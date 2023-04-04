@@ -1,0 +1,27 @@
+.container{
+    margin: 0 20%;
+    margin-top: 5%;
+    }
+
+    .basic {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: #1976d2;
+        color: white;
+        font-weight: 600;
+        justify-content: center;
+        text-align: center !important;
+    
+    }
+    .card-img-top{
+
+        width: 220px; 
+        height: 180px;
+        margin: 0 auto;
+    }

@@ -32,6 +32,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MailVComponent } from './Components/mail-v/mail-v.component';
 import { RecuperarComponent } from './Components/recuperar/recuperar.component';
+import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 
 
 
@@ -42,7 +43,8 @@ import { RecuperarComponent } from './Components/recuperar/recuperar.component';
     UloginComponent,
     DashboardComponent,
     MailVComponent,
-    RecuperarComponent
+    RecuperarComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
