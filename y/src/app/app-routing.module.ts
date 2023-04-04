@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RecuperarpasswordComponent } from './components/recuperarpassword/recuperarpassword.component';
-import { LoginUIComponent } from './Components/login-ui/login-ui.component';
-import { VerificarmailComponent } from './components/verificarmail/verificarmail.component';
-import { PrincipalComponent } from './components/principal/principal.component';
+import { UloginComponent } from './Components/ulogin/ulogin.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { MailVComponent } from './Components/mail-v/mail-v.component';
+
 
 const routes: Routes = [
-  {path: '', redirectTo:'principal',pathMatch:'full'},
-  {path: 'principal', component:PrincipalComponent},
-  {path: 'recuperarp', component:RecuperarpasswordComponent},
-  {path: 'login', component:LoginUIComponent},
-  {path: 'verificarm', component:VerificarmailComponent},
+  {path: '', redirectTo:'login',pathMatch:'full'},
+  {path: 'principal', component:DashboardComponent},
+    {path: 'login', component:UloginComponent},
+  {path: 'verificarm', component:MailVComponent},
   //{path: 'visual', component:VisualComponent},
-   {path: '**', redirectTo: 'principal', pathMatch:'full'}
+   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
 @NgModule({

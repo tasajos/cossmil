@@ -7,11 +7,11 @@ import { FormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-login-ui',
-  templateUrl: './login-ui.component.html',
-  styleUrls: ['./login-ui.component.css']
+  selector: 'app-ulogin',
+  templateUrl: './ulogin.component.html',
+  styleUrls: ['./ulogin.component.css']
 })
-export class LoginUIComponent implements OnInit{
+export class UloginComponent implements OnInit{
 
   loginUsuario : FormGroup;
   loading:boolean =false;
@@ -54,5 +54,6 @@ export class LoginUIComponent implements OnInit{
 
   
 }
+
 
 

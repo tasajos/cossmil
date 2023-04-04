@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpinnerComponent } from './spinner.component';
+import { MailVComponent } from './mail-v.component';
 
-describe('SpinnerComponent', () => {
-  let component: SpinnerComponent;
-  let fixture: ComponentFixture<SpinnerComponent>;
+describe('MailVComponent', () => {
+  let component: MailVComponent;
+  let fixture: ComponentFixture<MailVComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpinnerComponent ]
+      declarations: [ MailVComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SpinnerComponent);
+    fixture = TestBed.createComponent(MailVComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
