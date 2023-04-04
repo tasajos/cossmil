@@ -31,6 +31,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MailVComponent } from './Components/mail-v/mail-v.component';
+import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 
 
 
@@ -40,7 +41,8 @@ import { MailVComponent } from './Components/mail-v/mail-v.component';
     LoginUIComponent,
     UloginComponent,
     DashboardComponent,
-    MailVComponent
+    MailVComponent,
+    RecuperarComponent
   ],
   imports: [
     BrowserModule,

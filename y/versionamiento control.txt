@@ -1,1 +1,2 @@
 1.- Alfa: Login Firebase
+1.2 - alfa : Login y Recuperar
