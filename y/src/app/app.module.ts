@@ -33,6 +33,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MailVComponent } from './Components/mail-v/mail-v.component';
 import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
+import { FarmaciaComponent } from './Components/farmacia/farmacia.component';
+import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarmacia.component';
 
 
 
@@ -44,7 +46,9 @@ import { CabeceraComponent } from './Components/cabecera/cabecera.component';
     DashboardComponent,
     MailVComponent,
     RecuperarComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    FarmaciaComponent,
+    NavbarfarmaciaComponent
   ],
   imports: [
     BrowserModule,
