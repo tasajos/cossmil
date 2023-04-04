@@ -1,0 +1,25 @@
+1.- Install npm -Install
+2.- create folder inside app environments
+3.- create envinronment.ts inside environmets folder
+4.-install bootstrap
+    >npm i bootstrap@5.3.0-alpha3
+    >Go to angular.json > Go to styles
+    >add  \node_modules\bootstrap\dist\css\bootstrap.min.css
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+5.- create components: ng g c components/Login
+6.- create components: ng g c components/dashboard
+7.- create components: ng g c components/verificarmail
+8.- create components: ng g c components/recuperarpassword
+9.- create folder shared
+10.-create spinner ng g c spinner inside shared folder
+11.- update routing.node
+
+const routes: Routes = [
+  {path: '', redirectTo:'dashboard',pathMatch:'full'},
+  {path: 'dashboard', component:DashboardComponent},
+  {path: 'recuperarpassword', component:RecuperarpasswordComponent},
+  {path: 'login', component:LoginUIComponent},
+  {path: 'verificarm', component:VerificarmailComponent},
+  //{path: 'visual', component:VisualComponent},
+   {path: '**', redirectTo: 'dashboard', pathMatch:'full'},
+];
