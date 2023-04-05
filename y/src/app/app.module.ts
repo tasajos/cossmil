@@ -14,6 +14,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UloginComponent } from './Components/ulogin/ulogin.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatExpansionModule} from '@angular/material/expansion'
+
+
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -35,6 +40,8 @@ import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { FarmaciaComponent } from './Components/farmacia/farmacia.component';
 import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarmacia.component';
+
+
 
 
 
@@ -73,7 +80,10 @@ import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarma
     ReactiveFormsModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule,
+    NgbModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
