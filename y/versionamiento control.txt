@@ -2,3 +2,4 @@
 1.2 - alfa : Login y Recuperar
 1.3 - Añadido dashboard y configuraciones inciales
 1.4 - Añadido twitter a ofiuco de cossmil y del ministerio de salud
+1.4.1 Modificacion tweets

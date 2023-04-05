@@ -31,7 +31,8 @@ export class TwitterComponent implements OnInit {
     twttr.widgets.createTimeline(
       {
         sourceType: 'profile',
-        screenName: 'OFICIAL_COSSMIL', // Reemplaza con el nombre de usuario de Twitter que deseas mostrar en el timeline
+        screenName: 'mindefbolivia',
+        //screenName: 'bolivia', // Reemplaza con el nombre de usuario de Twitter que deseas mostrar en el timeline
         tweetLimit: 5 ,
       },
       document.getElementById('twitter-timeline1')
