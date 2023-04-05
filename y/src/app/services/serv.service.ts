@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -9,6 +9,8 @@ import { Inter } from '../Interfaz/inter';
 })
 export class ServService {
   private Myappurl: string = environment.endpoint;
+ // private apiUrl = 'https://api.twitter.com/1.1/search/tweets.json'; // Definir la URL de la API de Twitter
+
   //private Myappurl: string = "localhost/7105/";
   private Myapiurl: string = 'api/personal/';
 
@@ -60,5 +62,6 @@ export class ServService {
                 return 'Usuario no Encontrado'
         }
     }
+    
    }
 

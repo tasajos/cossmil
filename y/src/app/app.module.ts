@@ -40,6 +40,8 @@ import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { FarmaciaComponent } from './Components/farmacia/farmacia.component';
 import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarmacia.component';
+import { TwitterComponent } from './Components/twitter/twitter.component';
+
 
 
 
@@ -55,7 +57,8 @@ import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarma
     RecuperarComponent,
     CabeceraComponent,
     FarmaciaComponent,
-    NavbarfarmaciaComponent
+    NavbarfarmaciaComponent,
+    TwitterComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +86,8 @@ import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarma
     MatSelectModule,
     MatTabsModule,
     NgbModule,
-    MatExpansionModule
+    MatExpansionModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
