@@ -3,3 +3,5 @@
 1.3 - Añadido dashboard y configuraciones inciales
 1.4 - Añadido twitter a ofiuco de cossmil y del ministerio de salud
 1.4.1 Modificacion tweets
+1.4.2 Añadir IU modulos
+1.4.3 Añadido Formulario Insumos Medicos

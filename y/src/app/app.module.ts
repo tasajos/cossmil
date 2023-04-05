@@ -41,6 +41,8 @@ import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { FarmaciaComponent } from './Components/farmacia/farmacia.component';
 import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarmacia.component';
 import { TwitterComponent } from './Components/twitter/twitter.component';
+import { PcirugiaComponent } from './Components/pcirugia/pcirugia.component';
+import { RfarmaciaComponent } from './Components/rfarmacia/rfarmacia.component';
 
 
 
@@ -58,7 +60,9 @@ import { TwitterComponent } from './Components/twitter/twitter.component';
     CabeceraComponent,
     FarmaciaComponent,
     NavbarfarmaciaComponent,
-    TwitterComponent
+    TwitterComponent,
+    PcirugiaComponent,
+    RfarmaciaComponent
   ],
   imports: [
     BrowserModule,
