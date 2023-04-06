@@ -43,6 +43,8 @@ import { NavbarfarmaciaComponent } from './Components/navbarfarmacia/navbarfarma
 import { TwitterComponent } from './Components/twitter/twitter.component';
 import { PcirugiaComponent } from './Components/pcirugia/pcirugia.component';
 import { RfarmaciaComponent } from './Components/rfarmacia/rfarmacia.component';
+import { R2tComponent } from './Components/r2t/r2t.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -62,7 +64,8 @@ import { RfarmaciaComponent } from './Components/rfarmacia/rfarmacia.component';
     NavbarfarmaciaComponent,
     TwitterComponent,
     PcirugiaComponent,
-    RfarmaciaComponent
+    RfarmaciaComponent,
+    R2tComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +94,7 @@ import { RfarmaciaComponent } from './Components/rfarmacia/rfarmacia.component';
     MatTabsModule,
     NgbModule,
     MatExpansionModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],

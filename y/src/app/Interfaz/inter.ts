@@ -1,16 +1,12 @@
 export interface Inter {
     // columna db 
     id?: number,
-    nombre: string,
-    apellido: string,
-    telefono:number,
-    ubicacion: string,
-    tipo: string,
-    detalle:string,
-    pedido:string,
-    cantidad: number,
-    color: string,
-    precio:number,
-    
-    
+    codigosiga: string,
+    codigoVademecum: string,
+    unidad:number,
+    descripcion: string,
+    fechav: string,
+    cantidadpedida:string,
+    observaciones:string,
+     
     }

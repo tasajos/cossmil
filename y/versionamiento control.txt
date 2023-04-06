@@ -7,3 +7,4 @@
 1.4.3 Añadido Formulario Insumos Medicos
 1.4.4 Añadido Formulario Programacion Cirugia
 1.4.5 Añadido fecha
+1.5 Añadido registro de medicamentos

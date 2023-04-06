@@ -1,7 +1,7 @@
 export const environment = {
 
-    roduction: false,
-    endpoint: 'https://localhost:7105/',
+    Production: false,
+    endpoint: 'https://localhost:7250/',
 
     firebaseConfig:{
         apiKey: "AIzaSyD34-kDROsIubJ_HazX0-busVIx6qJIuWY",

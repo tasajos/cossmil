@@ -12,7 +12,7 @@ export class ServService {
  // private apiUrl = 'https://api.twitter.com/1.1/search/tweets.json'; // Definir la URL de la API de Twitter
 
   //private Myappurl: string = "localhost/7105/";
-  private Myapiurl: string = 'api/personal/';
+  private Myapiurl: string = 'api/farmacia/';
 
   constructor(private http: HttpClient) {}
     getPersonal(): Observable<Inter[]> {
@@ -27,9 +27,9 @@ export class ServService {
     }
    
     //addPersonal  (): Observable<Inter>{
-    addPersonal  (personal: Inter): Observable<Inter>{
+      addmedicamento  (frm: Inter): Observable<Inter>{
 
-      return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,personal);
+      return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,frm);
       //return this.http.post<Mascota>(`${this.myAppUrl}${this.myApiUrl}`, mascota);
     // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
     }
@@ -37,7 +37,12 @@ export class ServService {
      return this.http.delete<void>(`${this.Myappurl}${this.Myapiurl}${id}`);
     }
    
+    addPersonal  (personal: Inter): Observable<Inter>{
 
+      return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,personal);
+      //return this.http.post<Mascota>(`${this.myAppUrl}${this.myApiUrl}`, mascota);
+    // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
+    }
 
       CodeError(code:string){
         switch(code){
