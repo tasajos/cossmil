@@ -2,19 +2,21 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 namespace cossmil.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FarmaciaController : ControllerBase
+    public class cirugiaController : ControllerBase
     {
-        private readonly FarContext _context;
-      
 
-        public FarmaciaController(FarContext context)
+        private readonly FarContext _context;
+
+
+        public cirugiaController(FarContext context)
         {
 
-
+           //ProgracionCirugia
             _context = context;
 
         }
@@ -24,8 +26,8 @@ namespace cossmil.Controllers
         {
             try
             {
-                var listmedicamentos = await _context.FarmaciaTab.ToListAsync();
-                return Ok(listmedicamentos);
+                var listcirugia = await _context.ProgracionCirugia.ToListAsync();
+                return Ok(listcirugia);
             }
             catch (Exception ex)
             {
@@ -43,8 +45,8 @@ namespace cossmil.Controllers
         {
             try
             {
-                var listmedicamentosid = await _context.FarmaciaTab.FindAsync(Id);
-                return Ok(listmedicamentosid);
+                var listcirugiaid = await _context.ProgracionCirugia.FindAsync(Id);
+                return Ok(listcirugiaid);
 
             }
             catch (Exception ex)
@@ -58,14 +60,14 @@ namespace cossmil.Controllers
         {
             try
             {
-                var delete = await _context.FarmaciaTab.FindAsync(Id);
+                var delete = await _context.ProgracionCirugia.FindAsync(Id);
 
                 if (delete == null)
                 {
                     return NotFound();
                 }
 
-                _context.FarmaciaTab.Remove(delete);
+                _context.ProgracionCirugia.Remove(delete);
                 await _context.SaveChangesAsync();
 
                 return NoContent();
@@ -80,16 +82,16 @@ namespace cossmil.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Post(FarmT FarmaciaTab)
+        public async Task<IActionResult> Post(Pcirugia ProgracionCirugia)
         {
             try
             {
-                FarmaciaTab.FechaCreacion = DateTime.Now;
-                _context.Add(FarmaciaTab);
+                ProgracionCirugia.FechaCreacion = DateTime.Now;
+                _context.Add(ProgracionCirugia);
                 await _context.SaveChangesAsync();
-                return CreatedAtAction("Get", new { Id = FarmaciaTab.id }, FarmaciaTab);
-               
-            }    
+                return CreatedAtAction("Get", new { Id = ProgracionCirugia.id }, ProgracionCirugia);
+
+            }
             catch (Exception ex)
             {
                 // Handle other errors
@@ -97,9 +99,10 @@ namespace cossmil.Controllers
             }
 
         }
-      
+
 
     }
 
 
 }
+   
