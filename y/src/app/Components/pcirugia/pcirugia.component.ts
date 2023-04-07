@@ -51,6 +51,8 @@ export class PcirugiaComponent {
       unidad: ['',Validators.required],
       tipointer: ['',Validators.required],
       fechap: ['',Validators.required],
+      fecham: ['',Validators.required],
+      fechaa: ['',Validators.required],
       tiposangre: ['',Validators.required],
       observaciones: ['',Validators.required],
      
@@ -73,6 +75,8 @@ ngOnInit(): void {
       unidad:this.formulario.value.unidad,
       tipointer:this.formulario.value.tipointer,
       fechap:this.formulario.value.fechap,
+      fecham:this.formulario.value.fecham,
+      fechaa:this.formulario.value.fechaa,
       tiposangre:this.formulario.value.tiposangre,
       observaciones:this.formulario.value.observaciones,
     

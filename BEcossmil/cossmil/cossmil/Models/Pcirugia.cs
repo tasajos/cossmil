@@ -10,6 +10,9 @@
 
         public string tipointer { get; set; }
         public string fechap { get; set; }
+        public string fecham { get; set; }
+        public string fechaa { get; set; }
+
         public string tiposangre { get; set; }
 
         public string observaciones { get; set; }

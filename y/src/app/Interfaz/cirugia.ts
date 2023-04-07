@@ -6,6 +6,8 @@ export interface cirugiaInter {
     unidad: string,
     tipointer:number,
     fechap: string,
+    fecham: string,
+    fechaa: string,
     tiposangre: string,
     observaciones:string,
     
