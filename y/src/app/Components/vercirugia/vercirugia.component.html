@@ -4,20 +4,26 @@
 <br><br>
 <div class="container">
     <h1>Cirugias Programadas</h1>
+    <br>
+    <h3><p>Fecha actual: {{ fechaActual | date:'dd-MMMM-yyyy' }}</p></h3>
+
 <br><br>
 
     <div class="card text-center mt-2" *ngFor="let cirugia of cirugias">
         <div class="card-header">
-           <strong>Paciente:</strong> {{ cirugia.paciente }}
+           <strong>Grado: </strong>  {{ cirugia.grado }}
         </div>
         <div class="card-body">
-          <h5 class="card-title"><strong>Grado:</strong>{{ cirugia.grado }}</h5>
+          <h5 class="card-title"><strong>Paciente:</strong>{{ cirugia.paciente }}</h5>
           <p class="card-text"><strong>Unidad:</strong>{{ cirugia.unidad }}</p>
+          <p class="card-text"><strong>Tipo de Intervencion:</strong>{{ cirugia.tipointer }}</p>
           <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
         </div>
         <div class="card-footer text-body-secondary">
            <strong>Dia: </strong> {{ cirugia.fechap }} <strong>Mes: </strong> {{ cirugia.fecham }} <strong>Año: </strong> {{ cirugia.fechaa }}
           <p> <strong>Hora: </strong> {{ cirugia.hora }} <strong>Minuto: </strong> {{ cirugia.minuto }}</p>
+          <p></p>
+          
         </div>
       </div>
 </div>

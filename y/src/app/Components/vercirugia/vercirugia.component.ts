@@ -9,6 +9,9 @@ import { cirugiaInter } from 'src/app/Interfaz/cirugia';
 })
 export class VercirugiaComponent implements OnInit {
   public cirugias: cirugiaInter[]= [];
+  public fechaActual: Date = new Date();
+  
+ 
 
   constructor(private cirugiaserv: CirugiaservService) { }
 
@@ -16,9 +19,15 @@ export class VercirugiaComponent implements OnInit {
     this.getCirugias();
   }
 
+
   getCirugias(){
+    const fechaActual = new Date();
+    const diaActual = fechaActual.getDate().toString();
+  const mesActual = (fechaActual.getMonth() + 1).toString();
+  const anioActual = fechaActual.getFullYear().toString();
     this.cirugiaserv.getPersonal().subscribe(data => {
-      this.cirugias = data;
+      console.log(data)
+      this.cirugias = data.filter(cirugia => cirugia.fechap === diaActual && cirugia.fecham === mesActual && cirugia.fechaa === anioActual);
     });
   }
 

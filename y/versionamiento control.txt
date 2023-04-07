@@ -16,3 +16,5 @@
 1.6.4 Añadido Cirugias Programadas Interfaz UI
 1.6.5 Añadido Card de Cirugias Programadas
 1.7 Implementacion de Ver cirugias
+1.7.1 Añadido Fecha Actual
+1.7.2 Modificacion para que te muestre fecha actual
