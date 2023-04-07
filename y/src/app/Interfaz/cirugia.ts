@@ -1,11 +1,12 @@
 export interface cirugiaInter {
     // columna db 
     id?: number,
+    paciente: string,
     grado: string,
     unidad: string,
-    fechap:number,
+    tipointer:number,
+    fechap: string,
     tiposangre: string,
-    fechav: string,
     observaciones:string,
     
      

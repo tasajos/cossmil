@@ -5,51 +5,45 @@
 <div class="container">
     <h1>Programacion Cirugia</h1>
     <div class="container text-center mt-4">
+        <form [formGroup]="formulario" (ngSubmit)="agregarcirugia()">
         <div class="row">
           <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Paciente:</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" formControlName="paciente" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
               </div>
           </div>
           <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Grado:</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" formControlName="grado" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
               </div>
           </div>
           <div class="row">
           <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Unidad:</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" formControlName="unidad" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
               </div>
           </div>
           <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Tipo de intervencion:</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" formControlName="tipointer" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
               </div>
           </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-3">
-                    <input
-				class="form-control"
-				placeholder="yyyy-mm-dd"
-				name="dp"
-				[(ngModel)]="model"
-				ngbDatepicker
-				#d="ngbDatepicker"
-			/>
-			<button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
-                </div>
+                    <span class="input-group-text" id="inputGroup-sizing-default">fecha Programacion:</span>
+                    <input type="text" formControlName="fechap" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
               </div>
             <div class="col">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default">Tipo de Sangre:</span>
-                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <input type="text" formControlName="tiposangre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
           </div>
@@ -57,12 +51,17 @@
             <div class="col">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default">Observaciones:</span>
-                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <input type="text" formControlName="observaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
-            
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary btn-lg mt-3" type="Submit" style="margin-left: 10px;">Registrar</button>
+              <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/principal" style="margin-left: 10px;" >Volver</button>
+            </div>
           </div>
-    </div>
-    <button class="btn btn-primary btn-lg mt-3" type="button" routerLink="/principal" style="margin-left: 10px;">Registrar</button>
-    <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/principal" style="margin-left: 10px;">Volver</button>
-    </div>
+          </div>
+  
+</form>
+    
