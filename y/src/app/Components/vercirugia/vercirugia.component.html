@@ -6,17 +6,19 @@
     <h1>Cirugias Programadas</h1>
 <br><br>
 
-    <div class="card text-center mt-2">
+    <div class="card text-center mt-2" *ngFor="let cirugia of cirugias">
         <div class="card-header">
-          Featured
+           <strong>Paciente:</strong> {{ cirugia.paciente }}
         </div>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title"><strong>Grado:</strong>{{ cirugia.grado }}</h5>
+          <p class="card-text"><strong>Unidad:</strong>{{ cirugia.unidad }}</p>
           <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
         </div>
         <div class="card-footer text-body-secondary">
-          2 days ago
+           <strong>Dia: </strong> {{ cirugia.fechap }} <strong>Mes: </strong> {{ cirugia.fecham }} <strong>Año: </strong> {{ cirugia.fechaa }}
+          <p> <strong>Hora: </strong> {{ cirugia.hora }} <strong>Minuto: </strong> {{ cirugia.minuto }}</p>
         </div>
       </div>
 </div>
+<br><br>

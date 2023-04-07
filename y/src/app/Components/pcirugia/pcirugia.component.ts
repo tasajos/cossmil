@@ -55,6 +55,8 @@ export class PcirugiaComponent {
       fechaa: ['',Validators.required],
       tiposangre: ['',Validators.required],
       observaciones: ['',Validators.required],
+      hora: ['',Validators.required],
+      minuto: ['',Validators.required],
      
       
     })
@@ -79,6 +81,8 @@ ngOnInit(): void {
       fechaa:this.formulario.value.fechaa,
       tiposangre:this.formulario.value.tiposangre,
       observaciones:this.formulario.value.observaciones,
+      hora:this.formulario.value.hora,
+      minuto:this.formulario.value.minuto,
     
     }
     console.log(rcirugia)

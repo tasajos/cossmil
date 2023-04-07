@@ -16,6 +16,8 @@
         public string tiposangre { get; set; }
 
         public string observaciones { get; set; }
+        public string hora { get; set; }
+        public string minuto { get; set; }
 
         public DateTime FechaCreacion { get; set; }
     }

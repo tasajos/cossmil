@@ -10,6 +10,8 @@ export interface cirugiaInter {
     fechaa: string,
     tiposangre: string,
     observaciones:string,
+    hora:string,
+    minuto:string,
     
      
     }
