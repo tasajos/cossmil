@@ -16,7 +16,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatExpansionModule} from '@angular/material/expansion'
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -48,6 +49,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarcirugiaComponent } from './Components/navbarcirugia/navbarcirugia.component';
 import { VercirugiaComponent } from './Components/vercirugia/vercirugia.component';
 import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.component';
+import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/medicamento-esencial.component';
+import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
 
 
 
@@ -73,6 +76,8 @@ import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.co
     NavbarcirugiaComponent,
     VercirugiaComponent,
     ListacirugiaComponent,
+    MedicamentoEsencialComponent,
+    ListaEsencialComponent,
     
   ],
   imports: [
@@ -103,7 +108,7 @@ import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.co
     NgbModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    
+    MatMenuModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

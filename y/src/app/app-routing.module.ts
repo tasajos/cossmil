@@ -11,6 +11,8 @@ import { RfarmaciaComponent } from './Components/rfarmacia/rfarmacia.component';
 import { R2tComponent } from './Components/r2t/r2t.component';
 import { VercirugiaComponent } from './Components/vercirugia/vercirugia.component';
 import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.component';
+import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/medicamento-esencial.component';
+import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path: 'prueba', component:R2tComponent},
   {path: 'vercirugia', component:VercirugiaComponent},
   {path: 'listacirugia', component:ListacirugiaComponent},
+  {path: 'medsencial', component:MedicamentoEsencialComponent},
+  {path: 'listesencial', component:ListaEsencialComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
