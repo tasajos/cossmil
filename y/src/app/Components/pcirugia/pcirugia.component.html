@@ -14,37 +14,85 @@
               </div>
           </div>
           <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Grado:</span>
-                <input type="text" formControlName="grado" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Grado:</label>
+                <select class="form-select" id="inputGroupSelect01" formControlName="grado">
+                  <option selected>Seleccione...</option>
+                  <option value="Soldado|Marino">Soldado|Marino</option>
+                  <option value="Dragoneante|Marino de 1ra">Dragoneante|Marino de 1ra</option>
+                  <option value="Cabo|Cabo Conscripto">Cabo|Cabo Conscripto</option>
+                  <option value="Sgto.Inicial">Sgto.Inicial</option>
+                  <option value="Sgto.Segundo">Sgto.Segundo</option>
+                  <option value="Sgto.Primero">Sgto.Primero</option>
+                  <option value="Suboficial.Inicial">Suboficial.Inicial</option>
+                  <option value="Suboficial.Segundo">Suboficial.Segundo</option>
+                  <option value="Suboficial.Primero">Suboficial.Primero</option>
+                  <option value="Suboficial.Mayor">Suboficial.Mayor</option>
+                  <option value="Suboficial.Master|Maestre">Suboficial.Master|Maestre</option>
+                  <option value="Subteniente|Alferez">Subteniente|Alferez</option>
+                  <option value="Teniente|Tte.Frag">Teniente|Tte.Frag</option>
+                  <option value="Capitan|Tte.Nav">Capitan|Tte.Nav</option>
+                  <option value="Mayor|Cap.Corb">Mayor|Cap.Corb</option>
+                  <option value="Teniente Coronel|Cap.Fragata">Teniente Coronel|Cap.Fragata</option>
+                  <option value="Coronel|Cap.Nav">Coronel|Cap.Nav</option>
+
+                  <option value="Gral.Brig|Contralmte">Gral.Brig|Contralmte</option>
+                  <option value="Gral.Division|Vicealmte">Gral.Division|Vicealmte</option>
+                  <option value="Gral.Fuerza|Almirante">Gral.Fuerza|Almirante</option>
+                </select>
               </div>
           </div>
           <div class="row">
           <div class="col">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Unidad:</span>
-                <input type="text" formControlName="unidad" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <label class="input-group-text" for="inputGroupSelect01">Unidad:</label>
+                <select class="form-select" id="inputGroupSelect01" formControlName="unidad">
+                  <option selected>Seleccione...</option>
+                  <option value="Ejercito">Ejercito</option>
+                  <option value="Fuerza Aerea">Fuerza Aerea</option>
+                  <option value="Armada">Armada</option>
+                </select>
               </div>
           </div>
           <div class="col">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Tipo de intervencion:</span>
-                <input type="text" formControlName="tipointer" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <label class="input-group-text" for="inputGroupSelect01">Tipo de Intervencion:</label>
+                <select class="form-select" id="inputGroupSelect01" formControlName="tipointer">
+                  <option selected>Seleccione...</option>
+                  <option value="Cirugía abdominal">Cirugía abdominal</option>
+                  <option value="Cirugía cardíaca">Cirugía cardíaca</option>
+                  <option value="Cirugía ortopédica">Cirugía ortopédica</option>
+                  <option value="Cirugía plástica">Cirugía plástica</option>
+                  <option value="Cirugía laparoscópica">Cirugía laparoscópica</option>
+                  <option value="Cirugía endoscópica">Cirugía endoscópica</option>
+                  <option value="Cirugía neurológica">Cirugía neurológica</option>
+                  
+                </select>
               </div>
           </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">fecha Programacion:</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Fecha Programacion:</span>
                     <input type="text" formControlName="fechap" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                   </div>
               </div>
             <div class="col">
-              <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Tipo de Sangre:</span>
-                  <input type="text" formControlName="tiposangre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Tipo de Sangre:</label>
+                    <select class="form-select" id="inputGroupSelect01" formControlName="tiposangre">
+                      <option selected>Seleccione...</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A- </option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B- </option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB- </option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>
+                  </div>
             </div>
           </div>
           <div class="row">
