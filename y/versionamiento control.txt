@@ -10,4 +10,4 @@
 1.5 Añadido registro de medicamentos
 1.5.1 añadido servicio e interfaz
 1.6 Añadido registro de cirugias
-1.6.1 navbar programacion cirugia
+1.6.1 navbar programacion cirugia           
