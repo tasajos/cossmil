@@ -54,6 +54,7 @@ import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.co
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.co
     R2tComponent,
     NavbarcirugiaComponent,
     VercirugiaComponent,
-    ListacirugiaComponent
+    ListacirugiaComponent,
+    
   ],
   imports: [
     BrowserModule,
