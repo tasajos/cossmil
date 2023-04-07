@@ -19,3 +19,5 @@
 1.7.1 Añadido Fecha Actual
 1.7.2 Modificacion para que te muestre fecha actual
 1.7.3 Añadido Lista de Cirugias interfaz
+1.8 Añadido la funcionalidad de listado cirugia
+1.8.1 Modificacion NavBar Cirugia
