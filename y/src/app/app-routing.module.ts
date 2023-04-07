@@ -9,6 +9,7 @@ import { FarmaciaComponent } from './Components/farmacia/farmacia.component';
 import { PcirugiaComponent } from './Components/pcirugia/pcirugia.component';
 import { RfarmaciaComponent } from './Components/rfarmacia/rfarmacia.component';
 import { R2tComponent } from './Components/r2t/r2t.component';
+import { VercirugiaComponent } from './Components/vercirugia/vercirugia.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'programacion', component:PcirugiaComponent},
   {path: 'registrarf', component:RfarmaciaComponent},
   {path: 'prueba', component:R2tComponent},
+  {path: 'vercirugia', component:VercirugiaComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
