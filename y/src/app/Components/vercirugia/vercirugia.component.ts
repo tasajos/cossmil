@@ -17,6 +17,9 @@ export class VercirugiaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCirugias();
+    setInterval(() => {
+      window.location.reload();
+    }, 10000);
   }
 
 

@@ -47,6 +47,7 @@ import { R2tComponent } from './Components/r2t/r2t.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarcirugiaComponent } from './Components/navbarcirugia/navbarcirugia.component';
 import { VercirugiaComponent } from './Components/vercirugia/vercirugia.component';
+import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.component';
 
 
 
@@ -69,7 +70,8 @@ import { VercirugiaComponent } from './Components/vercirugia/vercirugia.componen
     RfarmaciaComponent,
     R2tComponent,
     NavbarcirugiaComponent,
-    VercirugiaComponent
+    VercirugiaComponent,
+    ListacirugiaComponent
   ],
   imports: [
     BrowserModule,
