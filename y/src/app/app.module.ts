@@ -54,6 +54,8 @@ import { ListaEsencialComponent } from './Components/lista-esencial/lista-esenci
 import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmacia.component';
 import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
 import { NavbarmenuComponent } from './Components/navbarmenu/navbarmenu.component';
+import { InternacionComponent } from './Components/internacion/internacion.component';
+import { NavbarinterComponent } from './Components/navbarinter/navbarinter.component';
 
 
 
@@ -84,6 +86,8 @@ import { NavbarmenuComponent } from './Components/navbarmenu/navbarmenu.componen
     ListaFarmaciaComponent,
     DboardfarComponent,
     NavbarmenuComponent,
+    InternacionComponent,
+    NavbarinterComponent,
     
   ],
   imports: [

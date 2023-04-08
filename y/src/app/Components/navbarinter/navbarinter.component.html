@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img class="imgfor" src="../../../assets/img/logo 1.png">
+      <a class="navbar-brand" href="#">Cerrar Sesion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/internacion">Inicio</a>
+          </li>
+          <li class="nav-item">
+          <!--  <a class="nav-link" routerLink="/registrarf">Registrar Farmacia</a>-->
+          <button mat-button [matMenuTriggerFor]="paciente">Pacientes</button>
+  <mat-menu #paciente="matMenu">
+    <button mat-menu-item routerLink="/registrarf">Registrar Paciente</button>
+    <button mat-menu-item routerLink="/listafarmacia" >Lista Pacientes</button>
+     </mat-menu>
+          </li>
+          <li class="nav-item">
+            <button mat-button [matMenuTriggerFor]="seguimiento">Seguimiento</button>
+  <mat-menu #seguimiento="matMenu">
+    <button mat-menu-item routerLink="/medsencial">Seguimiento</button>
+    <button mat-menu-item routerLink="/listesencial" >Inventario</button>
+  </mat-menu>
+  
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>

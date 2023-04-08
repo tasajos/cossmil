@@ -15,6 +15,7 @@ import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/
 import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
 import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmacia.component';
 import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
+import { InternacionComponent } from './Components/internacion/internacion.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'listesencial', component:ListaEsencialComponent},
   {path: 'listafarmacia', component:ListaFarmaciaComponent},
   {path: 'form3', component:DboardfarComponent},
+  {path: 'internacion', component:InternacionComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
