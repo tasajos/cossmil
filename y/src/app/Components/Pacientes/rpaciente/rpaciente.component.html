@@ -1,1 +1,66 @@
-<p>rpaciente works!</p>
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarinter></app-navbarinter>
+<br><br>
+<div class="container">
+  <h1>  Registrar Pacientes </h1>
+  <br>
+    <div class="container text-center mt-4">
+        <form [formGroup]="formulario" (ngSubmit)="agregarpaciente()">
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Pieza:</span>
+                <input type="text" formControlName="pieza" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre Paciente:</span>
+                <input type="text" formControlName="nombrepaciente" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="row">
+          <div class="col">
+           <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Doctor:</span>
+                <input type="text" formControlName="doctor" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Cuidado:</span>
+                    <input type="text" formControlName="cuidado" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+          </div>
+        </div>
+
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Estado:</span>
+                    <input type="text" formControlName="estado" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+          </div>
+        </div>
+
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Fecha:</span>
+                    <input type="date" formControlName="fecha" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+          </div>
+        </div>
+       
+        <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary btn-lg mt-3" type="Submit" style="margin-left: 10px;">Registrar</button>
+              <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/farmacia" style="margin-left: 10px;" >Volver</button>
+            </div>
+          </div>
+          </div>
+  </div>
+</form>
+    

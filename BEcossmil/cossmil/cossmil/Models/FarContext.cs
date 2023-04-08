@@ -14,5 +14,6 @@ namespace cossmil.Models
         public DbSet<Pcirugia> ProgracionCirugia { get; set; }
 
         public DbSet<Medicamentoesenciales> Mesenciales { get; set; }
+        public DbSet<PPacientesT> Pacientes { get; set; } //<clase> Nombre de la tabla
     }
 }

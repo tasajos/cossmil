@@ -7,5 +7,6 @@ export interface PacInt {
  doctor:number,
  cuidado: string,
  estado: string,
+ fecha: string,
  
 }
