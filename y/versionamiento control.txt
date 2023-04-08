@@ -28,3 +28,5 @@
 1.11 Modificado Formulario recupera datos de medicamentos esenciales
 1.11.1 Modificado NavBar Farmacia
 1.12.1.1 Update bugs de tablas de datos
+1.12.2 update input type ="date" me permite desplegar el calendario 
+         <input type="date" formControlName="fechav" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
