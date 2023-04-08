@@ -92,12 +92,10 @@ exportToExcel(): void {
   const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
   const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
   const dataBlob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8' });
-  const fileName = 'lista_medicamentos_esenciales.xlsx';
+  const fileName = 'lista_pacientes.xlsx';
   const downloadLink = document.createElement('a');
   downloadLink.href = URL.createObjectURL(dataBlob);
   downloadLink.download = fileName;
   downloadLink.click();
 }
-}
-
-  ;
+};
