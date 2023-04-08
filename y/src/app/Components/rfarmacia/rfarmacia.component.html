@@ -15,8 +15,11 @@
           </div>
           <div class="col">
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Codigo Vademecum:</span>
-                <input formControlName="codigoVademecum" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              <span class="input-group-text" id="inputGroup-sizing-default">Codigo Vademecum:</span>
+              <select formControlName="codigoVademecum" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <option value="">Selecciona un código</option>
+                <option *ngFor="let codigo of codigoVademecum" [value]="codigo.codigo">{{codigo.codigo}}</option>
+              </select>
               </div>
           </div>
           <div class="row">
@@ -43,7 +46,7 @@
             <div class="col">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default">Cantidad pedida:</span>
-                  <input formControlName="cantidadp" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <input formControlName="cantidadpedida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
           </div>

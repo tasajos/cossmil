@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import {ServService} from 'src/app/services/serv.service';
+import {MservesencService} from 'src/app/services/mservesenc.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Inter } from 'src/app/Interfaz/inter';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-rfarmacia',
   templateUrl: './rfarmacia.component.html',
@@ -13,14 +14,14 @@ import { Inter } from 'src/app/Interfaz/inter';
 export class RfarmaciaComponent implements OnInit {
  
   formulario:FormGroup;
- 
+  codigoVademecum: any;
  
 
   constructor (private fb: FormBuilder, 
     private _snackBar: MatSnackBar,
     private _rfarmaciaService:ServService,
     private aRoute: ActivatedRoute,
-    private router: Router,) {
+    private router: Router,private http: HttpClient) {
 
     this.formulario = this.fb.group({
       codigosiga: ['',Validators.required],
@@ -38,7 +39,7 @@ export class RfarmaciaComponent implements OnInit {
   
 }
 ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  this.obtenerCodigosVademecum();
   }
 
   agregarmedicamento(){
@@ -69,5 +70,13 @@ ngOnInit(): void {
       duration: 2000,
       horizontalPosition: 'right',
     });
+  }
+  obtenerCodigosVademecum() {
+    this.http.get<any>('https://localhost:7250/api/MedicamentoEs').subscribe(
+      response => {
+        this.codigoVademecum  = response;
+      },
+      error => console.log(error)
+    );
   }
 }
