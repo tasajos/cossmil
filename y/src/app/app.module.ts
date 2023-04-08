@@ -56,6 +56,9 @@ import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
 import { NavbarmenuComponent } from './Components/navbarmenu/navbarmenu.component';
 import { InternacionComponent } from './Components/internacion/internacion.component';
 import { NavbarinterComponent } from './Components/navbarinter/navbarinter.component';
+import { RpacienteComponent } from './Components/Pacientes/rpaciente/rpaciente.component';
+import { LpacienteComponent } from './Components/Pacientes/lpaciente/lpaciente.component';
+import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaciente.component';
 
 
 
@@ -88,6 +91,9 @@ import { NavbarinterComponent } from './Components/navbarinter/navbarinter.compo
     NavbarmenuComponent,
     InternacionComponent,
     NavbarinterComponent,
+    RpacienteComponent,
+    LpacienteComponent,
+    EdipacienteComponent,
     
   ],
   imports: [

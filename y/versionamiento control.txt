@@ -35,4 +35,5 @@
         <option *ngFor="let codigo of codigovademecum" [value]="codigo.codigo + ' ' + codigo.descripcion">{{codigo.codigo}} {{codigo.descripcion}}</option>
 1.13 Añadido sumarizado
 1.14 Update NavBar Menu
+1.15 update pacientes UI
 
