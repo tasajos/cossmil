@@ -1,1 +1,75 @@
-<p>lpaciente works!</p>
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarinter></app-navbarinter>
+<br><br>
+<div class="container">
+    <h1>Lista de Pacientes</h1>
+<br>
+<br>
+<br>
+    <mat-form-field>
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="applyFilter($event)"  placeholder="Ex. paciente" #input autocomplete="off">
+      </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z2" matSort>
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="pieza">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pieza </th>
+          <td mat-cell *matCellDef="let element"> {{element.pieza}} </td>
+        </ng-container>
+        <ng-container matColumnDef="nombrepaciente">
+          <th mat-header-cell *matHeaderCellDef> Nombre Paciente </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombrepaciente}} </td>
+        </ng-container>
+        <ng-container matColumnDef="doctor">
+          <th mat-header-cell *matHeaderCellDef> Doctor </th>
+          <td mat-cell *matCellDef="let element"> {{element.doctor}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cuidado">
+          <th mat-header-cell *matHeaderCellDef> Cuidado </th>
+          <td mat-cell *matCellDef="let element"> {{element.cuidado}} </td>
+        </ng-container>
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+          </ng-container>
+               
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef >
+            <a class="btn btn-primary" routerLink="/rpaciente" role="button">Registrar</a> </th>
+          <td mat-cell *matCellDef="let element"> 
+            <!--<mat-icon matTooltip="Ver" routerLink="/verusuarios/{{element.id}}" class="search" fontIcon="search"></mat-icon>-->
+            <!--<mat-icon matTooltip="Editar" routerLink="/editarusuarios/1" class="edit"fontIcon="edit"></mat-icon>-->
+            <!--mat-icon  (click)="eliminarPersonal(element.id)"matTooltip="Borrar" class="delete" fontIcon="delete"></mat-icon>-->
+          </td>
+        </ng-container>
+        
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      <mat-paginator [pageSizeOptions]="[20, 40, 50,80]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+    
+    
+     <br>
+            
+     <button type="button" class="btn btn-info" (click)="exportToExcel()"> Exportar a Excel</button>
+    
+           
+          
+      
+    </div>
+
+
