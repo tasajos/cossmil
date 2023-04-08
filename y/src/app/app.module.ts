@@ -53,6 +53,7 @@ import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/
 import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
 import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmacia.component';
 import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
+import { NavbarmenuComponent } from './Components/navbarmenu/navbarmenu.component';
 
 
 
@@ -82,6 +83,7 @@ import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
     ListaEsencialComponent,
     ListaFarmaciaComponent,
     DboardfarComponent,
+    NavbarmenuComponent,
     
   ],
   imports: [

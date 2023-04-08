@@ -34,4 +34,5 @@
         Para concatenar la descripción junto con el código en el atributo [value] del elemento <option>, puedes simplemente agregar la variable codigo.descripcion después de codigo.codigo y separarlos con un espacio en blanco, de la siguiente manera:
         <option *ngFor="let codigo of codigovademecum" [value]="codigo.codigo + ' ' + codigo.descripcion">{{codigo.codigo}} {{codigo.descripcion}}</option>
 1.13 Añadido sumarizado
+1.14 Update NavBar Menu
 
