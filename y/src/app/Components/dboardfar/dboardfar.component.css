@@ -5,3 +5,9 @@
     h1 {
         text-align: center;
       }
+      .imgfor {
+        float: left;
+        margin-right: 10px; 
+        width: 40px; 
+        height: 30px;
+    }
