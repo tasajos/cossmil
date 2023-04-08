@@ -14,6 +14,7 @@ export class ServService {
 
   //private Myappurl: string = "localhost/7105/";
   private Myapiurl: string = 'api/farmacia/';
+  private geturl: string = 'sum-medicamento-pedida';
 
   constructor(private http: HttpClient) {}
     getPersonal(): Observable<Inter[]> {
@@ -21,6 +22,7 @@ export class ServService {
       //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
       return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl);
     }
+
     getidpersonal(id:number): Observable<Inter>{
 
       return this.http.get<Inter>(`${this.Myappurl}${this.Myapiurl}${id}`)
@@ -52,6 +54,21 @@ export class ServService {
     // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
     }
 
+    sumCantidadPedida(codigovademecum: string): Observable<number> {
+      const url = `${this.Myappurl}${this.Myapiurl}sum-cantidad-pedida/${codigovademecum}`;
+      return this.http.get<number>(url);
+    }
+  
+    getSumCantidadPedida(codigovademecum: string): Observable<any> {
+      const url = `${this.Myappurl}${this.Myapiurl}sum-cantidad-pedida/${codigovademecum}`;
+      return this.http.get<any>(url);
+    }
+ getlismed(): Observable<Inter[]> {
+
+      //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
+      return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl+this.geturl);
+    
+ }
       CodeError(code:string){
         switch(code){
           //el correo ya existe

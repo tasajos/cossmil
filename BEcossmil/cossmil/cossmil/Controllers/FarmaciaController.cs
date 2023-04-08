@@ -97,7 +97,42 @@ namespace cossmil.Controllers
             }
 
         }
-      
+
+
+        [HttpGet("sum-cantidad-pedida/{codigovademecum}")]
+        public async Task<IActionResult> GetSumCantidadPedida(string codigovademecum)
+        {
+            try
+            {
+                var sum = await _context.FarmaciaTab
+                    .Where(m => m.codigovademecum == codigovademecum)
+                    .SumAsync(m => m.cantidadpedida);
+                return Ok(new { codigovademecum = codigovademecum, cantidadpedida = sum });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("sum-medicamento-pedida")]
+        public async Task<IActionResult> GetSumCantidadPedida()
+        {
+            try
+            {
+                var result = await _context.FarmaciaTab
+                    .GroupBy(m => m.codigovademecum)
+                    .Select(g => new { codigovademecum = g.Key, cantidadpedida = g.Sum(m => m.cantidadpedida) })
+                    .ToListAsync();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
 
     }
 

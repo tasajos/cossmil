@@ -9,7 +9,7 @@
 
         public string descripcion { get; set; }
         public string fechav { get; set; }
-        public string cantidadpedida { get; set; }
+        public int cantidadpedida { get; set; }
 
         public string observaciones { get; set; }
        

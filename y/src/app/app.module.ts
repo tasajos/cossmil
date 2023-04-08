@@ -52,6 +52,7 @@ import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.co
 import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/medicamento-esencial.component';
 import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
 import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmacia.component';
+import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
 
 
 
@@ -80,6 +81,7 @@ import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmac
     MedicamentoEsencialComponent,
     ListaEsencialComponent,
     ListaFarmaciaComponent,
+    DboardfarComponent,
     
   ],
   imports: [

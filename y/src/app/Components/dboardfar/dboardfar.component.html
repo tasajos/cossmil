@@ -1,0 +1,18 @@
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarfarmacia></app-navbarfarmacia>
+<br><br>
+
+<div class="container">
+    <h1>Sumarizado</h1>
+    <br>
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Medicamentos
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let inter of interList">{{ inter.codigovademecum }} <strong>Total: </strong>{{ inter.cantidadpedida }}</li>
+        <!--<li class="list-group-item" *ngFor="let inter of interList">{{ inter.cantidadpedida }}</li>-->
+    </ul>
+  </div>
+</div>
