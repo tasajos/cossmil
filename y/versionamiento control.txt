@@ -26,3 +26,4 @@
 1.9 Añadido funcionalidad registros medicamentos esenciales
 1.10 Añadido funcionalidad listar medicamentos esenciales
 1.11 Modificado Formulario recupera datos de medicamentos esenciales
+1.11.1 Modificado NavBar Farmacia

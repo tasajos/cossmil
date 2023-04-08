@@ -11,7 +11,12 @@
           <a class="nav-link active" aria-current="page" routerLink="/principal">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/registrarf">Registrar</a>
+        <!--  <a class="nav-link" routerLink="/registrarf">Registrar Farmacia</a>-->
+        <button mat-button [matMenuTriggerFor]="farmacia">Farmacia</button>
+<mat-menu #farmacia="matMenu">
+  <button mat-menu-item routerLink="/registrarf">Registrar Farmacia</button>
+  <button mat-menu-item routerLink="/listafarmacia" >Lista Farmacia</button>
+</mat-menu>
         </li>
         <li class="nav-item">
           <button mat-button [matMenuTriggerFor]="animals">Medicamentos Esenciales</button>
