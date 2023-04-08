@@ -7,6 +7,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Observable } from 'rxjs';
 
+import {MatDialog} from '@angular/material/dialog';
+
+
 @Component({
   selector: 'app-r2t',
   templateUrl: './r2t.component.html',
