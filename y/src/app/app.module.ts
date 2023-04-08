@@ -51,6 +51,7 @@ import { VercirugiaComponent } from './Components/vercirugia/vercirugia.componen
 import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.component';
 import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/medicamento-esencial.component';
 import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
+import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmacia.component';
 
 
 
@@ -78,6 +79,7 @@ import { ListaEsencialComponent } from './Components/lista-esencial/lista-esenci
     ListacirugiaComponent,
     MedicamentoEsencialComponent,
     ListaEsencialComponent,
+    ListaFarmaciaComponent,
     
   ],
   imports: [

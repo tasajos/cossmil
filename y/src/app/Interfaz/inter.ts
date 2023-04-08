@@ -2,7 +2,7 @@ export interface Inter {
     // columna db 
     id?: number,
     codigosiga: string,
-    codigoVademecum: string,
+    codigovademecum: string,
     unidad:number,
     descripcion: string,
     fechav: string,

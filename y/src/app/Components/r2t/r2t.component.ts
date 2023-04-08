@@ -53,7 +53,7 @@ export class R2tComponent implements OnInit{
     // Armamos el objeto
     const personal: Inter = {
       codigosiga: this.form.value.codigosiga,
-      codigoVademecum:this.form.value.codigoVademecum,
+      codigovademecum:this.form.value.codigovademecum,
       unidad:this.form.value.unidad,
       descripcion:this.form.value.descripcion,
       fechav:this.form.value.fechav,
@@ -73,7 +73,7 @@ export class R2tComponent implements OnInit{
     //armamos el objeto
     const personal: Inter = {
       codigosiga: this.form.value.codigosiga,
-      codigoVademecum:this.form.value.codigoVademecum,
+      codigovademecum:this.form.value.codigovademecum,
       unidad:this.form.value.unidad,
       descripcion:this.form.value.descripcion,
       fechav:this.form.value.fechav,

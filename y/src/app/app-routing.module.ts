@@ -13,6 +13,7 @@ import { VercirugiaComponent } from './Components/vercirugia/vercirugia.componen
 import { ListacirugiaComponent } from './Components/listacirugia/listacirugia.component';
 import { MedicamentoEsencialComponent } from './Components/medicamento-esencial/medicamento-esencial.component';
 import { ListaEsencialComponent } from './Components/lista-esencial/lista-esencial.component';
+import { ListaFarmaciaComponent } from './Components/lista-farmacia/lista-farmacia.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'listacirugia', component:ListacirugiaComponent},
   {path: 'medsencial', component:MedicamentoEsencialComponent},
   {path: 'listesencial', component:ListaEsencialComponent},
+  {path: 'listafarmacia', component:ListaFarmaciaComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 

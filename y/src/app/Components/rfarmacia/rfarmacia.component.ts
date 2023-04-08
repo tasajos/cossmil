@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class RfarmaciaComponent implements OnInit {
  
   formulario:FormGroup;
-  codigoVademecum: any;
+  codigovademecum: any;
  
 
   constructor (private fb: FormBuilder, 
@@ -25,7 +25,7 @@ export class RfarmaciaComponent implements OnInit {
 
     this.formulario = this.fb.group({
       codigosiga: ['',Validators.required],
-      codigoVademecum: ['',Validators.required],
+      codigovademecum: ['',Validators.required],
       unidad: ['',Validators.required],
       descripcion: ['',Validators.required],
       fechav: ['',Validators.required],
@@ -47,7 +47,7 @@ ngOnInit(): void {
    //armamos el objeto
     const rfarmacia: Inter = {
       codigosiga: this.formulario.value.codigosiga,
-      codigoVademecum:this.formulario.value.codigoVademecum,
+      codigovademecum:this.formulario.value.codigovademecum,
       unidad:this.formulario.value.unidad,
       descripcion:this.formulario.value.descripcion,
       fechav:this.formulario.value.fechav,
@@ -74,7 +74,7 @@ ngOnInit(): void {
   obtenerCodigosVademecum() {
     this.http.get<any>('https://localhost:7250/api/MedicamentoEs').subscribe(
       response => {
-        this.codigoVademecum  = response;
+        this.codigovademecum  = response;
       },
       error => console.log(error)
     );
