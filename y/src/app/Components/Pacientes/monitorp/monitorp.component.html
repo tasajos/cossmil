@@ -1,0 +1,27 @@
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarinter></app-navbarinter>
+<br>
+<div class="container">
+    <h1>Monitor de Pacientes</h1>
+<br><br>
+     <div class="d-inline-block mx-5 my-3" style="width: 10rem;" *ngFor="let paciente of pacientesActivos">
+    <div class="card" style="width: 10rem;">
+      <img src="../../../../assets/img/health-insurance.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Nombre: </strong>{{ paciente.nombrepaciente }}</h5>
+        <p class="card-text"><strong>Pieza:</strong> {{ paciente.pieza }}</p>
+        <p class="card-text"><strong>Doctor:</strong> {{ paciente.doctor }}</p>
+        <button type="button" class="btn btn-primary position-relative">
+            Alerta
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                
+              1+
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button>
+      </div>
+    </div>
+  </div>
+     
+<br>

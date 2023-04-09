@@ -60,6 +60,7 @@ import { RpacienteComponent } from './Components/Pacientes/rpaciente/rpaciente.c
 import { LpacienteComponent } from './Components/Pacientes/lpaciente/lpaciente.component';
 import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaciente.component';
 import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaciente.component';
+import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.component';
 
 
 
@@ -96,6 +97,7 @@ import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaci
     LpacienteComponent,
     EdipacienteComponent,
     VerpacienteComponent,
+    MonitorpComponent,
     
   ],
   imports: [
