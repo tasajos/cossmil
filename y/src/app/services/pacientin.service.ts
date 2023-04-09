@@ -20,9 +20,10 @@ export class PacientinService {
    
     return this.http.get<PacInt[]>(this.Myappurl+this.Myapiurl);
   }
-  getidpersonal(id:number): Observable<Medesen>{
 
-    return this.http.get<Medesen>(`${this.Myappurl}${this.Myapiurl}${id}`)
+  getidpaciente(id:number): Observable<PacInt>{
+
+    return this.http.get<PacInt>(`${this.Myappurl}${this.Myapiurl}${id}`)
 
   }
  

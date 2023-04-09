@@ -41,4 +41,5 @@
 1.16.1 add paciente formulario optimizacion
 1.17 add listado paciente
 1.17.1 icon edit and interfaz
+1.18 update search paciente
 

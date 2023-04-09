@@ -18,6 +18,7 @@ import { DboardfarComponent } from './Components/dboardfar/dboardfar.component';
 import { InternacionComponent } from './Components/internacion/internacion.component';
 import { RpacienteComponent } from './Components/Pacientes/rpaciente/rpaciente.component';
 import { LpacienteComponent } from './Components/Pacientes/lpaciente/lpaciente.component';
+import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaciente.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'internacion', component:InternacionComponent},
   {path: 'rpaciente', component:RpacienteComponent},
   {path: 'lpaciente', component:LpacienteComponent},
+  {path: 'verpaciente/:id',component:VerpacienteComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 

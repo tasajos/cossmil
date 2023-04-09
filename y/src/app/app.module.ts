@@ -59,6 +59,7 @@ import { NavbarinterComponent } from './Components/navbarinter/navbarinter.compo
 import { RpacienteComponent } from './Components/Pacientes/rpaciente/rpaciente.component';
 import { LpacienteComponent } from './Components/Pacientes/lpaciente/lpaciente.component';
 import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaciente.component';
+import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaciente.component';
 
 
 
@@ -94,6 +95,7 @@ import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaci
     RpacienteComponent,
     LpacienteComponent,
     EdipacienteComponent,
+    VerpacienteComponent,
     
   ],
   imports: [

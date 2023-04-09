@@ -1,0 +1,26 @@
+<div class="title">
+    <H1>VER PACIENTE</H1> 
+</div>
+
+<div *ngIf="idpaciente != null"class="container">
+    
+    <mat-card class="card">
+        
+        <mat-card-title>{{idpaciente.nombrepaciente}}</mat-card-title>
+        <p></p>
+        <p></p>
+                   <mat-card-content>
+                <p><strong>Doctor:</strong>{{idpaciente.doctor}} </p>
+                <p><strong>Cuidado:</strong> {{idpaciente.cuidado}} </p>
+                <p><strong>Estado:</strong> {{idpaciente.estado}} </p>
+                <p><strong>Fecha:</strong> {{idpaciente.fecha}} </p>
+                <p><strong>Pieza:</strong> {{idpaciente.pieza}} </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="primary" routerLink="/lpaciente">Volver</button>
+            </mat-card-actions>
+            
+            </mat-card>
+
+</div>
+    
