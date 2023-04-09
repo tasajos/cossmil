@@ -47,3 +47,4 @@
 1.20. Dashboard Paciente mejora
 1.20.1 update dashboard pacientes
 1.21. udpate monitor paciente
+1.22 update recete UI

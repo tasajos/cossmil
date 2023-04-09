@@ -21,6 +21,7 @@ import { LpacienteComponent } from './Components/Pacientes/lpaciente/lpaciente.c
 import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaciente.component';
 import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaciente.component';
 import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.component';
+import { PrecetaComponent } from './Components/Pacientes/preceta/preceta.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path: 'verpaciente/:id',component:VerpacienteComponent},
   {path: 'editarpaciente/:id',component:EdipacienteComponent},
   {path: 'monitorp',component:MonitorpComponent},
+  {path: 'preceta',component:PrecetaComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 

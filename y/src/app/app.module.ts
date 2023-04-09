@@ -18,6 +18,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -61,6 +62,7 @@ import { LpacienteComponent } from './Components/Pacientes/lpaciente/lpaciente.c
 import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaciente.component';
 import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaciente.component';
 import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.component';
+import { PrecetaComponent } from './Components/Pacientes/preceta/preceta.component';
 
 
 
@@ -98,6 +100,7 @@ import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.comp
     EdipacienteComponent,
     VerpacienteComponent,
     MonitorpComponent,
+    PrecetaComponent,
     
   ],
   imports: [
@@ -128,7 +131,8 @@ import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.comp
     NgbModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    MatMenuModule    
+    MatMenuModule,
+    MatDatepickerModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
