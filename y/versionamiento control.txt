@@ -42,4 +42,4 @@
 1.17 add listado paciente
 1.17.1 icon edit and interfaz
 1.18 update search paciente
-
+1.19 Edicion component

@@ -51,6 +51,12 @@ export class PacientinService {
   
   }
 
+  updatepaciente(id: number, edpaciente: PacInt): Observable<void> {
+    return this.http.put<void>(`${this.Myappurl}${this.Myapiurl}${id}`, edpaciente);
+  }
+
+
+  
     CodeError(code:string){
       switch(code){
         //el correo ya existe

@@ -99,6 +99,40 @@ namespace cossmil.Controllers
 
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, PPacientesT Pacientes)
+        {
+            try
+            {
+                
+
+                if (id != Pacientes.id)
+                {
+                    return BadRequest();
+                }
+
+                var pacienteItem = await _context.Pacientes.FindAsync(id);
+
+                if (pacienteItem == null)
+                {
+                    return NotFound();
+                }
+                pacienteItem.estado = Pacientes.estado;
+                pacienteItem.doctor = Pacientes.doctor;
+                pacienteItem.cuidado = Pacientes.cuidado;
+                pacienteItem.pieza = Pacientes.pieza;
+
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 
