@@ -44,3 +44,4 @@
 1.18 update search paciente
 1.19 Edicion component
 1.19.1 Mejora Edicion Paciente
+1.20. Dashboard Paciente mejora

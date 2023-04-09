@@ -13,6 +13,7 @@ export class PacientinService {
 
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/paciente/';
+  private urlp: string = 'activos';
   constructor(private http: HttpClient) {}
 
 
@@ -55,8 +56,20 @@ export class PacientinService {
     return this.http.put<void>(`${this.Myappurl}${this.Myapiurl}${id}`, edpaciente);
   }
 
-
   
+  
+  PacientesActivos(): Observable<PacInt[]> {
+    //return this.http.get<PacInt[]>(this.Myappurl+this.urlp);
+//    return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}?estado=Activo`);
+    return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}${this.urlp}`);
+   // return this.http.get<PacInt[]>(`${this.Myappurl}api/Paciente/activos`);
+
+
+  }
+  
+
+
+
     CodeError(code:string){
       switch(code){
         //el correo ya existe

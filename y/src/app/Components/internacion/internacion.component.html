@@ -8,6 +8,15 @@
   <p class="lead">En este modulo podras interactuar registrando pacientes, listado pacientes y sacando reportes.</p>
   <hr class="my-4">
   <p>Recuerda si tienes dudas consulta a tu inmediato superior.</p>
+
+  <h2>Pacientes activos</h2>
+  <ul>
+    <li *ngFor="let paciente of pacientesActivos">
+      {{ paciente.nombrepaciente }} {{ paciente.pieza }} 
+    </li>
+  </ul>
+  
+
   <br>
   <br>
   <button class="btn btn-warning btn-lg" type="button" routerLink="/principal" style="margin-left: 10px;">Volver</button>

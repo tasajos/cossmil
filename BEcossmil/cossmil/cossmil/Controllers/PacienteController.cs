@@ -134,6 +134,53 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpGet("activos/count")]
+        public async Task<IActionResult> GetActivosCount()
+        {
+            try
+            {
+                var count = await _context.Pacientes.CountAsync(p => p.estado == "Activo");
+                return Ok(count);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("count-by-status")]
+        public async Task<IActionResult> GetCountByStatus()
+        {
+            try
+            {
+                var countByStatus = await _context.Pacientes
+                    .GroupBy(p => p.estado)
+                    .Select(g => new { Status = g.Key, Count = g.Count() })
+                    .ToListAsync();
+
+                return Ok(countByStatus);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("activos")]
+        public async Task<IActionResult> GetActivos()
+        {
+            try
+            {
+                var pacientes = await _context.Pacientes.Where(p => p.estado == "Activo").ToListAsync();
+                return Ok(pacientes);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 
 
