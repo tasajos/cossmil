@@ -9,13 +9,20 @@
   <hr class="my-4">
   <p>Recuerda si tienes dudas consulta a tu inmediato superior.</p>
 
-  <h2>Pacientes activos</h2>
+  <br>
+  <h2>Resumen Internacion - Pacientes activos</h2>
   <ul>
     <li *ngFor="let paciente of pacientesActivos">
-      {{ paciente.nombrepaciente }} {{ paciente.pieza }} 
+    <strong>Nombre Paciente: </strong>  {{ paciente.nombrepaciente }} <strong>Pieza: </strong>{{ paciente.pieza }} 
     </li>
   </ul>
   
+  <h2>Historico - Pacientes </h2>
+  <ul>
+    <li *ngFor="let paciente of pacientesresume">
+    <strong>Paciente por estado: </strong>  {{ paciente.status }} <strong>Total : </strong>{{ paciente.count }} 
+    </li>
+  </ul>
 
   <br>
   <br>

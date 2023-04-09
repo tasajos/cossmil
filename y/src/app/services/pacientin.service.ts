@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Medesen } from '../Interfaz/medesen';
 import { PacInt } from '../Interfaz/pac-int';
+import { PacIntResponse } from '../Interfaz/PacIntResponse';
 
 
 @Injectable({
@@ -55,9 +56,8 @@ export class PacientinService {
   updatepaciente(id: number, edpaciente: PacInt): Observable<void> {
     return this.http.put<void>(`${this.Myappurl}${this.Myapiurl}${id}`, edpaciente);
   }
+  
 
-  
-  
   PacientesActivos(): Observable<PacInt[]> {
     //return this.http.get<PacInt[]>(this.Myappurl+this.urlp);
 //    return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}?estado=Activo`);
@@ -67,6 +67,12 @@ export class PacientinService {
 
   }
   
+  resumenPacientes(): Observable<PacIntResponse[]> {
+    //return this.http.get<PacInt[]>(this.Myappurl+this.urlp);
+//    return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}?estado=Activo`);
+    //return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}${this.urlp}`);
+    return this.http.get<PacIntResponse[]>(`${this.Myappurl}api/Paciente/count-by-status`);
+  }
 
 
 
