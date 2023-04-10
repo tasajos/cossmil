@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { Medesen } from '../Interfaz/medesen';
 import { PacInt } from '../Interfaz/pac-int';
 import { PacIntResponse } from '../Interfaz/PacIntResponse';
+import { tap } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -12,9 +14,12 @@ import { PacIntResponse } from '../Interfaz/PacIntResponse';
 })
 export class PacientinService {
 
+  horaActual: string = '';
+  horaFinServicio: string = '20:00';
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/paciente/';
   private urlp: string = 'activos';
+  
   constructor(private http: HttpClient) {}
 
 
@@ -63,10 +68,12 @@ export class PacientinService {
 //    return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}?estado=Activo`);
     return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}${this.urlp}`);
    // return this.http.get<PacInt[]>(`${this.Myappurl}api/Paciente/activos`);
-
-
   }
   
+  
+  
+
+
   resumenPacientes(): Observable<PacIntResponse[]> {
     //return this.http.get<PacInt[]>(this.Myappurl+this.urlp);
 //    return this.http.get<PacInt[]>(`${this.Myappurl}${this.Myapiurl}?estado=Activo`);
@@ -100,5 +107,5 @@ export class PacientinService {
       }
   }
   
- }
-
+ 
+}

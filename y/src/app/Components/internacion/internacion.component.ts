@@ -16,6 +16,7 @@ export class InternacionComponent implements OnInit {
   pacientesresume: { status: string, count: number }[] = [];
   
   ngOnInit(): void {
+    
     this.pacienteService.PacientesActivos().subscribe(data => {
       this.pacientesActivos = data;
     });
