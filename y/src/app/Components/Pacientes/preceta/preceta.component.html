@@ -34,8 +34,14 @@
           <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Hora Inicio:</span>
-                <input type="text" formControlName="horai" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-              </div>
+               <!-- <input type="text" formControlName="horai" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
+               <select id="hora" formControlName="horai" [(ngModel)]="horaSeleccionada" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              <!-- <select id="hora" [(ngModel)]="horaSeleccionada" name="hora">-->
+               <option value="">Selecciona una hora</option>
+                <option *ngFor="let hora of hora" [value]="hora">{{ hora }}</option>
+              </select>
+  
+            </div>
                 
         </div>
 
