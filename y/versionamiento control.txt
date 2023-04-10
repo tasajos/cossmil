@@ -50,3 +50,6 @@
 1.22 update receta UI
 1.22.1 BE - receta
 1.22.2 update servicios e interfaz
+1.22.3 update registro receta
+1.22.4 update regitrar receta
+1.22.5 update y relacion entre tablas

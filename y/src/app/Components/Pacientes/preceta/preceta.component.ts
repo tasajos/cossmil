@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { PacientinService } from 'src/app/services/pacientin.service';
-import {PacInt} from 'src/app/Interfaz/pac-int';
+import {RecInt} from 'src/app/Interfaz/rec-int';
+import { RecetaservicesService } from 'src/app/services/recetaservices.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-preceta',
@@ -12,12 +14,14 @@ import {PacInt} from 'src/app/Interfaz/pac-int';
 })
 export class PrecetaComponent {
   formulario:FormGroup;
-      
+  pieza: any;    
+
+
   constructor(private fb: FormBuilder, 
     private _snackBar: MatSnackBar,
-    private _rpacienteservice:PacientinService,
+    private _rrecetaservice:RecetaservicesService,
     private aRoute: ActivatedRoute,
-    private router: Router,) 
+    private router: Router,private http: HttpClient) 
     
     {
 		
@@ -25,11 +29,13 @@ export class PrecetaComponent {
 
     this.formulario = this.fb.group({
       pieza: ['',Validators.required],
-      nombrepaciente: ['',Validators.required],
       doctor: ['',Validators.required],
-      cuidado: ['',Validators.required],
-      estado: ['',Validators.required],
-      fecha: ['',Validators.required],
+      fechai: ['',Validators.required],
+      horai: ['',Validators.required],
+      fechaf: ['',Validators.required],
+      recordatorio: ['',Validators.required],
+      receta: ['',Validators.required],
+      lapso: ['',Validators.required],
         
       
     })
@@ -38,28 +44,30 @@ export class PrecetaComponent {
   
 }
 ngOnInit(): void {
-    
+  this.obtenerPacientesactivos();
   }
 
-  agregarpaciente(){
+  agregarreceta(){
 
    //armamos el objeto
-    const rpaciente: PacInt = {
+    const rreceta: RecInt = {
       pieza: this.formulario.value.pieza,
-      nombrepaciente:this.formulario.value.nombrepaciente,
       doctor:this.formulario.value.doctor,
-      cuidado:this.formulario.value.cuidado,
-      estado:this.formulario.value.estado,
-      fecha:this.formulario.value.fecha,
+      fechai:this.formulario.value.fechai,
+      horai:this.formulario.value.horai,
+      fechaf:this.formulario.value.fechaf,
+      recordatorio:this.formulario.value.recordatorio,
+      receta:this.formulario.value.receta,
+      lapso:this.formulario.value.lapso,
          
     }
-    console.log(rpaciente)
+    console.log(rreceta)
     // Enviamos objeto al backend
 
-    this._rpacienteservice.addpaciente(rpaciente).subscribe(_data => {
+    this._rrecetaservice.addReceta(rreceta).subscribe(_data => {
       this.mensajeExito('registrado');
       this.formulario.reset();
-      this.router.navigate(['/rpaciente']);
+      this.router.navigate(['/preceta']);
     })
 
          
@@ -71,7 +79,14 @@ ngOnInit(): void {
     });
   }
 
-
+  obtenerPacientesactivos() {
+    this.http.get<any>('https://localhost:7250/api/Paciente/activos').subscribe(
+      response => {
+        this.pieza  = response;
+      },
+      error => console.log(error)
+    );
+  }
     
 }
 
