@@ -10,11 +10,11 @@
         <div class="row">
             <div class="col">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Pieza:</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Seleccione un Paciente:</span>
                     <select formControlName="pieza" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                      <option value="">Selecciona un código</option>
+                      <option value="">Seleccione</option>
                       <!--<option *ngFor="let codigo of codigovademecum" [value]="codigo.codigo">{{codigo.codigo}}</option>-->
-                      <option *ngFor="let codigo of pieza" [value]="codigo.pieza + '' + codigo.nombrepaciente">{{codigo.pieza}} - {{codigo.nombrepaciente}}</option>
+                      <option *ngFor="let codigo of pieza" [value]="codigo.pieza + '-' + codigo.nombrepaciente">{{codigo.pieza}} - {{codigo.nombrepaciente}}</option>
                     </select>
                     </div>
             </div>
@@ -56,7 +56,12 @@
             <div class="col">
              <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default">Recordatorio:</span>
-                  <input type="text" formControlName="recordatorio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <select class="form-select" id="inputGroupSelect01" formControlName="recordatorio">
+                                <option value="">Seleccione</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                               
+                              </select>
                 </div>
             </div>
 
@@ -70,8 +75,24 @@
                     <div class="col">
                         <div class="input-group mb-3">
                              <span class="input-group-text" id="inputGroup-sizing-default">Repeticion:</span>
-                             <input type="text" formControlName="lapso" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                           </div>
+                             <select class="form-select" id="inputGroupSelect01" formControlName="lapso">
+                                <option value="">Seleccione</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">12</option>
+                                <option value="24">24</option>
+                                <option value="48">48</option>
+                              </select>
+                             <span class="input-group-text" id="inputGroup-sizing-default">Horas</span>
+                            </div>
                
 
         </div>
