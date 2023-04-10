@@ -57,3 +57,4 @@
 1.22.7 fin formulario registrar paciente
 1.22.8 añadido UI Listreceta
 1.23 Lista receta añadido
+1.24 update receta alerta

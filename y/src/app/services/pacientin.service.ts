@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Medesen } from '../Interfaz/medesen';
 import { PacInt } from '../Interfaz/pac-int';
 import { PacIntResponse } from '../Interfaz/PacIntResponse';
-import { tap } from 'rxjs/operators';
+
 
 
 
@@ -14,8 +14,7 @@ import { tap } from 'rxjs/operators';
 })
 export class PacientinService {
 
-  horaActual: string = '';
-  horaFinServicio: string = '20:00';
+  notificacion = new EventEmitter<string>();
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/paciente/';
   private urlp: string = 'activos';
@@ -71,7 +70,9 @@ export class PacientinService {
   }
   
   
-  
+  enviarNotificacion(mensaje: string) {
+    this.notificacion.emit(mensaje);
+  }
 
 
   resumenPacientes(): Observable<PacIntResponse[]> {

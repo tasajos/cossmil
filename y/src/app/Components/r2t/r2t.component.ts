@@ -1,5 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { PacientinService } from '../../services/pacientin.service';
+import { ComunicacionServiceService } from '../../services/comunicacion-service.service';
+import { MonitorpComponent } from '../../Components/Pacientes/monitorp/monitorp.component';
+import { CabeceraComponent } from '../../Components/cabecera/cabecera.component';
+
+
 
 @Component({
   selector: 'app-r2t',
@@ -7,9 +13,9 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./r2t.component.css']
 })
 export class R2tComponent{
-  notificacion = new EventEmitter<string>();
+  //constructor(private comunicacionService: ComunicacionServiceService) {}
 
-  enviarNotificacion() {
-    this.notificacion.emit('Mensaje de notificación');
-  }
+ // enviarNotificacion() {
+    //this.comunicacionService.enviarNotificacion('Mensaje de notificación');
+  //}
 }

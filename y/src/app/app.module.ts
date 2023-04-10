@@ -65,6 +65,10 @@ import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaci
 import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.component';
 import { PrecetaComponent } from './Components/Pacientes/preceta/preceta.component';
 import { ListrecetaComponent } from './Components/Pacientes/listreceta/listreceta.component';
+import { Prueba1Component } from './Components/Pruebas/prueba1/prueba1.component';
+import { Prueba2Component } from './Components/Pruebas/prueba2/prueba2.component';
+import { Prueba3Component } from './Components/Pruebas/prueba3/prueba3.component';
+import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component';
 
 
 
@@ -104,6 +108,10 @@ import { ListrecetaComponent } from './Components/Pacientes/listreceta/listrecet
     MonitorpComponent,
     PrecetaComponent,
     ListrecetaComponent,
+    Prueba1Component,
+    Prueba2Component,
+    Prueba3Component,
+    Prueba4Component,
     
   ],
   imports: [

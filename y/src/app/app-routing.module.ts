@@ -23,6 +23,8 @@ import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaci
 import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.component';
 import { PrecetaComponent } from './Components/Pacientes/preceta/preceta.component';
 import { ListrecetaComponent } from './Components/Pacientes/listreceta/listreceta.component';
+import { Prueba1Component } from './Components/Pruebas/prueba1/prueba1.component';
+import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component';
 
 
 const routes: Routes = [
@@ -49,6 +51,8 @@ const routes: Routes = [
   {path: 'monitorp',component:MonitorpComponent},
   {path: 'preceta',component:PrecetaComponent},
   {path: 'listreceta',component:ListrecetaComponent},
+  {path: 'prueba1',component:Prueba1Component},
+  {path: 'prueba4',component:Prueba4Component},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 

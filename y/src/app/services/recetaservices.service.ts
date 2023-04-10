@@ -5,6 +5,9 @@ import { environment } from 'src/environments/environment';
 import { Inter } from '../Interfaz/inter';
 import { RecInt } from '../Interfaz/rec-int';
 import { cirugiaInter } from '../Interfaz/cirugia';
+import * as moment from 'moment';
+import { map } from 'rxjs/operators';
+
 //import { groupBy } from 'lodash';
 
 @Injectable({
@@ -28,6 +31,55 @@ export class RecetaservicesService {
       //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
       return this.http.get<RecInt[]>(this.Myappurl+this.Myapiurl);
     }
+
+    getRecetaAlert(): Observable<RecInt[]> {
+      return this.http.get<RecInt[]>(this.Myappurl + this.Myapiurl)
+        .pipe(
+          map(recetas => {
+            return recetas.filter(receta => {
+              // Obtener fecha y hora actual
+              const now = moment();
+              
+              // Obtener fecha y hora de inicio
+              const fechaInicio = moment(receta.fechai + ' ' + receta.horai, 'YYYY-MM-DD HH:mm');
+              
+              // Calcular diferencia en horas
+              const horasDiferencia = moment.duration(now.diff(fechaInicio)).asHours();
+              
+              // Obtener lapso de la receta
+              const lapso = parseInt(receta.lapso);
+              
+              // Generar alerta si se cumple la condición
+              if (horasDiferencia >= 0 && horasDiferencia % lapso === 0) {
+                // Generar alerta
+                alert('Es hora de tomar la medicina');
+              }
+              
+              return true;
+            });
+          })
+        );
+    }
+
+    getRecetaAlert2(): Observable<RecInt[]> {
+      return this.http.get<RecInt[]>(this.Myappurl + this.Myapiurl)
+        .pipe(
+          map(recetas => {
+            const now = moment();
+            const recetasActuales = recetas.filter(receta => {
+              const fechaInicio = moment(receta.fechai + ' ' + receta.horai, 'YYYY-MM-DD HH:mm');
+              return fechaInicio.isSame(now, 'day');
+            });
+            recetasActuales.forEach(receta => {
+              // Generar alerta
+              alert('Es hora de tomar la medicina');
+            });
+            return recetasActuales;
+          })
+        );
+    }
+    
+
 
     getidpersonal(id:number): Observable<Inter>{
 
