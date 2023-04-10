@@ -63,6 +63,7 @@ import { EdipacienteComponent } from './Components/Pacientes/edipaciente/edipaci
 import { VerpacienteComponent } from './Components/Pacientes/verpaciente/verpaciente.component';
 import { MonitorpComponent } from './Components/Pacientes/monitorp/monitorp.component';
 import { PrecetaComponent } from './Components/Pacientes/preceta/preceta.component';
+import { ListrecetaComponent } from './Components/Pacientes/listreceta/listreceta.component';
 
 
 
@@ -101,6 +102,7 @@ import { PrecetaComponent } from './Components/Pacientes/preceta/preceta.compone
     VerpacienteComponent,
     MonitorpComponent,
     PrecetaComponent,
+    ListrecetaComponent,
     
   ],
   imports: [

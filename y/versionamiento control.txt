@@ -55,3 +55,4 @@
 1.22.5 update y relacion entre tablas
 1.22.6 horas
 1.22.7 fin formulario registrar paciente
+1.22.8 añadido UI Listreceta
