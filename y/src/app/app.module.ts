@@ -22,6 +22,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
+
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -135,6 +136,7 @@ import { ListrecetaComponent } from './Components/Pacientes/listreceta/listrecet
     BrowserAnimationsModule,
     MatMenuModule,
     MatDatepickerModule    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

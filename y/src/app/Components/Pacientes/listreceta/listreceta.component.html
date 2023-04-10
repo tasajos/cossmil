@@ -1,1 +1,24 @@
-<p>listreceta works!</p>
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarinter></app-navbarinter>
+<br>
+<div class="container">
+    <h1>Lista de Recetas - Pacientes</h1>
+    <br>
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0" *ngFor="let recetasPieza of recetasPorPieza">
+        <div class="card w-200 card-custom mb-4">
+          <div class="card-body">
+            <h2 class="card-title">{{ recetasPieza[0].pieza }} </h2>
+            <ul>
+              <li *ngFor="let receta of recetasPieza">
+               <strong>Receta: </strong> {{ receta.receta }} - <strong>Repeticion: </strong>{{ receta.lapso }} Horas - 
+               <strong>Hora de Inicio: </strong> {{ receta.horai }} - <strong>Fecha: </strong> {{ receta.fechai }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

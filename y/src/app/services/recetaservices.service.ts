@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Inter } from '../Interfaz/inter';
 import { RecInt } from '../Interfaz/rec-int';
 import { cirugiaInter } from '../Interfaz/cirugia';
+//import { groupBy } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,17 @@ export class RecetaservicesService {
   private geturl: string = 'sum-medicamento-pedida';
 
   constructor(private http: HttpClient) {}
+
     getPersonal(): Observable<Inter[]> {
 
       //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
       return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl);
+    }
+
+    getReceta(): Observable<RecInt[]> {
+
+      //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
+      return this.http.get<RecInt[]>(this.Myappurl+this.Myapiurl);
     }
 
     getidpersonal(id:number): Observable<Inter>{
