@@ -1,0 +1,129 @@
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarinter></app-navbarinter>
+<br><br>
+<div class="container">
+  <h1>  Registrar Receta - Pacientes </h1>
+  <br>
+    <div class="container text-center mt-4">
+        <form [formGroup]="formulario" (ngSubmit)="agregarpaciente()">
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Pieza:</label>
+                  <select class="form-select" id="inputGroupSelect01" formControlName="pieza">
+                    <option selected>Seleccione...</option>
+                    <option value="1 A">1 A</option>
+                    <option value="1 B">1 B</option>
+                    <option value="1 C">1 C</option>
+                    <option value="1 D">1 D</option>
+                    <option value="1 E">1 E</option>
+                    <option value="2 A">2 A</option>
+                    <option value="2 B">2 B</option>
+                    <option value="2 C">2 C</option>
+                    <option value="2 D">2 D</option>
+                    <option value="2 E">2 E</option>
+                    <option value="3 A">3 A</option>
+                    <option value="3 B">3 B</option>
+                    <option value="3 C">3 C</option>
+                    <option value="3 D">3 D</option>
+                    <option value="3 E">3 E</option>
+                    <option value="4 A">4 A</option>
+                    <option value="4 B">4 B</option>
+                    <option value="4 C">4 C</option>
+                    <option value="4 D">4 D</option>
+                    <option value="4 E">4 E</option>
+                    <option value="5 A">5 A</option>
+                    <option value="5 B">5 B</option>
+                    <option value="5 C">5 C</option>
+                    <option value="5 D">5 D</option>
+                    <option value="5 E">5 E</option>
+                    <option value="6 A">6 A</option>
+                    <option value="6 B">6 B</option>
+                    <option value="6 C">6 C</option>
+                    <option value="6 D">6 D</option>
+                    <option value="6 E">6 E</option>
+                    <option value="7 A">7 A</option>
+                    <option value="7 B">7 B</option>
+                    <option value="7 C">7 C</option>
+                    <option value="7 D">7 D</option>
+                    <option value="7 E">7 E</option>
+                    <option value="8 A">8 A</option>
+                    <option value="8 B">8 B</option>
+                    <option value="8 C">8 C</option>
+                    <option value="8 D">8 D</option>
+                    <option value="8 E">8 E</option>
+                    <option value="9 A">9 A</option>
+                    <option value="9 B">9 B</option>
+                    <option value="9 C">9 C</option>
+                    <option value="9 D">9 D</option>
+                    <option value="9 E">9 E</option>
+                    <option value="10 A">10 A</option>
+                    <option value="10 B">10 B</option>
+                    <option value="10 C">10 C</option>
+                    <option value="10 D">10 D</option>
+                    <option value="10 E">10 E</option>
+                  </select>
+                </div>
+            </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre Paciente:</span>
+                <input type="text" formControlName="nombrepaciente" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="row">
+          <div class="col">
+           <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Doctor:</span>
+                <input type="text" formControlName="doctor" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Cuidado:</label>
+                    <select class="form-select" id="inputGroupSelect01" formControlName="cuidado">
+                      <option selected>Seleccione...</option>
+                      <option value="Basico">Basico</option>
+                      <option value="Intermedio">Intermedio</option>
+                      <option value="intensivo">intensivo</option>
+                    </select>
+                  </div>
+          </div>
+        </div>
+
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Estado:</label>
+                    <select class="form-select" id="inputGroupSelect01" formControlName="estado">
+                      <option selected>Seleccione...</option>
+                      <option value="Activo">Activo</option>
+                      <option value="Transferencia">Transferencia</option>
+                      <option value="Alta">Alta</option>
+                      <option value="Baja">Baja</option>
+                    </select>
+                  </div>
+          </div>
+        </div>
+
+        <div class="col">
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Fecha:</span>
+                    <input type="date" formControlName="fecha" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+          </div>
+        </div>
+       
+        <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary btn-lg mt-3" type="Submit" style="margin-left: 10px;">Registrar</button>
+              <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/internacion" style="margin-left: 10px;" >Volver</button>
+            </div>
+          </div>
+          </div>
+  </div>
+</form>
+    

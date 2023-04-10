@@ -15,5 +15,7 @@ namespace cossmil.Models
 
         public DbSet<Medicamentoesenciales> Mesenciales { get; set; }
         public DbSet<PPacientesT> Pacientes { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<Precetas> Recetas { get; set; } //<clase> Nombre de la tabla
     }
 }
