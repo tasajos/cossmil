@@ -72,6 +72,8 @@ import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component
 import { PrincipalcComponent } from './Components/Contabilidad/principalc/principalc.component';
 import { EstadosfinancierosComponent } from './Components/Contabilidad/estadosfinancieros/estadosfinancieros.component';
 import { NavbarcontabilidadComponent } from './Components/Contabilidad/navbarcontabilidad/navbarcontabilidad.component';
+import { CajachicaaperturaComponent } from './Components/Contabilidad/cajachicaapertura/cajachicaapertura.component';
+import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacierre/cajachicacierre.component';
 
 
 
@@ -119,6 +121,8 @@ import { NavbarcontabilidadComponent } from './Components/Contabilidad/navbarcon
     PrincipalcComponent,
     EstadosfinancierosComponent,
     NavbarcontabilidadComponent,
+    CajachicaaperturaComponent,
+    CajachicacierreComponent,
     
     
   ],

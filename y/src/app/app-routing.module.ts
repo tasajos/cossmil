@@ -26,6 +26,8 @@ import { ListrecetaComponent } from './Components/Pacientes/listreceta/listrecet
 import { Prueba1Component } from './Components/Pruebas/prueba1/prueba1.component';
 import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component';
 import { PrincipalcComponent } from './Components/Contabilidad/principalc/principalc.component';
+import { CajachicaaperturaComponent } from './Components/Contabilidad/cajachicaapertura/cajachicaapertura.component';
+import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacierre/cajachicacierre.component';
 
 
 const routes: Routes = [
@@ -55,6 +57,8 @@ const routes: Routes = [
   {path: 'prueba1',component:Prueba1Component},
   {path: 'prueba4',component:Prueba4Component},
   {path: 'contabilidad',component:PrincipalcComponent},
+  {path: 'acajachica',component:CajachicaaperturaComponent},
+  {path: 'ccajachica',component:CajachicacierreComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
