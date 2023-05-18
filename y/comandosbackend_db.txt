@@ -33,3 +33,95 @@ namespace cossmil.Models
  4.1 Add-migration Cajachica
  4.2 Update-database
 
+ 5.- Añadir controlador - Controller
+ 5.1 Agregar clase controlador - api blanco
+
+ 6.- Añadir librerias
+ using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using cossmil.Models;
+
+7.- A;adir clases
+public class CajaChicaController : ControllerBase
+    {
+        private readonly FarContext _context;
+
+        public CajaChicaController(FarContext context)
+        {
+
+            //CajaChica
+            _context = context;
+
+        }
+    }
+
+8.- A;adir get
+  [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var listcajachica = await _context.Cajachica.ToListAsync();
+                return Ok(listcajachica);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+Resultado
+
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using cossmil.Models;
+
+
+namespace cossmil.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CajaChicaController : ControllerBase
+    {
+        private readonly FarContext _context;
+
+        public CajaChicaController(FarContext context)
+        {
+
+            //CajaChica
+            _context = context;
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var listcajachica = await _context.Cajachica.ToListAsync();
+                return Ok(listcajachica);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+    }
+}
+
+

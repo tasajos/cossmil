@@ -12,9 +12,21 @@
 
         public string fechaf { get; set; }
 
+        public string fechai { get; set; }
+
+        public string totalcompras { get; set; }
+
+        public string totalfac { get; set; }
+
+        public string totalrecibos { get; set; }
+
+        public string otros { get; set; }
+
         public string comentario { get; set; }
 
-       
+        
+
+
         public DateTime FechaCreacion { get; set; }
 
     }
