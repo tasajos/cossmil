@@ -4,3 +4,57 @@
 <br>
 <br>
 <h1 align="center">APERTURA CAJA CHICA</h1>
+
+<div class="container">
+    <h1>APERTURAR CAJA CHICA</h1>
+    <div class="container text-center mt-4">
+        <form [formGroup]="formulario" (ngSubmit)="aperturarcajachica()">
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Monto Inicial:</span>
+                <input formControlName="montoinicial" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Transacciones:</span>
+                <input formControlName="transacciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Aprobacion:</span>
+                <input formControlName="aprobaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Fecha:</span>
+                  <input type="date" formControlName="fechai" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Observaciones:</span>
+                  <input formControlName="comentario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary btn-lg mt-3" type="Submit" style="margin-left: 10px;">Registrar</button>
+              <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/acajachica" style="margin-left: 10px;" >Volver</button>
+            </div>
+          </div>
+          
+    </div>
+    
+</form>
+        
+</div>
