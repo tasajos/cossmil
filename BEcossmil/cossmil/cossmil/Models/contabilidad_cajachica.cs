@@ -24,10 +24,7 @@
 
         public string comentario { get; set; }
 
-        
-
-
-        public DateTime FechaCreacion { get; set; }
+                public DateTime FechaCreacion { get; set; }
 
     }
 }

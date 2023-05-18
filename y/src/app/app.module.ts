@@ -74,6 +74,7 @@ import { EstadosfinancierosComponent } from './Components/Contabilidad/estadosfi
 import { NavbarcontabilidadComponent } from './Components/Contabilidad/navbarcontabilidad/navbarcontabilidad.component';
 import { CajachicaaperturaComponent } from './Components/Contabilidad/cajachicaapertura/cajachicaapertura.component';
 import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacierre/cajachicacierre.component';
+import { EstadocajachicaComponent } from './Components/Contabilidad/estadocajachica/estadocajachica.component';
 
 
 
@@ -123,6 +124,7 @@ import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacie
     NavbarcontabilidadComponent,
     CajachicaaperturaComponent,
     CajachicacierreComponent,
+    EstadocajachicaComponent,
     
     
   ],

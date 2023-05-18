@@ -28,6 +28,7 @@ import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component
 import { PrincipalcComponent } from './Components/Contabilidad/principalc/principalc.component';
 import { CajachicaaperturaComponent } from './Components/Contabilidad/cajachicaapertura/cajachicaapertura.component';
 import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacierre/cajachicacierre.component';
+import { EstadocajachicaComponent } from './Components/Contabilidad/estadocajachica/estadocajachica.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path: 'contabilidad',component:PrincipalcComponent},
   {path: 'acajachica',component:CajachicaaperturaComponent},
   {path: 'ccajachica',component:CajachicacierreComponent},
+  {path: 'estadocajachica',component:EstadocajachicaComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 

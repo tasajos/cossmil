@@ -125,3 +125,62 @@ namespace cossmil.Controllers
 }
 
 
+9.- Añadir Interfaz en Frontend
+10.- Ir a la carpeta interfaz y crear un ts
+
+cajachica.ts
+nombre interfaz cajachicaInter
+
+export interface cajachicaInter {
+    // columna db 
+    id?: number,
+    montoinicial: string,
+    transacciones: string,
+    responsable: string,
+    aprobaciones:number,
+    fechaf: string,
+    fechai: string,
+    fechaa: string,
+    totalcompras: string,
+    totalfac:string,
+    totalrecibos:string,
+    otros:string,
+    comentario:string,
+    
+     
+    }
+
+11.- servicios
+crear servicios
+11.1    ng g s services/cajachica
+11.2 crear la funcion get cajachica
+
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { cajachicaInter } from '../Interfaz/cajachica';
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CajachicaService {
+
+  //entorno para llamar
+
+  private Myappurl: string = environment.endpoint;
+  private Myapiurl: string = 'api/Cajachica/';
+
+//constructor
+  constructor(private http: HttpClient) { }
+
+  //funcion obtener resultados
+  getcaja(): Observable<cajachicaInter[]> {
+     
+    return this.http.get<cajachicaInter[]>(this.Myappurl+this.Myapiurl);
+  }
+}
+
+
