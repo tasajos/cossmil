@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img class="imgfor" src="../../../assets/img/logo 1.png">
+      <a class="navbar-brand" href="#">Cerrar Sesion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/farmacia">Inicio</a>
+          </li>
+          <li class="nav-item">
+          <!--  <a class="nav-link" routerLink="/registrarf">Registrar Farmacia</a>-->
+          <button mat-button [matMenuTriggerFor]="farmacia">Contabilidad</button>
+  <mat-menu #farmacia="matMenu">
+    <button mat-menu-item routerLink="/registrarf">Registrar Ingresos</button>
+    <button mat-menu-item routerLink="/listafarmacia" >Registrar Egreso</button>
+    <button mat-menu-item routerLink="/form3" >Reportes</button>
+  </mat-menu>
+          </li>
+          <li class="nav-item">
+            <button mat-button [matMenuTriggerFor]="animals">Caja</button>
+  <mat-menu #animals="matMenu">
+    <button mat-menu-item routerLink="/medsencial">Balance</button>
+    <button mat-menu-item routerLink="/listesencial" >Caja Chica</button>
+  </mat-menu>
+  
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>

@@ -69,6 +69,10 @@ import { Prueba1Component } from './Components/Pruebas/prueba1/prueba1.component
 import { Prueba2Component } from './Components/Pruebas/prueba2/prueba2.component';
 import { Prueba3Component } from './Components/Pruebas/prueba3/prueba3.component';
 import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component';
+import { PrincipalcComponent } from './Components/Contabilidad/principalc/principalc.component';
+import { EstadosfinancierosComponent } from './Components/Contabilidad/estadosfinancieros/estadosfinancieros.component';
+import { NavbarcontabilidadComponent } from './Components/Contabilidad/navbarcontabilidad/navbarcontabilidad.component';
+
 
 
 
@@ -112,6 +116,10 @@ import { Prueba4Component } from './Components/Pruebas/prueba4/prueba4.component
     Prueba2Component,
     Prueba3Component,
     Prueba4Component,
+    PrincipalcComponent,
+    EstadosfinancierosComponent,
+    NavbarcontabilidadComponent,
+    
     
   ],
   imports: [
