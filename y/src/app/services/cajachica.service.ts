@@ -25,9 +25,11 @@ export class CajachicaService {
     return this.http.get<cajachicaInter[]>(this.Myappurl+this.Myapiurl);
   }
 
-  
 
+  addcaja  (caja: cajachicaInter): Observable<cajachicaInter>{
 
-
+      return this.http.post<cajachicaInter>(`${this.Myappurl}${this.Myapiurl}`,caja);
+      
+    }
 
 }

@@ -183,4 +183,34 @@ export class CajachicaService {
   }
 }
 
+11.3 Metodo Post (backEnd)
+
+  [HttpPost]
+
+        public async Task<IActionResult> Post(contabilidad_cajachica Cajachica)
+        {
+            try
+            {
+                Cajachica.FechaCreacion = DateTime.Now;
+                _context.Add(Cajachica);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Get", new { Id = Cajachica.id }, Cajachica);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+11.3.1 Crear Funcion Post (Frontend)
+
+addcaja  (caja: cajachicaInter): Observable<cajachicaInter>{
+
+      return this.http.post<cajachicaInter>(`${this.Myappurl}${this.Myapiurl}`,caja);
+      
+    }
+
 

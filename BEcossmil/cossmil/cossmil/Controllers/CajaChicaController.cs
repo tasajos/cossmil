@@ -40,5 +40,27 @@ namespace cossmil.Controllers
 
         }
 
+        [HttpPost]
+
+        public async Task<IActionResult> Post(contabilidad_cajachica Cajachica)
+        {
+            try
+            {
+                Cajachica.FechaCreacion = DateTime.Now;
+                _context.Add(Cajachica);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Get", new { Id = Cajachica.id }, Cajachica);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+
+
     }
 }
