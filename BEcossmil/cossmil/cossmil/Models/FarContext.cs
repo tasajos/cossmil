@@ -21,5 +21,9 @@ namespace cossmil.Models
         public DbSet<contabilidad_cajachica> Cajachica { get; set; } //<clase> Nombre de la tabla
 
         public DbSet<aperturacajachica> AperturaCajachica { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<registrocajachica> RegCajachica { get; set; } //<clase> Nombre de la tabla
+
+
     }
 }
