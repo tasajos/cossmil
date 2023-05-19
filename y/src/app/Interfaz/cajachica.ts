@@ -24,3 +24,13 @@ export interface cajachicaInter {
         fechai: string,
         comentario:string,
         }
+    
+        export interface registrocajachicaInter {
+            // columna db 
+            id?: number,
+            monto: string,
+            transacciones: string,
+            aprobaciones:number,
+            fechai: string,
+            comentario:string,
+            }

@@ -42,6 +42,26 @@ namespace cossmil.Controllers
 
         }
 
+        [HttpPost]
+
+        public async Task<IActionResult> Post(registrocajachica RegCajaChica)
+        {
+            try
+            {
+                RegCajaChica.FechaCreacion = DateTime.Now;
+                _context.Add(RegCajaChica);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Get", new { Id = RegCajaChica.id }, RegCajaChica);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+
+        }
+
 
 
     }

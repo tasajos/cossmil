@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { cajachicaInter } from '../Interfaz/cajachica';
+import { registrocajachicaInter } from '../Interfaz/cajachica';
 import { aperturacajachicaInter } from '../Interfaz/cajachica';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
@@ -20,6 +21,10 @@ export class CajachicaService {
   private Myapiurl: string = 'api/Cajachica/';
   private Myapiurlc: string = 'api/Aperturacajachica/';
   private Myapiurlf: string = 'api/Aperturacajachica/fecha';
+  private Myapiurlg: string = '/api/RegGcajachica';
+
+
+
 
 //constructor
   constructor(private http: HttpClient) { }
@@ -57,6 +62,12 @@ export class CajachicaService {
           return throwError('Error al obtener los datos de apertura de caja chica');
         })
       );
+    }
+
+    addgastocajachica  (gastochica: registrocajachicaInter): Observable<registrocajachicaInter>{
+
+      return this.http.post<registrocajachicaInter>(`${this.Myappurl}${this.Myapiurlg}`,gastochica);
+      
     }
    
     }
