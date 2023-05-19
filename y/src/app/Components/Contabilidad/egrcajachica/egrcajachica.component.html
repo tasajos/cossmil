@@ -6,3 +6,61 @@
 <h1 align="center">REGISTRAR GASTOS CAJA CHICA</h1>
 <br>
 <app-tcajachica></app-tcajachica>
+<br>
+<br>
+<div class="container">
+    <h1></h1>
+    <div class="container text-center mt-4">
+        <form [formGroup]="formulario" (ngSubmit)="gastoregistrocajachica()">
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Monto:</span>
+                <input formControlName="monto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Transacciones:</span>
+                <input formControlName="transacciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Aprobacion:</span>
+                <input formControlName="aprobaciones" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Fecha:</span>
+                  <input type="date" [value]="formulario.controls['fechai'].value" formControlName="fechai" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [readonly]="true">
+
+
+
+                </div>
+            </div>
+            
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Observaciones:</span>
+                  <input formControlName="comentario" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary btn-lg mt-3" type="Submit" style="margin-left: 10px;">Registrar</button>
+              <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/acajachica" style="margin-left: 10px;" >Volver</button>
+            </div>
+          </div>
+          
+    </div>
+    
+</form>
+        
+</div>

@@ -21,7 +21,7 @@ export class CajachicaService {
   private Myapiurl: string = 'api/Cajachica/';
   private Myapiurlc: string = 'api/Aperturacajachica/';
   private Myapiurlf: string = 'api/Aperturacajachica/fecha';
-  private Myapiurlg: string = '/api/RegGcajachica';
+  private Myapiurlg: string = 'api/RegGcajachica';
 
 
 
