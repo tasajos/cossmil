@@ -25,5 +25,10 @@ namespace cossmil.Models
         public DbSet<registrocajachica> RegCajachica { get; set; } //<clase> Nombre de la tabla
 
 
+       public DbSet<resumeCajachica> ResumeCChica { get; set; } //<clase> Nombre de la tabla
+
+
+        public DbSet<Resultadocajachica> ResTCChica { get; set; } //<clase> Nombre de la tabla
+
     }
 }

@@ -1,0 +1,18 @@
+#query actualizacion datos
+
+INSERT INTO ResumeCchica (montor, FechaCreacion)
+SELECT CAST((SELECT TOP 1 montoinicial FROM AperturaCajaChica ORDER BY FechaCreacion DESC) AS FLOAT) - CAST((SELECT TOP 1 monto FROM RegCajaChica ORDER BY FechaCreacion DESC) AS FLOAT), GETDATE()
+#consulta db cajachica 
+Primero Copiar el dato de monto inicial
+
+INSERT INTO ResTCChica (montotr, FechaCreacion)
+SELECT TOP 1 montoinicial, GETDATE()
+FROM AperturaCajachica
+ORDER BY FechaCreacion DESC
+
+
+segundo actualizar
+
+UPDATE ResTCChica
+SET montotr = CAST(montotr AS FLOAT) - (SELECT TOP 1 monto FROM RegCajachica ORDER BY FechaCreacion DESC)
+WHERE id = (SELECT MAX(id) FROM ResTCChica)
