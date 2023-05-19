@@ -61,5 +61,31 @@ namespace cossmil.Controllers
 
         }
 
+        [HttpGet("fecha")]
+        public async Task<IActionResult> GetFecha()
+        {
+            try
+            {
+                var today = DateTime.Today;
+                var listaperturacajachica = await _context.AperturaCajachica
+                    .Where(a => a.FechaCreacion.Date == today)
+                    .OrderByDescending(a => a.FechaCreacion)
+                    .ToListAsync();
+
+                if (listaperturacajachica == null || listaperturacajachica.Count == 0)
+                {
+                    return NotFound(); // No se encontraron registros para la fecha de hoy
+                }
+
+                return Ok(listaperturacajachica);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
     }
 }

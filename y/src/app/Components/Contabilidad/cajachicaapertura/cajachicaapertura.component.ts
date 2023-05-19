@@ -24,7 +24,7 @@ export class CajachicaaperturaComponent implements OnInit {
     this.formulario = this.fb.group({
       montoinicial: ['',Validators.required],
       transacciones: ['',Validators.required],
-      fechai: ['',Validators.required],
+      fechai: [this.getFormattedDate(), Validators.required], // Autocompletar con la fecha actual
       aprobaciones: ['',Validators.required],
       comentario: ['',Validators.required],
       
@@ -36,6 +36,13 @@ export class CajachicaaperturaComponent implements OnInit {
   }
   ngOnInit(): void {
     
+    }
+    getFormattedDate(): string {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = `${today.getMonth() + 1}`.padStart(2, '0');
+      const day = `${today.getDate()}`.padStart(2, '0');
+      return `${year}-${month}-${day}`;
     }
 
 aperturarcajachica(){
