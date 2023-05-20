@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { cajachicaInter } from '../Interfaz/cajachica';
 import { registrocajachicaInter } from '../Interfaz/cajachica';
 import { aperturacajachicaInter } from '../Interfaz/cajachica';
+import { copiarcajachicaInter } from '../Interfaz/cajachica';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -23,6 +24,7 @@ export class CajachicaService {
   private Myapiurlf: string = 'api/Aperturacajachica/fecha';
   private Myapiurlg: string = 'api/RegGcajachica';
   private Myapiurlrc: string = 'api/ResultadoCajaChica/ultimomontotr';
+  private Myapiurlpcc: string = 'api/ResultadoCajaChica/actualizarmontotr';
   
 
 //constructor
@@ -72,6 +74,12 @@ export class CajachicaService {
     verquerycajachica(): Observable<number> {
       return this.http.get<number>(`${this.Myappurl}${this.Myapiurlrc}`);
     }
-   
+
+    actualizarcaja(): Observable<any> {
+      return this.http.post<copiarcajachicaInter>(`${this.Myappurl}${this.Myapiurlpcc}`, null);
+    }
+    getUltimoMontotr(): Observable<number> {
+      return this.http.get<number>(`${this.Myappurl}${this.Myapiurlrc}`);
+    }
     }
   

@@ -70,8 +70,19 @@ namespace cossmil.Controllers
         {
             try
             {
+                // Obtener el último monto de RegCajachica
+                var ultimoMonto = await _context.ResTCChica
+                    .OrderByDescending(r => r.id)
+                    .Select(r => r.montotr)
+                    .FirstOrDefaultAsync();
+
+                // Consulta SQL para obtener el valor más reciente de montotr
+                string query = "SELECT montotr " +
+                               "FROM ResTCChica " +
+                               "WHERE id = (SELECT MAX(id) FROM ResTCChica)";
+
                 var ultimoMontotr = await _context.ResTCChica
-                    .OrderByDescending(r => r.FechaCreacion)
+                    .FromSqlRaw(query)
                     .Select(r => r.montotr)
                     .FirstOrDefaultAsync();
 

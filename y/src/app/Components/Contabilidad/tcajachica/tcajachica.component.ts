@@ -40,7 +40,7 @@ export class TcajachicaComponent implements OnInit {
   }
 
   getUltimoMontotr(): void {
-    this.cajachicaService.verquerycajachica().subscribe(
+    this.cajachicaService.getUltimoMontotr().subscribe(
       (ultimoMontotr: number) => {
         this.ultimoMontotr = ultimoMontotr;
       },
