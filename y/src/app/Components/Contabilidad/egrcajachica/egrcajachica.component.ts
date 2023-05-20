@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,ValidatorFn  } from '@angular/forms';
 import { CajachicaService } from 'src/app/services/cajachica.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { registrocajachicaInter } from 'src/app/Interfaz/cajachica';
 import { Router } from '@angular/router';
+import { AbstractControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-egrcajachica',
@@ -23,7 +25,7 @@ export class EgrcajachicaComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = this.fb.group({
-      monto: ['', Validators.required],
+      monto: ['', [Validators.required, this.numberValidator()]],
       transacciones: ['', Validators.required],
       fechai: [this.getFormattedDate(), Validators.required],
       aprobaciones: ['', Validators.required],
@@ -32,6 +34,34 @@ export class EgrcajachicaComponent implements OnInit {
       
     });
   }
+  numberValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      if (isNaN(value) || typeof value !== 'number') {
+        return { numeric: true };
+      }
+      return null;
+    };
+  }
+
+  restrictToNumbers(event: KeyboardEvent) {
+    const allowedKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+    const keyPressed = event.key;
+  
+    if (!allowedKeys.includes(keyPressed)) {
+      const isNumericInput = /^\d+$/.test(keyPressed);
+      const isModifierKey = event.ctrlKey || event.altKey || event.metaKey;
+  
+      if (!isNumericInput || isModifierKey) {
+        event.preventDefault();
+      }
+    }
+  }
+
+  restrictInput(event: KeyboardEvent) {
+    event.preventDefault();
+  }
+  
 
   ngOnInit(): void {
     this.obtenerProximoNroRecibo();
@@ -65,7 +95,7 @@ export class EgrcajachicaComponent implements OnInit {
     // Armamos el objeto
     const fechaiValue = this.formulario.value.fechai;
     const rcajachica: registrocajachicaInter = {
-      monto: this.formulario.value.monto,
+      monto: this.formulario.value.monto.toString(),
       transacciones: this.formulario.value.transacciones,
       fechai: fechaiValue,
       aprobaciones: this.formulario.value.aprobaciones,

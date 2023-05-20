@@ -16,7 +16,12 @@
           <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Monto:</span>
-                <input formControlName="monto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input formControlName="monto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" (keydown)="restrictToNumbers($event)">
+
+
+                <div *ngIf="formulario.controls['monto'].errors && formulario.controls['monto'].errors['numeric']" class="error-message">Solo se permiten números</div>
+
+
               </div>
           </div>
           <div class="col">
@@ -60,8 +65,9 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Recibo nro:</span>
                     <!--<input formControlName="nrorecibo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
                     <!--<input formControlName="nrorecibo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="formulario.controls['nrorecibo'].value | json">-->
-                    <input formControlName="nrorecibo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="nrorecibo">
-                    
+                    <!--<input formControlName="nrorecibo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="nrorecibo">-->
+                    <input formControlName="nrorecibo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="nrorecibo" (keydown)="restrictInput($event)">
+
 
 
                  </div>
