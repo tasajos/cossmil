@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { aperturacajachicaInter } from 'src/app/Interfaz/cajachica';
+import { copiarcajachicaInter } from 'src/app/Interfaz/cajachica';
 import { CajachicaService } from 'src/app/services/cajachica.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, map } from 'rxjs/operators';
@@ -17,11 +18,36 @@ export class TcajachicaComponent implements OnInit {
   montoinicial: number | null = null; // Variable para almacenar el monto inicial
   fechaAperturaCajaChica: string | null = null; // Variable para almacenar la fecha de apertura
   aprobaciones: number | null = null;
+  ultimoMontotr: number | null = null; // Agrega esta línea para declarar la propiedad
 
   constructor(private cajachicaService: CajachicaService) {}
 
   ngOnInit(): void {
     this.getFechaAperturaCajaChica();
+    this.getUltimoMontotr();
+  
+  }
+
+  ngAfterViewInit(): void {
+    this.cajachicaService.verquerycajachica().subscribe(
+      (ultimoMontotr: number) => {
+        this.ultimoMontotr = ultimoMontotr;
+      },
+      (error: any) => {
+        console.error('Error al obtener el último valor de montotr:', error);
+      }
+    );
+  }
+
+  getUltimoMontotr(): void {
+    this.cajachicaService.verquerycajachica().subscribe(
+      (ultimoMontotr: number) => {
+        this.ultimoMontotr = ultimoMontotr;
+      },
+      (error: any) => {
+        console.error('Error al obtener el último valor de montotr:', error);
+      }
+    );
   }
 
   getFechaAperturaCajaChica(): void {
@@ -42,4 +68,6 @@ export class TcajachicaComponent implements OnInit {
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('es-ES', options);
   }
+  
+  
 }

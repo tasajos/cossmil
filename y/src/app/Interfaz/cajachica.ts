@@ -34,3 +34,10 @@ export interface cajachicaInter {
             fechai: string,
             comentario:string,
             }
+
+            export interface copiarcajachicaInter {
+                // columna db 
+                id?: number,
+                montotr: string,
+               
+                }

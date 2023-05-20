@@ -5,6 +5,9 @@ SELECT CAST((SELECT TOP 1 montoinicial FROM AperturaCajaChica ORDER BY FechaCrea
 #consulta db cajachica 
 Primero Copiar el dato de monto inicial
 
+
+#PRIMERO RECOLECTAR
+
 INSERT INTO ResTCChica (montotr, FechaCreacion)
 SELECT TOP 1 montoinicial, GETDATE()
 FROM AperturaCajachica
