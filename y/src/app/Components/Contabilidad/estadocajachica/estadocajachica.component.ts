@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { cajachicaInter  } from 'src/app/Interfaz/cajachica';
+import { registrocajachicaInter } from 'src/app/Interfaz/cajachica';
 import { CajachicaService } from 'src/app/services/cajachica.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -16,8 +17,8 @@ import * as XLSX from 'xlsx';
 export class EstadocajachicaComponent implements OnInit,AfterViewInit {
 
 
-  displayedColumns: string[] = ['montoinicial','transacciones','aprobaciones','otros','acciones'];
-  dataSource = new MatTableDataSource<cajachicaInter>();
+  displayedColumns: string[] = ['monto','transacciones','aprobaciones','fechai','comentario'];
+  dataSource = new MatTableDataSource<registrocajachicaInter>();
   loading:boolean =false;
   data: any[] = [];
   
@@ -43,7 +44,7 @@ export class EstadocajachicaComponent implements OnInit,AfterViewInit {
   }
   obtenerPersonal(){
 
-    this._rmedService.getcaja().subscribe(data =>
+    this._rmedService.getcajachica().subscribe(data =>
       {
         this.loading =false;
        this.dataSource.data = data;
@@ -78,10 +79,11 @@ export class EstadocajachicaComponent implements OnInit,AfterViewInit {
 exportToExcel(): void {
   const data = this.dataSource.filteredData.map(row => {
     return {
-      Codigo: row.montoinicial,
-      Descripcion: row.transacciones,
-      Forma: row.aprobaciones,
-      Concentracion: row.otros,
+      Monto: row.monto,
+      Transacciones: row.transacciones,
+      Aprobaciones: row.aprobaciones,
+      Fecha: row.fechai,
+      Observaciones: row.comentario,
         
       
     };

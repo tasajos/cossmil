@@ -1,11 +1,10 @@
-<app-cabecera></app-cabecera>
+<!--<app-cabecera></app-cabecera>
 <br><br><br>
 <app-navbarcontabilidad></app-navbarcontabilidad>
 <br>
-<br>
+<br>-->
 <div class="container">
     <h1>CAJA CHICA</h1>
-<br>
 <br>
 <br>
     <mat-form-field>
@@ -18,9 +17,9 @@
               The actual rendered columns are set as a property on the row definition" -->
       
         <!-- Position Column -->
-        <ng-container matColumnDef="montoinicial">
+        <ng-container matColumnDef="monto">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto Inicial </th>
-          <td mat-cell *matCellDef="let element"> {{element.montoinicial}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
         </ng-container>
         <ng-container matColumnDef="transacciones">
           <th mat-header-cell *matHeaderCellDef> Transacciones </th>
@@ -30,9 +29,13 @@
           <th mat-header-cell *matHeaderCellDef> Apropado Por </th>
           <td mat-cell *matCellDef="let element"> {{element.aprobaciones}} </td>
         </ng-container>
-        <ng-container matColumnDef="otros">
-          <th mat-header-cell *matHeaderCellDef> Otros </th>
-          <td mat-cell *matCellDef="let element"> {{element.otros}} </td>
+        <ng-container matColumnDef="fechai">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechai}} </td>
+        </ng-container>
+        <ng-container matColumnDef="comentario">
+          <th mat-header-cell *matHeaderCellDef> Observaciones </th>
+          <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
         </ng-container>
         
                
