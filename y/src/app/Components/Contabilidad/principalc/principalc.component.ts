@@ -17,11 +17,14 @@ export class PrincipalcComponent implements OnInit {
   montoinicial: number | null = null; // Variable para almacenar el monto inicial
   fechaAperturaCajaChica: string | null = null; // Variable para almacenar la fecha de apertura
   aprobaciones: number | null = null;
+  ultimoMontotr: number | null = null; // Agrega esta línea para declarar la propiedad
+  fechaCreacion: string | null = null; // Agrega esta línea para declarar la propiedad
 
   constructor(private cajachicaService: CajachicaService) {}
 
   ngOnInit(): void {
     this.getFechaAperturaCajaChica();
+    this.getUltimoMontotr();
   }
 
   getFechaAperturaCajaChica(): void {
@@ -41,5 +44,15 @@ export class PrincipalcComponent implements OnInit {
   formatDate(date: Date): string {
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('es-ES', options);
+  }
+  getUltimoMontotr(): void {
+    this.cajachicaService.getUltimoMontotr().subscribe(
+      (ultimoMontotr: number) => {
+        this.ultimoMontotr = ultimoMontotr;
+      },
+      (error: any) => {
+        console.error('Error al obtener el último valor de montotr:', error);
+      }
+    );
   }
 }

@@ -7,16 +7,34 @@
     <br>
     <br>
   </div>
-  <div class="card text-center">
-    <div class="card-header">
-     CAJA CHICA
-    </div>
-    <div class="card-body">
-      <h2 class="card-title"> {{ montoinicial }} Bs</h2>
-      <p class="card-text">El monto inicial para la fecha  {{ fechaAperturaCajaChica }}</p>
+  <div class="row">
+    <div class="col">
+      <div class="card text-center">
+        <div class="card-header">
+          CAJA CHICA
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">{{ montoinicial }} Bs</h2>
+          <p class="card-text">El monto inicial para la fecha {{ fechaAperturaCajaChica }}</p>
+        </div>
+        <div class="card-footer text-muted">
+          Aprobado por: <strong>{{ aprobaciones }}</strong>
+        </div>
       </div>
-    <div class="card-footer text-body-secondary">
-        Aprobado por: <strong> {{aprobaciones}}</strong>
+    </div>
+    <div class="col">
+      <div class="card text-center">
+        <div class="card-header">
+          TOTAL RESTANTE CAJACHICA
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Monto: {{ ultimoMontotr }} Bs</h2>
+          <p class="card-text">Fecha de creación: {{ fechaCreacion }}</p>
+        </div>
+        <div class="card-footer text-muted">
+          Aprobado por: <strong>{{ aprobaciones }}</strong>
+        </div>
+      </div>
     </div>
   </div>
 </div>
