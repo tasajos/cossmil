@@ -25,6 +25,9 @@ export class CajachicaService {
   private Myapiurlg: string = 'api/RegGcajachica';
   private Myapiurlrc: string = 'api/ResultadoCajaChica/ultimomontotr';
   private Myapiurlpcc: string = 'api/ResultadoCajaChica/actualizarmontotr';
+  private Myapiurlnr: string = 'api/NroRecibo';
+
+  
   
 
 //constructor
@@ -87,5 +90,14 @@ export class CajachicaService {
     getUltimoMontotr(): Observable<number> {
       return this.http.get<number>(`${this.Myappurl}${this.Myapiurlrc}`);
     }
+    getProximoNroRecibo(): Observable<number> {
+      return this.http.get<number>(`${this.Myappurl}${this.Myapiurlnr}`).pipe(
+        map((nroRecibo: number) => nroRecibo + 1)
+      );
+    }
+    
+    
+    
+
     }
   

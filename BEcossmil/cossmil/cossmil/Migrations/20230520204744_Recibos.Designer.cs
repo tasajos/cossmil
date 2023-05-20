@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cossmil.Models;
 
@@ -11,9 +12,10 @@ using cossmil.Models;
 namespace cossmil.Migrations
 {
     [DbContext(typeof(FarContext))]
-    partial class FarContextModelSnapshot : ModelSnapshot
+    [Migration("20230520204744_Recibos")]
+    partial class Recibos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -339,26 +341,6 @@ namespace cossmil.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Recetas");
-                });
-
-            modelBuilder.Entity("cossmil.Models.Recibos", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("nrorecibo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Recibosdb");
                 });
 
             modelBuilder.Entity("cossmil.Models.registrocajachica", b =>

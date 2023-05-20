@@ -14,6 +14,7 @@ export class EgrcajachicaComponent implements OnInit {
  
   formulario: FormGroup;
   ultimoMontotr: number | undefined;
+  nrorecibo: string =''; 
 
   constructor(
     private fb: FormBuilder, 
@@ -27,11 +28,30 @@ export class EgrcajachicaComponent implements OnInit {
       fechai: [this.getFormattedDate(), Validators.required],
       aprobaciones: ['', Validators.required],
       comentario: ['', Validators.required],
-      nrorecibo: ['', Validators.required],
+      nrorecibo: [this.nrorecibo, Validators.required],
+      
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.obtenerProximoNroRecibo();
+
+   }
+
+   obtenerProximoNroRecibo() {
+    this._rcajachicaService.getProximoNroRecibo().subscribe((proximoNro: any) => {
+      console.log(proximoNro);
+      if (proximoNro && proximoNro.length > 0) {
+        const currentNroRecibo = parseInt(proximoNro[0]);
+        const nextNroRecibo = currentNroRecibo + 1;
+        this.nrorecibo = nextNroRecibo.toString(); // Asignar el valor a nrorecibo
+        this.formulario.get('nrorecibo')?.setValue(this.nrorecibo); // Establecer el valor en el formulario
+      }
+    });
+  }
+  
+  
+  
 
   getFormattedDate(): string {
     const today = new Date();
