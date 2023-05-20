@@ -27,6 +27,7 @@ export class EgrcajachicaComponent implements OnInit {
       fechai: [this.getFormattedDate(), Validators.required],
       aprobaciones: ['', Validators.required],
       comentario: ['', Validators.required],
+      nrorecibo: ['', Validators.required],
     });
   }
 
@@ -49,6 +50,7 @@ export class EgrcajachicaComponent implements OnInit {
       fechai: fechaiValue,
       aprobaciones: this.formulario.value.aprobaciones,
       comentario: this.formulario.value.comentario,
+      nrorecibo: this.formulario.value.nrorecibo,
     };
 
     // Actualizar caja antes de registrar el gasto

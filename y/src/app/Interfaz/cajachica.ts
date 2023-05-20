@@ -33,6 +33,7 @@ export interface cajachicaInter {
             aprobaciones:number,
             fechai: string,
             comentario:string,
+            nrorecibo:string,
             }
 
             export interface copiarcajachicaInter {

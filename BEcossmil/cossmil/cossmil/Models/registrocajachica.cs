@@ -13,6 +13,8 @@
 
         public string comentario { get; set; }
 
+        public string nrorecibo { get; set; }
+
         public DateTime FechaCreacion { get; set; }
 
     }
