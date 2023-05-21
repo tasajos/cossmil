@@ -137,24 +137,45 @@ export class EgrcajachicaComponent implements OnInit {
     // Configuración de la biblioteca pdfmake
     (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
+    
     // Contenido del documento PDF
     const docDefinition:TDocumentDefinitions  = {
       content: [
-        { text: 'Registro de caja chica', style: 'header' },
-        { text: 'Monto: ' + data.monto },
-        { text: 'Transacciones: ' + data.transacciones },
-        { text: 'Fecha: ' + data.fechai },
-        { text: 'Aprobaciones: ' + data.aprobaciones },
-        { text: 'Comentario: ' + data.comentario },
-        { text: 'Número de recibo: ' + data.nrorecibo },
-        { text: 'Entregado a: ' + data.entregado },
+     
+       
+        { text: 'REGISTRO DE CAJA CHICA', style: 'header',alignment: 'center', bold:true },
+        { text: 'Nro de recibo: ' +' '+' '+''+  data.nrorecibo,style: 'subtitulo',alignment: 'center' },
+        { text:'', margin: [0, 5, 0, 5] },
+        { text: 'Monto: ' +' '+' '+''+ data.monto + ' Bs'},
+        { text:'', margin: [0, 5, 0, 5] },
+        { text: 'Fecha: ' +' '+' '+''+  data.fechai,bold:true },
+        { text:'', margin: [0, 5, 0, 5] },
+        { text: 'Transacciones: ' +' '+' '+''+  data.transacciones },
+        { text:'', margin: [0, 5, 0, 5] },
+        { text: 'Aprobaciones: ' +' '+' '+''+  data.aprobaciones },
+        { text:'', margin: [0, 5, 0, 5] },
+        { text: 'Comentario: ' +' '+' '+''+  data.comentario },
+        { text:'', margin: [0, 5, 0, 5] },
+        { text: 'Entregado a: '+' '+' '+''+  data.entregado },
+        { text:'', margin: [0, 5, 0, 5] },
+        { text:'', margin: [0, 50, 0, 5] },
+        { text: '-----RECIBO GENERADO AUTOMATICAMENTE ATRAVES DEL SISTEMA OFIUCO DE CHAKUY---- '+' '+' '+'',style: 'footer' },
+        { text:'', margin: [0, 5, 0, 5] },
       ],
       styles: {
         header: {
           fontSize: 18,
           bold: true,
-          margin: [0, 0, 0, 10]
+          margin: [0, 2, 0, 10]
+        },
+        subtitulo: {
+          fontSize: 16,
+          bold: true,
+        },
+        footer:{
+          fontSize: 8,
         }
+
       }
     };
 
