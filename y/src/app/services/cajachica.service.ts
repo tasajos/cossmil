@@ -6,6 +6,7 @@ import { cajachicaInter } from '../Interfaz/cajachica';
 import { registrocajachicaInter } from '../Interfaz/cajachica';
 import { aperturacajachicaInter } from '../Interfaz/cajachica';
 import { copiarcajachicaInter } from '../Interfaz/cajachica';
+import { nroreciboInter } from '../Interfaz/cajachica';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -91,12 +92,14 @@ export class CajachicaService {
       return this.http.get<number>(`${this.Myappurl}${this.Myapiurlrc}`);
     }
     getProximoNroRecibo(): Observable<number> {
-      return this.http.get<number>(`${this.Myappurl}${this.Myapiurlnr}`).pipe(
-        map((nroRecibo: number) => nroRecibo + 1)
-      );
+      return this.http.get<number>(`${this.Myappurl}${this.Myapiurlnr}`);
     }
     
-    
+    actualizarnrorecibo  (recibonro: nroreciboInter): Observable<nroreciboInter>{
+
+      return this.http.post<nroreciboInter>(`${this.Myappurl}${this.Myapiurlnr}`,recibonro);
+      
+    }
     
 
     }

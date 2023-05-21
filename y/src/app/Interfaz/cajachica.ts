@@ -42,3 +42,10 @@ export interface cajachicaInter {
                 montotr: string,
                
                 }
+
+                export interface nroreciboInter {
+                    // columna db 
+                    id?: number,
+                    nrorecibo: string,
+                   
+                    }

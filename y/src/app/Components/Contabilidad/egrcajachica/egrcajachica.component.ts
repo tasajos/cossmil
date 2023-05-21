@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,ValidatorFn  } from '@angular/forms';
 import { CajachicaService } from 'src/app/services/cajachica.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { registrocajachicaInter } from 'src/app/Interfaz/cajachica';
+import { nroreciboInter, registrocajachicaInter } from 'src/app/Interfaz/cajachica';
 import { Router } from '@angular/router';
 import { AbstractControl } from '@angular/forms';
 
@@ -67,19 +67,22 @@ export class EgrcajachicaComponent implements OnInit {
     this.obtenerProximoNroRecibo();
 
    }
-
-   obtenerProximoNroRecibo() {
-    this._rcajachicaService.getProximoNroRecibo().subscribe((proximoNro: any) => {
-      console.log(proximoNro);
-      if (proximoNro && proximoNro.length > 0) {
-        const currentNroRecibo = parseInt(proximoNro[0]);
-        const nextNroRecibo = currentNroRecibo + 1;
-        this.nrorecibo = nextNroRecibo.toString(); // Asignar el valor a nrorecibo
-        this.formulario.get('nrorecibo')?.setValue(this.nrorecibo); // Establecer el valor en el formulario
-      }
-    });
+   ejecutarAcciones() {
+    this.gastoregistrocajachica();
+    this.Actualizarnrorecibo();
   }
-  
+
+
+  obtenerProximoNroRecibo() {
+  this._rcajachicaService.getProximoNroRecibo().subscribe((proximoNro: number) => {
+    console.log(proximoNro);
+    if (proximoNro) {
+      const nextNroRecibo = proximoNro + 1;
+      this.nrorecibo = nextNroRecibo.toString(); // Asignar el valor a nrorecibo
+      this.formulario.get('nrorecibo')?.setValue(this.nrorecibo); // Establecer el valor en el formulario
+    }
+  });
+}
   
   
 
@@ -131,4 +134,25 @@ export class EgrcajachicaComponent implements OnInit {
       horizontalPosition: 'right',
     });
   }
+
+Actualizarnrorecibo(){
+
+  //Armamos el objeto
+
+  const nroreciboValue = this.formulario.value.nrorecibo;
+
+
+  const nrorecibocajachica: nroreciboInter = {
+    
+    nrorecibo: nroreciboValue,
+  };
+
+   // Enviamos objeto al backend para el registro del gasto
+   this._rcajachicaService.actualizarnrorecibo(nrorecibocajachica).subscribe(_data => {
+    
+    //this.router.navigate(['/egcajachica']);
+  });
+
+}
+
 }

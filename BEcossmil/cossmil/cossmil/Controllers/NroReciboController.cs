@@ -27,14 +27,37 @@ namespace cossmil.Controllers
         {
             try
             {
-                var nroRecibos = await _context.Recibosdb.Select(recibo => recibo.nrorecibo).ToListAsync();
-                return Ok(nroRecibos);
+                var ultimoNroRecibo = await _context.Recibosdb.OrderByDescending(recibo => recibo.nrorecibo).Select(recibo => recibo.nrorecibo).FirstOrDefaultAsync();
+                return Ok(ultimoNroRecibo);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
+
+
+        [HttpPost]
+
+        public async Task<IActionResult> Post(Recibos Recibosdb)
+        {
+            try
+            {
+                Recibosdb.FechaCreacion = DateTime.Now;
+                _context.Add(Recibosdb);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Get", new { Id = Recibosdb.id }, Recibosdb);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+
+        }
+
 
 
     }
