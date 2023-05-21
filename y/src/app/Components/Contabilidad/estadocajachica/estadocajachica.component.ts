@@ -17,7 +17,7 @@ import * as XLSX from 'xlsx';
 export class EstadocajachicaComponent implements OnInit,AfterViewInit {
 
 
-  displayedColumns: string[] = ['monto','transacciones','aprobaciones','fechai','comentario','nrorecibo'];
+  displayedColumns: string[] = ['monto','transacciones','aprobaciones','fechai','comentario','nrorecibo','entregado'];
   dataSource = new MatTableDataSource<registrocajachicaInter>();
   loading:boolean =false;
   data: any[] = [];

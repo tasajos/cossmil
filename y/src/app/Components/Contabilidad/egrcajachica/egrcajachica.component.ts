@@ -9,16 +9,6 @@ import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { TDocumentDefinitions, StyleDictionary } from 'pdfmake/interfaces';
 
-
-// Luego puedes utilizar pdfMakeInstance para generar el PDF según tus necesidades
-
-
-// Resto del código del componente
-
-
-
-
-
 @Component({
   selector: 'app-egrcajachica',
   templateUrl: './egrcajachica.component.html',
@@ -43,6 +33,7 @@ export class EgrcajachicaComponent implements OnInit {
       aprobaciones: ['', Validators.required],
       comentario: ['', Validators.required],
       nrorecibo: [this.nrorecibo, Validators.required],
+      entregado: ['', Validators.required],
       
     });
   }
@@ -120,6 +111,7 @@ export class EgrcajachicaComponent implements OnInit {
       aprobaciones: this.formulario.value.aprobaciones,
       comentario: this.formulario.value.comentario,
       nrorecibo: this.formulario.value.nrorecibo,
+      entregado: this.formulario.value.entregado,
     };
     (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
     // Actualizar caja antes de registrar el gasto
@@ -155,6 +147,7 @@ export class EgrcajachicaComponent implements OnInit {
         { text: 'Aprobaciones: ' + data.aprobaciones },
         { text: 'Comentario: ' + data.comentario },
         { text: 'Número de recibo: ' + data.nrorecibo },
+        { text: 'Entregado a: ' + data.entregado },
       ],
       styles: {
         header: {

@@ -34,6 +34,7 @@ export interface cajachicaInter {
             fechai: string,
             comentario:string,
             nrorecibo:number,
+            entregado:number,
             }
 
             export interface copiarcajachicaInter {

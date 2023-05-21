@@ -15,6 +15,8 @@
 
         public string nrorecibo { get; set; }
 
+        public string entregado { get; set; }
+
         public DateTime FechaCreacion { get; set; }
 
     }
