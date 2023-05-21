@@ -27,7 +27,11 @@ namespace cossmil.Controllers
         {
             try
             {
-                var ultimoNroRecibo = await _context.Recibosdb.OrderByDescending(recibo => recibo.nrorecibo).Select(recibo => recibo.nrorecibo).FirstOrDefaultAsync();
+                var ultimoNroRecibo = await _context.Recibosdb
+                    .OrderByDescending(recibo => recibo.id)
+                    .Select(recibo => recibo.nrorecibo)
+                    .FirstOrDefaultAsync();
+
                 return Ok(ultimoNroRecibo);
             }
             catch (Exception ex)
@@ -35,7 +39,6 @@ namespace cossmil.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
 
 
         [HttpPost]
