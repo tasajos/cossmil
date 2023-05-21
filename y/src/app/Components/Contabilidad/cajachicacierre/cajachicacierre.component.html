@@ -48,60 +48,6 @@
   <br>
   
 
-
-<!--
-<div class="container text-center">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">1</button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">2</button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">3</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">4</button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">5</button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">6</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">7</button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">8</button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">9</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-sm"></button>
-      </div>
-      <div class="col text-end">
-        <button type="button" class="btn btn-light btn-lg">0</button>
-      </div>
-      <div class="col"></div>
-    </div>
-    <br>
-    <br>
-    <br>
--->
-
 <br>
 <br>
       <div class="d-flex">
@@ -112,10 +58,14 @@
           </div>
           <div class="col-auto">
             <label for="inputPassword2" class="visually-hidden">Password</label>
-            <input type="text" class="form-control" id="inputPassword2" placeholder="CAJA CHICA">
+            <!--<input type="text" class="form-control" id="inputPassword2" placeholder="CAJA CHICA">-->
+            <input type="text" class="form-control" #inputPassword2 placeholder="CAJA CHICA" readonly> Bs
           </div>
           <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-3">Cerrar Caja</button>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3" (click)="borrarCampo()" >Borrar</button>
           </div>
         </form>
 
@@ -125,37 +75,37 @@
             <div class="row">
               <div class="col"></div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">1</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-1">1</button>
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">2</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-2">2</button>
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">3</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col"></div>
-              <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">4</button>
-              </div>
-              <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">5</button>
-              </div>
-              <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">6</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-3">3</button>
               </div>
             </div>
             <div class="row">
               <div class="col"></div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">7</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-4">4</button>
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">8</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-5">5</button>
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">9</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-6">6</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-light btn-lg" id="batn-7">7</button>
+              </div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-light btn-lg" id="batn-8" >8</button>
+              </div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-light btn-lg" id="batn-9">9</button>
               </div>
             </div>
             <div class="row">
@@ -164,7 +114,7 @@
                 <button type="button" class="btn btn-light btn-sm"></button>
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg">0</button>
+                <button type="button" class="btn btn-light btn-lg" id="batn-0">0</button>
               </div>
               <div class="col"></div>
             </div>
@@ -173,4 +123,5 @@
             <br>
   </div>
  
+</div>
 </div>
