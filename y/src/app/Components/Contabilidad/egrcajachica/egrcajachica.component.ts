@@ -5,6 +5,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { nroreciboInter, registrocajachicaInter } from 'src/app/Interfaz/cajachica';
 import { Router } from '@angular/router';
 import { AbstractControl } from '@angular/forms';
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { TDocumentDefinitions, StyleDictionary } from 'pdfmake/interfaces';
+
+
+// Luego puedes utilizar pdfMakeInstance para generar el PDF según tus necesidades
+
+
+// Resto del código del componente
+
+
+
 
 
 @Component({
@@ -65,11 +77,15 @@ export class EgrcajachicaComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerProximoNroRecibo();
+    
+
 
    }
    ejecutarAcciones() {
     this.gastoregistrocajachica();
     this.Actualizarnrorecibo();
+    const formData = this.formulario.value; // Get the form data
+    this.generarPDF(formData); // Pass the form data as an argument
   }
 
 
@@ -105,7 +121,7 @@ export class EgrcajachicaComponent implements OnInit {
       comentario: this.formulario.value.comentario,
       nrorecibo: this.formulario.value.nrorecibo,
     };
-
+    (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
     // Actualizar caja antes de registrar el gasto
     this._rcajachicaService.actualizarcaja().subscribe(() => {
       // Llamada para obtener los datos actualizados
@@ -118,9 +134,43 @@ export class EgrcajachicaComponent implements OnInit {
         this.formulario.patchValue({ fechai: fechaiValue });
         window.location.reload();
         //this.router.navigate(['/egcajachica']);
+        this.generarPDF(rcajachica);
+        
       });
     });
+
+    
   }
+  generarPDF(data: registrocajachicaInter) {
+    // Configuración de la biblioteca pdfmake
+    (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+
+    // Contenido del documento PDF
+    const docDefinition:TDocumentDefinitions  = {
+      content: [
+        { text: 'Registro de caja chica', style: 'header' },
+        { text: 'Monto: ' + data.monto },
+        { text: 'Transacciones: ' + data.transacciones },
+        { text: 'Fecha: ' + data.fechai },
+        { text: 'Aprobaciones: ' + data.aprobaciones },
+        { text: 'Comentario: ' + data.comentario },
+        { text: 'Número de recibo: ' + data.nrorecibo },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        }
+      }
+    };
+
+    // Generar el archivo PDF
+    pdfMake.createPdf(docDefinition).download('registro_caja_chica.pdf');
+
+    return docDefinition;
+  }
+  
 
   obtenerUltimoMontotr() {
     this._rcajachicaService.getUltimoMontotr().subscribe((data: number) => {
