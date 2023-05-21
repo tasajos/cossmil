@@ -59,3 +59,4 @@
 1.23 Lista receta añadido
 1.24 update receta alerta
 2.2 update caja chica
+2.3 update registro caja chica
