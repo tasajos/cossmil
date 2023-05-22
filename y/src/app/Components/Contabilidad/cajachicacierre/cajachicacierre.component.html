@@ -6,7 +6,6 @@
 <h1 align="center">CIERRE CAJA CHICA</h1>
 
 <div class="container">
-   
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
@@ -55,7 +54,10 @@
 <br>
 <br>
       <div class="d-flex">
-        <form class="row g-3">
+        <!--<form class="row g-3">-->
+
+            <form class="row g-3" [formGroup]="formulario">
+
           <div class="col-auto">
             <label for="staticEmail2" class="visually-hidden">Email</label>
             <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="INTRODUCE LOS VALORES">
@@ -63,57 +65,82 @@
           <div class="col-auto">
             <label for="inputPassword2" class="visually-hidden">Password</label>
             <!--<input type="text" class="form-control" id="inputPassword2" placeholder="CAJA CHICA">-->
-            <input type="text" class="form-control" #inputPassword2 placeholder="CAJA CHICA" readonly> Bs
+            <!--<input type="text" class="form-control" #inputPassword2 placeholder="CAJA CHICA" readonly> Bs-->
+           <!-- <input type="number" class="form-control" formControlName="monto" #inputPassword2 placeholder="CAJA CHICA" id="monto" > Bs-->
+            <input type="text" class="form-control" [(ngModel)]="monto" #inputPassword2 placeholder="CAJA CHICA" id="monto">
+
+
           </div>
           
           <div class="col-auto">
-          <input class="form-control" type="text" placeholder="Responsable" id="responsable" aria-label="default input example">
+          <!--<input class="form-control" type="text" placeholder="Responsable" id="responsable" aria-label="default input example">-->
+          <input class="form-control" type="text" formControlName="responsable" placeholder="Responsable" id="responsable" aria-label="default input example">
         </div>
-          <div class="col-auto">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar Caja</button>
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3" (click)="borrarCampo()" >Borrar</button>
-          </div>
-        </form>
 
+        <div class="btn-group" role="group" aria-label="Basic example">
+           <!-- <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar Caja</button>-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="registrarcierre()">Cerrar Caja</button>
+
+            <button type="submit" class="btn btn-primary mb-3" (click)="borrarCampo()">Borrar</button>
+          </div>
+        <!--
+        <div class="d-flex mx-1">
+            <div class="col-auto me-auto">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar Caja</button>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3" (click)="borrarCampo()">Borrar</button>
+            </div>
+          </div>-->
+          
+        </form>
+<br>
+<br>
 
 
         <div class="container text-center">
             <div class="row">
               <div class="col"></div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-1">1</button>
+                <button type="button" class="btn btn-light btn-lg" id="btn-1" (click)="agregarNumero('1')">1</button>
+                
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-2">2</button>
-              </div>
+                <button type="button" class="btn btn-light btn-lg" id="btn-2" (click)="agregarNumero('2')">2</button>
+                </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-3">3</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col"></div>
-              <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-4">4</button>
-              </div>
-              <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-5">5</button>
-              </div>
-              <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-6">6</button>
+                <button type="button" class="btn btn-light btn-lg" id="btn-3" (click)="agregarNumero('3')">3</button>
+                
               </div>
             </div>
             <div class="row">
               <div class="col"></div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-7">7</button>
+                <button type="button" class="btn btn-light btn-lg" id="btn-4" (click)="agregarNumero('4')">4</button>
+                
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-8" >8</button>
+                <button type="button" class="btn btn-light btn-lg" id="btn-5" (click)="agregarNumero('5')">5</button>
+                
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-9">9</button>
+                <button type="button" class="btn btn-light btn-lg" id="btn-6" (click)="agregarNumero('6')">6</button>
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-light btn-lg" id="btn-7" (click)="agregarNumero('7')">7</button>
+                
+              </div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-light btn-lg" id="btn-8" (click)="agregarNumero('8')">8</button>
+                
+              </div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-light btn-lg" id="btn-9" (click)="agregarNumero('9')">9</button>
+                
               </div>
             </div>
             <div class="row">
@@ -122,7 +149,8 @@
                 <button type="button" class="btn btn-light btn-sm"></button>
               </div>
               <div class="col text-end">
-                <button type="button" class="btn btn-light btn-lg" id="batn-0">0</button>
+                <button type="button" class="btn btn-light btn-lg" id="btn-0" (click)="agregarNumero('0')">0</button>
+                
               </div>
               <div class="col"></div>
             </div>
@@ -134,9 +162,8 @@
 </div>
 </div>
 
-
  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -149,7 +176,14 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
-          <button type="button" class="btn btn-primary">CERRAR CAJA</button>
+          
+          <!--<button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;" [routerLink]="'/ccajachica'">Registrar</button>-->
+
+          <!--<button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;">Registrar</button>-->
+          <button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;" (click)="registrarcierre()">Registrar</button>
+
+          
+
         </div>
       </div>
     </div>

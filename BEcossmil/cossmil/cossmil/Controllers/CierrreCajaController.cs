@@ -43,7 +43,25 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpPost]
 
+        public async Task<IActionResult> Post(CierreCajaChica CierreCChica)
+        {
+            try
+            {
+                CierreCChica.FechaCreacion = DateTime.Now;
+                _context.Add(CierreCChica);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Get", new { Id = CierreCChica.id }, CierreCChica);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+
+        }
 
 
     }

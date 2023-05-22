@@ -6,7 +6,7 @@
 
         public int monto { get; set; }
 
-        public int responsable { get; set; }
+        public string responsable { get; set; }
 
         public DateTime FechaCreacion { get; set; }
     }

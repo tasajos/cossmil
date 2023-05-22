@@ -7,6 +7,7 @@ import { registrocajachicaInter } from '../Interfaz/cajachica';
 import { aperturacajachicaInter } from '../Interfaz/cajachica';
 import { copiarcajachicaInter } from '../Interfaz/cajachica';
 import { nroreciboInter } from '../Interfaz/cajachica';
+import { cierrecajachicaInter } from '../Interfaz/cajachica';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -28,6 +29,7 @@ export class CajachicaService {
   private Myapiurlrc: string = 'api/ResultadoCajaChica/ultimomontotr';
   private Myapiurlpcc: string = 'api/ResultadoCajaChica/actualizarmontotr';
   private Myapiurlnr: string = 'api/NroRecibo';
+  private Myapiurlcc: string = 'api/CierrreCaja';
 
   
   
@@ -108,6 +110,12 @@ export class CajachicaService {
           return throwError('Error retrieving caja chica expenses');
         })
       );
+    }
+
+    cierrecaja  (ccierre: cierrecajachicaInter): Observable<cierrecajachicaInter>{
+
+      return this.http.post<cierrecajachicaInter>(`${this.Myappurl}${this.Myapiurlcc}`,ccierre);
+      
     }
     
 

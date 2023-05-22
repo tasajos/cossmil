@@ -1,14 +1,38 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CajachicaService } from 'src/app/services/cajachica.service';
+import { FormBuilder, FormGroup, Validators,ValidatorFn  } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { nroreciboInter, cierrecajachicaInter } from 'src/app/Interfaz/cajachica';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-cajachicacierre',
   templateUrl: './cajachicacierre.component.html',
   styleUrls: ['./cajachicacierre.component.css']
 })
-export class CajachicacierreComponent implements AfterViewInit {
+export class CajachicacierreComponent implements AfterViewInit,OnInit {
 
-  constructor(private router: Router) {}
+  formulario: FormGroup;
+  monto: string = '';
+ 
+ 
+  constructor(
+    private router: Router,
+    private fb: FormBuilder, 
+    private _snackBar: MatSnackBar,
+    private _rcajachicaService: CajachicaService,
+    private http: HttpClient
+    
+    ) {
+      this.formulario = this.fb.group({
+        monto: ['', Validators.required],
+        responsable: ['', Validators.required],
+        
+      });
+
+    }
 
   @ViewChild('inputPassword2', { static: false }) cajaChicaInput!: ElementRef<HTMLInputElement>;
 
@@ -31,4 +55,51 @@ export class CajachicacierreComponent implements AfterViewInit {
   modalcierre(){
     this.router.navigate(['/modalcierre']);
   }
+  
+  ngOnInit(): void {
+    
+   }
+   
+
+   
+
+
+
+mensajeExito(texto: string) {
+  this._snackBar.open(`El registro fue realizado ${texto} con exito`, '', {
+    duration: 2000,
+    horizontalPosition: 'right',
+  });
+}
+
+
+registrarcierre() {
+  const monto = this.formulario.get('monto')?.value;
+  const responsable = this.formulario.get('responsable')?.value;
+  
+  const cierreCaja: cierrecajachicaInter = {
+    monto: monto,
+    responsable: responsable
+  };
+
+  this._rcajachicaService.cierrecaja(cierreCaja).subscribe(
+    response => {
+      // Maneja la respuesta del servidor si es necesario
+      console.log(response);
+      // Restablece el formulario
+      this.formulario.reset();
+    },
+    error => {
+      // Maneja los errores si es necesario
+      console.error(error);
+    }
+  );
+}
+
+agregarNumero(numero: string) {
+  this.monto += numero;
+  this.formulario.get('monto')?.setValue(this.monto);
+}
+
+
 }
