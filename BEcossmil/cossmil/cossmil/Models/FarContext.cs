@@ -32,5 +32,7 @@ namespace cossmil.Models
 
         public DbSet<Recibos> Recibosdb { get; set; } //<clase> Nombre de la tabla
 
+        public DbSet<CierreCajaChica> CierreCChica { get; set; } //<clase> Nombre de la tabla
+
     }
 }

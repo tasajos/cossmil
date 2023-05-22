@@ -23,9 +23,9 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h3 class="card-title"><strong>TOTAL GASTOS CAJA CHICA</strong></h3>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            <h4 class="card-title"><strong> GASTOS CAJA CHICA</strong></h4>
+            <p class="card-text"><h2>{{ monto }} Bs  </h2> 
+           <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>-->
           </div>
         </div>
       </div>
@@ -40,8 +40,8 @@
         <div class="col-md-8">
           <div class="card-body">
             <h3 class="card-title"><strong>TOTAL CAJA CHICA</strong></h3>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            <p class="card-text"><h2>{{ montoinicial && monto ? montoinicial - monto : 0 }} Bs</h2>
+            
           </div>
         </div>
       </div>

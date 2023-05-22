@@ -28,7 +28,7 @@ export interface cajachicaInter {
         export interface registrocajachicaInter {
             // columna db 
             id?: number,
-            monto: string,
+            monto: number,
             transacciones: string,
             aprobaciones:number,
             fechai: string,

@@ -24,6 +24,7 @@ export class CajachicaService {
   private Myapiurlc: string = 'api/Aperturacajachica/';
   private Myapiurlf: string = 'api/Aperturacajachica/fecha';
   private Myapiurlg: string = 'api/RegGcajachica';
+  private Myapiurlgt: string = 'api/RegGcajachica/totalgastos';
   private Myapiurlrc: string = 'api/ResultadoCajaChica/ultimomontotr';
   private Myapiurlpcc: string = 'api/ResultadoCajaChica/actualizarmontotr';
   private Myapiurlnr: string = 'api/NroRecibo';
@@ -99,6 +100,14 @@ export class CajachicaService {
 
       return this.http.post<nroreciboInter>(`${this.Myappurl}${this.Myapiurlnr}`,recibonro);
       
+    }
+    getgastoscajachica(): Observable<number | null> {
+      return this.http.get<number>(this.Myappurl + this.Myapiurlgt).pipe(
+        catchError((error: any) => {
+          console.error(error);
+          return throwError('Error retrieving caja chica expenses');
+        })
+      );
     }
     
 
