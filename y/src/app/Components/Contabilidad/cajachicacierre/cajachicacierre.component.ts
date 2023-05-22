@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cajachicacierre',
@@ -6,6 +7,9 @@ import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./cajachicacierre.component.css']
 })
 export class CajachicacierreComponent implements AfterViewInit {
+
+  constructor(private router: Router) {}
+
   @ViewChild('inputPassword2', { static: false }) cajaChicaInput!: ElementRef<HTMLInputElement>;
 
   ngAfterViewInit() {
@@ -14,7 +18,7 @@ export class CajachicacierreComponent implements AfterViewInit {
     const btns = document.querySelectorAll('.btn');
     btns.forEach((btn: any) => {
       btn.addEventListener('click', () => {
-        if (!btn.classList.contains('btn-primary')) { // Excluir botón "Cerrar Caja"
+        if (!btn.classList.contains('btn-primary') && !btn.classList.contains('btn-secondary')) {
           const value = btn.innerText;
           cajaChicaInput.value += value;
         }
@@ -23,5 +27,8 @@ export class CajachicacierreComponent implements AfterViewInit {
   }
   borrarCampo() {
     this.cajaChicaInput.nativeElement.value = '';
+  }
+  modalcierre(){
+    this.router.navigate(['/modalcierre']);
   }
 }

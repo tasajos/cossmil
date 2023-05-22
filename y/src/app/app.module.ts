@@ -77,10 +77,7 @@ import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacie
 import { EstadocajachicaComponent } from './Components/Contabilidad/estadocajachica/estadocajachica.component';
 import { EgrcajachicaComponent } from './Components/Contabilidad/egrcajachica/egrcajachica.component';
 import { TcajachicaComponent } from './Components/Contabilidad/tcajachica/tcajachica.component';
-
-
-
-
+import { CajamodalComponent } from './Components/Contabilidad/cajachicacierre/cajamodal/cajamodal.component';
 
 
 
@@ -129,6 +126,7 @@ import { TcajachicaComponent } from './Components/Contabilidad/tcajachica/tcajac
     EstadocajachicaComponent,
     EgrcajachicaComponent,
     TcajachicaComponent,
+    CajamodalComponent,
     
     
   ],

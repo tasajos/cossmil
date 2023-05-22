@@ -50,6 +50,7 @@
   <br>
   
   <app-estadosfinancieros></app-estadosfinancieros>
+  
   <br>
 <br>
 <br>
@@ -64,8 +65,12 @@
             <!--<input type="text" class="form-control" id="inputPassword2" placeholder="CAJA CHICA">-->
             <input type="text" class="form-control" #inputPassword2 placeholder="CAJA CHICA" readonly> Bs
           </div>
+          
           <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">Cerrar Caja</button>
+          <input class="form-control" type="text" placeholder="Responsable" id="responsable" aria-label="default input example">
+        </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar Caja</button>
           </div>
           <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-3" (click)="borrarCampo()" >Borrar</button>
@@ -128,3 +133,24 @@
  
 </div>
 </div>
+
+
+ <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel"><app-cabecera></app-cabecera></h1>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Esta a punto de cerrar la caja chica
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-primary">CERRAR CAJA</button>
+        </div>
+      </div>
+    </div>
+  </div>

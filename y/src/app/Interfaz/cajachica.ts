@@ -50,3 +50,11 @@ export interface cajachicaInter {
                     nrorecibo: string,
                    
                     }
+
+                        export interface cierrecajachicaInter {
+                        // columna db 
+                        id?: number,
+                        monto: number,
+                        responsable: string,
+                       
+                        }

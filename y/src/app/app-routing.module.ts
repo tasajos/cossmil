@@ -30,6 +30,7 @@ import { CajachicaaperturaComponent } from './Components/Contabilidad/cajachicaa
 import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacierre/cajachicacierre.component';
 import { EstadocajachicaComponent } from './Components/Contabilidad/estadocajachica/estadocajachica.component';
 import { EgrcajachicaComponent } from './Components/Contabilidad/egrcajachica/egrcajachica.component';
+import { CajamodalComponent } from './Components/Contabilidad/cajachicacierre/cajamodal/cajamodal.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,7 @@ const routes: Routes = [
   {path: 'ccajachica',component:CajachicacierreComponent},
   {path: 'estadocajachica',component:EstadocajachicaComponent},
   {path: 'egcajachica',component:EgrcajachicaComponent},
+  {path: 'modalcierre',component:CajamodalComponent},
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
