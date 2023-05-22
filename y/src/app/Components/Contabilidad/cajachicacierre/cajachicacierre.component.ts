@@ -1,38 +1,35 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CajachicaService } from 'src/app/services/cajachica.service';
-import { FormBuilder, FormGroup, Validators,ValidatorFn  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { nroreciboInter, cierrecajachicaInter } from 'src/app/Interfaz/cajachica';
+import { nroreciboInter, cierrecajachicaInter, aperturacajachicaInter } from 'src/app/Interfaz/cajachica';
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-cajachicacierre',
   templateUrl: './cajachicacierre.component.html',
   styleUrls: ['./cajachicacierre.component.css']
 })
-export class CajachicacierreComponent implements AfterViewInit,OnInit {
-
+export class CajachicacierreComponent implements AfterViewInit, OnInit {
   formulario: FormGroup;
   monto: string = '';
- 
- 
+  montoinicial: number = 0;
+  transacciones: string[] = [];
+  aprobaciones: string[] = [];
+
   constructor(
     private router: Router,
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private _snackBar: MatSnackBar,
     private _rcajachicaService: CajachicaService,
     private http: HttpClient
-    
-    ) {
-      this.formulario = this.fb.group({
-        monto: ['', Validators.required],
-        responsable: ['', Validators.required],
-        
-      });
-
-    }
+  ) {
+    this.formulario = this.fb.group({
+      monto: ['', Validators.required],
+      responsable: ['', Validators.required],
+    });
+  }
 
   @ViewChild('inputPassword2', { static: false }) cajaChicaInput!: ElementRef<HTMLInputElement>;
 
@@ -49,57 +46,71 @@ export class CajachicacierreComponent implements AfterViewInit,OnInit {
       });
     });
   }
+
   borrarCampo() {
     this.cajaChicaInput.nativeElement.value = '';
   }
-  modalcierre(){
+
+  modalcierre() {
     this.router.navigate(['/modalcierre']);
   }
-  
-  ngOnInit(): void {
-    
-   }
-   
 
-   
+  ngOnInit(): void {}
 
+  mensajeExito(texto: string) {
+    this._snackBar.open(`El registro fue realizado ${texto} con exito`, '', {
+      duration: 2000,
+      horizontalPosition: 'right',
+    });
+  }
 
+  registrarcierre() {
+    const monto = this.formulario.get('monto')?.value;
+    const responsable = this.formulario.get('responsable')?.value;
 
-mensajeExito(texto: string) {
-  this._snackBar.open(`El registro fue realizado ${texto} con exito`, '', {
-    duration: 2000,
-    horizontalPosition: 'right',
-  });
-}
+    const cierreCaja: cierrecajachicaInter = {
+      monto: monto,
+      responsable: responsable,
+    };
 
+    this._rcajachicaService.cierrecaja(cierreCaja).subscribe(
+      (response) => {
+        // Maneja la respuesta del servidor si es necesario
+        console.log(response);
+        // Restablece el formulario
+        this.formulario.reset();
+      },
+      (error) => {
+        // Maneja los errores si es necesario
+        console.error(error);
+      }
+    );
+  }
 
-registrarcierre() {
-  const monto = this.formulario.get('monto')?.value;
-  const responsable = this.formulario.get('responsable')?.value;
-  
-  const cierreCaja: cierrecajachicaInter = {
-    monto: monto,
-    responsable: responsable
-  };
+  agregarNumero(numero: string) {
+    this.monto += numero;
+    this.formulario.get('monto')?.setValue(this.monto);
+  }
 
-  this._rcajachicaService.cierrecaja(cierreCaja).subscribe(
-    response => {
-      // Maneja la respuesta del servidor si es necesario
-      console.log(response);
-      // Restablece el formulario
-      this.formulario.reset();
-    },
-    error => {
-      // Maneja los errores si es necesario
-      console.error(error);
-    }
-  );
-}
+  registrarMontoinicial() {
+    const cajachica: aperturacajachicaInter = {
+      montoinicial: "0",
+      transacciones: "",
+      aprobaciones: 0,
+      fechai: '',
+      comentario: '',
+      // Other required properties
+    };
 
-agregarNumero(numero: string) {
-  this.monto += numero;
-  this.formulario.get('monto')?.setValue(this.monto);
-}
-
-
+    this._rcajachicaService.addcajachica(cajachica).subscribe(
+      (response) => {
+        // Maneja la respuesta del servidor si es necesario
+        console.log(response);
+      },
+      (error) => {
+        // Maneja los errores si es necesario
+        console.error(error);
+      }
+    );
+  }
 }
