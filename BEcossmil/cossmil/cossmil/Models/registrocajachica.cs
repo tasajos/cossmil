@@ -3,7 +3,7 @@
     public class registrocajachica
     {
         public int id { get; set; }
-        public string monto { get; set; }
+        public long? monto { get; set; }
         public string transacciones { get; set; }
 
         public string aprobaciones { get; set; }

@@ -40,6 +40,24 @@ namespace cossmil.Controllers
 
         }
 
+        [HttpGet("totalgastos")]
+        public async Task<IActionResult> GetTotalAmount()
+        {
+            try
+            {
+                DateTime currentDate = DateTime.Today;
+                decimal? totalAmount = await _context.RegCajachica
+                    .Where(registro => registro.FechaCreacion.Date == currentDate)
+                    .SumAsync(registro => registro.monto);
+
+                return Ok(totalAmount);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost]
 
         public async Task<IActionResult> Post(contabilidad_cajachica Cajachica)
