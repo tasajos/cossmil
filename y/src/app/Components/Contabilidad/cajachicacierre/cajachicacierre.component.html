@@ -163,12 +163,12 @@
 </div>
 
  <!-- Modal -->
- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Primer modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel"><app-cabecera></app-cabecera></h1>
-          
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -176,15 +176,27 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
-          
-          <!--<button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;" [routerLink]="'/ccajachica'">Registrar</button>-->
-
-          <!--<button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;">Registrar</button>-->
-          <button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;" (click)="registrarcierre()">Registrar</button>
-
-          
-
+          <button class="btn btn-primary btn-lg mt-3" type="button" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#modalRegistroExitoso">Registrar</button>
         </div>
       </div>
     </div>
   </div>
+  
+  <!-- Segundo modal - Registro Exitoso -->
+  <div class="modal fade" id="modalRegistroExitoso" tabindex="-1" aria-labelledby="modalRegistroExitosoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><app-cabecera></app-cabecera>
+          <h5 class="modal-title" id="modalRegistroExitosoLabel">Registro Exitoso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¡El registro ha sido exitoso!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
