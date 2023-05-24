@@ -95,10 +95,10 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
   registrarMontoinicial() {
     const cajachica: aperturacajachicaInter = {
       montoinicial: "0",
-      transacciones: "",
+      transacciones: "0",
       aprobaciones: 0,
-      fechai: '',
-      comentario: '',
+      fechai: "0",
+      comentario: "0",
       // Other required properties
     };
 
@@ -112,5 +112,16 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
         console.error(error);
       }
     );
+  }
+
+  ejecutarAcciones(){
+this.registrarMontoinicial();
+this.registrarcierre();
+this.recargarpagina();
+
+  }
+
+  recargarpagina(){
+    location.reload();
   }
 }
