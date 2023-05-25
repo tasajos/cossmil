@@ -31,7 +31,7 @@ export class PrincipalcComponent implements OnInit {
     this.cajachicaService.getcajafecha().subscribe(
       (data: aperturacajachicaInter | null) => {
         if (data) {
-          this.montoinicial = parseFloat(data.montoinicial);
+          this.montoinicial = (data.montoinicial);
           this.fechaAperturaCajaChica = this.formatDate(new Date());
           this.aprobaciones = data.aprobaciones;
         }

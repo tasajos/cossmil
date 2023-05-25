@@ -79,7 +79,8 @@
 
         <div class="btn-group" role="group" aria-label="Basic example">
            <!-- <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar Caja</button>-->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="registrarcierre()">Cerrar Caja</button>
+            <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="registrarcierre()">Cerrar Caja</button>-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar Caja</button>
 
             <button type="submit" class="btn btn-primary mb-3" (click)="borrarCampo()">Borrar</button>
           </div>
@@ -176,7 +177,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
-          <button class="btn btn-primary btn-lg mt-3" type="button" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#modalRegistroExitoso">Registrar</button>
+          <button class="btn btn-primary btn-lg mt-3" type="button" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#modalRegistroExitoso" (click)="registrarcierre()">Registrar</button>
         </div>
       </div>
     </div>
@@ -197,7 +198,7 @@
           
           <!--<button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="location.reload()">Volver</button>-->
           <!--<button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="ejecutarAcciones()">RGS</button>-->
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="ejecutarAcciones()">Volver</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="registrarMontoinicial()">Volver</button>
 
         </div>
       </div>

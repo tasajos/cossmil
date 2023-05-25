@@ -16,7 +16,7 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
   monto: string = '';
   montoinicial: number = 0;
   transacciones: string[] = [];
-  aprobaciones: string[] = [];
+  aprobaciones: string[] = ['chakuy'];
 
   constructor(
     private router: Router,
@@ -78,7 +78,7 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
         // Maneja la respuesta del servidor si es necesario
         console.log(response);
         // Restablece el formulario
-        this.formulario.reset();
+        //this.formulario.reset();
       },
       (error) => {
         // Maneja los errores si es necesario
@@ -93,10 +93,11 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
   }
 
   registrarMontoinicial() {
+    const monto = this.formulario.get('monto')?.value;
     const cajachica: aperturacajachicaInter = {
-      montoinicial: "0",
+      montoinicial: monto,
       transacciones: "0",
-      aprobaciones: 0,
+      aprobaciones: this.aprobaciones[0],
       fechai: "0",
       comentario: "0",
       // Other required properties
@@ -106,6 +107,7 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
       (response) => {
         // Maneja la respuesta del servidor si es necesario
         console.log(response);
+        location.reload();
       },
       (error) => {
         // Maneja los errores si es necesario

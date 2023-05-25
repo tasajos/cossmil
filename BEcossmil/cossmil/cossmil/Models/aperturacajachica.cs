@@ -4,7 +4,7 @@
     {
 
         public int id { get; set; }
-        public string montoinicial { get; set; }
+        public int montoinicial { get; set; }
         public string transacciones { get; set; }
 
         public string aprobaciones { get; set; }

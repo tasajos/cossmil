@@ -18,11 +18,11 @@ export interface cajachicaInter {
     export interface aperturacajachicaInter {
         // columna db 
         id?: number,
-        montoinicial: string,
-        transacciones: string,
-        aprobaciones:number,
-        fechai: string,
-        comentario:string,
+        montoinicial: number,
+        transacciones?: string,
+        aprobaciones:any,
+        fechai?: string,
+        comentario?:string,
         }
     
         export interface registrocajachicaInter {
