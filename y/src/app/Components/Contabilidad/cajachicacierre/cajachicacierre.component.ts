@@ -16,7 +16,7 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
   monto: string = '';
   montoinicial: number = 0;
   transacciones: string[] = [];
-  aprobaciones: string[] = ['chakuy'];
+  aprobaciones: string[] = ['Caja Chica Cerrada'];
 
   constructor(
     private router: Router,
@@ -93,9 +93,9 @@ export class CajachicacierreComponent implements AfterViewInit, OnInit {
   }
 
   registrarMontoinicial() {
-    const monto = this.formulario.get('monto')?.value;
+    //const monto = this.formulario.get('monto')?.value;
     const cajachica: aperturacajachicaInter = {
-      montoinicial: monto,
+      montoinicial: 0,
       transacciones: "0",
       aprobaciones: this.aprobaciones[0],
       fechai: "0",
