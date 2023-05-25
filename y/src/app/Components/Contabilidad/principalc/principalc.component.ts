@@ -15,6 +15,8 @@ import { throwError } from 'rxjs';
 })
 export class PrincipalcComponent implements OnInit {
   montoinicial: number | null = null; // Variable para almacenar el monto inicial
+  monto: number | null = null; // Variable para almacenar el monto inicial
+  fechai: number | null = null; // Variable para almacenar el monto inicial
   fechaAperturaCajaChica: string | null = null; // Variable para almacenar la fecha de apertura
   aprobaciones: number | null = null;
   ultimoMontotr: number | null = null; // Agrega esta línea para declarar la propiedad
@@ -52,6 +54,20 @@ export class PrincipalcComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error al obtener el último valor de montotr:', error);
+      }
+    );
+  }
+
+  obtenerMonto() {
+    this.cajachicaService.getgastoscajachica().subscribe(
+      (data: any) => {
+        if (data) {
+          this.monto = data;
+          this.fechai = data;
+        }
+      },
+      (error: any) => {
+        console.error('Error al obtener el monto', error);
       }
     );
   }
