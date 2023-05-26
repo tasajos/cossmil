@@ -78,6 +78,11 @@ import { EstadocajachicaComponent } from './Components/Contabilidad/estadocajach
 import { EgrcajachicaComponent } from './Components/Contabilidad/egrcajachica/egrcajachica.component';
 import { TcajachicaComponent } from './Components/Contabilidad/tcajachica/tcajachica.component';
 import { CajamodalComponent } from './Components/Contabilidad/cajachicacierre/cajamodal/cajamodal.component';
+import { PlandecuentasComponent } from './Components/Contabilidad/Cont/plandecuentas/plandecuentas.component';
+import { CTRANSACCIONESComponent } from './Components/Contabilidad/Cont/ctransacciones/ctransacciones.component';
+import { LibroscontablesComponent } from './Components/Contabilidad/Cont/libroscontables/libroscontables.component';
+import { RepFinancieroCComponent } from './Components/Contabilidad/Cont/rep-financiero-c/rep-financiero-c.component';
+import { ImpuestosComponent } from './Components/Contabilidad/Cont/impuestos/impuestos.component';
 
 
 
@@ -127,6 +132,11 @@ import { CajamodalComponent } from './Components/Contabilidad/cajachicacierre/ca
     EgrcajachicaComponent,
     TcajachicaComponent,
     CajamodalComponent,
+    PlandecuentasComponent,
+    CTRANSACCIONESComponent,
+    LibroscontablesComponent,
+    RepFinancieroCComponent,
+    ImpuestosComponent,
     
     
   ],
