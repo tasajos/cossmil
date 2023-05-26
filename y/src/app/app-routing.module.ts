@@ -31,6 +31,11 @@ import { CajachicacierreComponent } from './Components/Contabilidad/cajachicacie
 import { EstadocajachicaComponent } from './Components/Contabilidad/estadocajachica/estadocajachica.component';
 import { EgrcajachicaComponent } from './Components/Contabilidad/egrcajachica/egrcajachica.component';
 import { CajamodalComponent } from './Components/Contabilidad/cajachicacierre/cajamodal/cajamodal.component';
+import { CTRANSACCIONESComponent } from './Components/Contabilidad/Cont/ctransacciones/ctransacciones.component';
+import { ImpuestosComponent } from './Components/Contabilidad/Cont/impuestos/impuestos.component';
+import { LibroscontablesComponent } from './Components/Contabilidad/Cont/libroscontables/libroscontables.component';
+import { PlandecuentasComponent } from './Components/Contabilidad/Cont/plandecuentas/plandecuentas.component';
+import { RepFinancieroCComponent } from './Components/Contabilidad/Cont/rep-financiero-c/rep-financiero-c.component';
 
 
 const routes: Routes = [
@@ -65,6 +70,15 @@ const routes: Routes = [
   {path: 'estadocajachica',component:EstadocajachicaComponent},
   {path: 'egcajachica',component:EgrcajachicaComponent},
   {path: 'modalcierre',component:CajamodalComponent},
+  {path: 'ctransacciones',component:CTRANSACCIONESComponent},
+  {path: 'cimpuestos',component:ImpuestosComponent},
+  {path: 'libroscontables',component:LibroscontablesComponent},
+  {path: 'plandecuentas',component:PlandecuentasComponent},
+  {path: 'crepfinanciero',component:RepFinancieroCComponent},
+
+
+
+
   {path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
