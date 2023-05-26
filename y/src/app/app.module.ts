@@ -83,6 +83,8 @@ import { CTRANSACCIONESComponent } from './Components/Contabilidad/Cont/ctransac
 import { LibroscontablesComponent } from './Components/Contabilidad/Cont/libroscontables/libroscontables.component';
 import { RepFinancieroCComponent } from './Components/Contabilidad/Cont/rep-financiero-c/rep-financiero-c.component';
 import { ImpuestosComponent } from './Components/Contabilidad/Cont/impuestos/impuestos.component';
+import { RegCuentaComponent } from './Components/Contabilidad/Cont/reg-cuenta/reg-cuenta.component';
+import { GuiacontabiliadComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiacontabiliad.component';
 
 
 
@@ -137,6 +139,8 @@ import { ImpuestosComponent } from './Components/Contabilidad/Cont/impuestos/imp
     LibroscontablesComponent,
     RepFinancieroCComponent,
     ImpuestosComponent,
+    RegCuentaComponent,
+    GuiacontabiliadComponent,
     
     
   ],

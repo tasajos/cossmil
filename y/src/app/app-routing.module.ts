@@ -36,6 +36,8 @@ import { ImpuestosComponent } from './Components/Contabilidad/Cont/impuestos/imp
 import { LibroscontablesComponent } from './Components/Contabilidad/Cont/libroscontables/libroscontables.component';
 import { PlandecuentasComponent } from './Components/Contabilidad/Cont/plandecuentas/plandecuentas.component';
 import { RepFinancieroCComponent } from './Components/Contabilidad/Cont/rep-financiero-c/rep-financiero-c.component';
+import { RegCuentaComponent } from './Components/Contabilidad/Cont/reg-cuenta/reg-cuenta.component';
+import { GuiacontabiliadComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiacontabiliad.component';
 
 
 const routes: Routes = [
@@ -75,6 +77,8 @@ const routes: Routes = [
   {path: 'libroscontables',component:LibroscontablesComponent},
   {path: 'plandecuentas',component:PlandecuentasComponent},
   {path: 'crepfinanciero',component:RepFinancieroCComponent},
+  {path: 'regcuentas',component:RegCuentaComponent},
+  {path: 'guiacontabilidad',component:GuiacontabiliadComponent},
 
 
 
