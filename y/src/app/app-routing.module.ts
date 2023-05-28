@@ -38,6 +38,12 @@ import { PlandecuentasComponent } from './Components/Contabilidad/Cont/plandecue
 import { RepFinancieroCComponent } from './Components/Contabilidad/Cont/rep-financiero-c/rep-financiero-c.component';
 import { RegCuentaComponent } from './Components/Contabilidad/Cont/reg-cuenta/reg-cuenta.component';
 import { GuiacontabiliadComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiacontabiliad.component';
+import { ActivoComponent } from './Components/Contabilidad/Cont/plandecuentas/activo/activo.component';
+import { PasivoComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/pasivo.component';
+import { PatrimonioComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/patrimonio.component';
+import { IngresosComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/ingresos.component';
+import { GastosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/gastos.component';
+
 
 
 const routes: Routes = [
@@ -79,6 +85,11 @@ const routes: Routes = [
   {path: 'crepfinanciero',component:RepFinancieroCComponent},
   {path: 'regcuentas',component:RegCuentaComponent},
   {path: 'guiacontabilidad',component:GuiacontabiliadComponent},
+  {path: 'pactivo',component:ActivoComponent},
+  {path: 'ppasivo',component:PasivoComponent},
+  {path: 'patrimonio',component:PatrimonioComponent},
+  {path: 'pingreso',component:IngresosComponent},
+  {path: 'pgastos',component:GastosComponent},
 
 
 

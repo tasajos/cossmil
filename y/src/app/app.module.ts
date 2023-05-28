@@ -85,6 +85,12 @@ import { RepFinancieroCComponent } from './Components/Contabilidad/Cont/rep-fina
 import { ImpuestosComponent } from './Components/Contabilidad/Cont/impuestos/impuestos.component';
 import { RegCuentaComponent } from './Components/Contabilidad/Cont/reg-cuenta/reg-cuenta.component';
 import { GuiacontabiliadComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiacontabiliad.component';
+import { ActivoComponent } from './Components/Contabilidad/Cont/plandecuentas/activo/activo.component';
+import { PasivoComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/pasivo.component';
+import { PatrimonioComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/patrimonio.component';
+import { IngresosComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/ingresos.component';
+import { GastosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/gastos.component';
+import { NavbarcontComponent } from './Components/Contabilidad/Cont/navbarcont/navbarcont.component';
 
 
 
@@ -141,6 +147,12 @@ import { GuiacontabiliadComponent } from './Components/Contabilidad/Cont/guiacon
     ImpuestosComponent,
     RegCuentaComponent,
     GuiacontabiliadComponent,
+    ActivoComponent,
+    PasivoComponent,
+    PatrimonioComponent,
+    IngresosComponent,
+    GastosComponent,
+    NavbarcontComponent,
     
     
   ],

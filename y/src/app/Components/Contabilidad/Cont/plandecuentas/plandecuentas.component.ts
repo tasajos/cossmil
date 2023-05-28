@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
-
+import { ContabiliadService } from '../../../../services/contabiliad.service'; 
+import { cuentacontabilidadInter } from '../../../../Interfaz/contabilidad'
 declare var bootstrap: any;
 
 @Component({
@@ -9,14 +10,25 @@ declare var bootstrap: any;
   templateUrl: './plandecuentas.component.html',
   styleUrls: ['./plandecuentas.component.css']
 })
-export class PlandecuentasComponent   implements AfterViewInit {
+export class PlandecuentasComponent  implements OnInit {
 
 
-  ngAfterViewInit() {
-    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-      target: '#list-example'
-    });
+  cuentas: cuentacontabilidadInter[] = [];
+
+  constructor(private contabilidadService: ContabiliadService) {}
+
+  ngOnInit() {
+    this.getCuentas();
   }
-  
 
+  getCuentas() {
+    this.contabilidadService.gettiposcuentas().subscribe(
+      (data) => {
+        this.cuentas = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
+}

@@ -20,11 +20,22 @@
 <br>
 <br>
 <br>
-<div class="card text-bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Tipo</div>
-  <div class="card-body">
-    <h5 class="card-title">Cuenta </h5>
-    <p class="card-text">id</p>
+<!--CARDS-->
+<div class="d-flex justify-content-between" style="margin-bottom: -10px; margin-right: -10px;">
+  <div *ngFor="let cuenta of cuentas" class="card text-bg-primary mb-3" style="flex-basis: calc(33.33% - 20px); margin-bottom: 10px; margin-right: 10px;">
+    <div class="card-header">{{ cuenta.tipo }}</div>
+    <div class="card-body">
+      <!--<h5 class="card-title">{{ cuenta.cuenta }}</h5>-->
+      <p class="card-text">{{ cuenta.id }}</p>
+    </div>
+    <!--IF para redireccionar a un site-->
+    <a *ngIf="cuenta.id === 1" class="stretched-link" routerLink="/pactivo"></a>
+    <a *ngIf="cuenta.id === 2" class="stretched-link" routerLink="/ppasivo"></a>
+    <a *ngIf="cuenta.id === 3" class="stretched-link" routerLink="/patrimonio"></a>
+    <a *ngIf="cuenta.id === 4" class="stretched-link" routerLink="/pingreso"></a>
+    <a *ngIf="cuenta.id === 5" class="stretched-link" routerLink="/pgastos"></a>
+
+
   </div>
 </div>
 
