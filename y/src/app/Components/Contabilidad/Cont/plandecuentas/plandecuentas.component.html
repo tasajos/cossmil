@@ -34,9 +34,23 @@
     <a *ngIf="cuenta.id === 3" class="stretched-link" routerLink="/patrimonio"></a>
     <a *ngIf="cuenta.id === 4" class="stretched-link" routerLink="/pingreso"></a>
     <a *ngIf="cuenta.id === 5" class="stretched-link" routerLink="/pgastos"></a>
+    <a *ngIf="cuenta.id === 6" class="stretched-link" routerLink="/coperacion"></a>
 
 
   </div>
 </div>
+
+<!--
+<ng-container *ngIf="(asyncTabs | async) === null">
+  Loading tabs...
+</ng-container>
+
+<mat-tab-group>
+  <mat-tab *ngFor="let tab of asyncTabs | async">
+    <ng-template mat-tab-label>{{tab.label}}</ng-template>
+    {{tab.content}}
+  </mat-tab>
+</mat-tab-group>
+-->
 
 </div>

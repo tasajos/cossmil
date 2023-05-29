@@ -1,0 +1,48 @@
+<br>
+<br>
+<h1 align="center">GUIA PLAN DE CUENTAS</h1>
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <!--<a class="nav-link active" aria-current="true" href="#">Activos</a>-->
+          <a class="nav-link link-style" aria-current="true" (click)="loadContent('activos')">Activos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pasivos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Patrimonio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cuentas de Distribucion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cuentas de Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Costo de Operacion</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <div *ngIf="activeTab !== 'activos'">
+        <h2 class="card-title">El plan de cuentas en Bolivia es una estructura contable que organiza y clasifica las cuentas utilizadas</h2>
+        <div class="custom-text-justify">
+          <p>1.- Identifica las necesidades de tu empresa: Antes de comenzar a crear el plan de cuentas, es importante comprender las características y actividades específicas de tu empresa. Considera los diferentes tipos de transacciones que realizarás y las categorías relevantes para tu industria.</p>
+          <p>2.- Clasifica las cuentas según su naturaleza: Organiza las cuentas en grupos principales según su naturaleza. Algunos grupos comunes en un plan de cuentas incluyen activos, pasivos, patrimonio, ingresos y gastos. Además, puedes agregar subcategorías dentro de cada grupo para una mayor especificidad.</p>
+        </div>
+      </div>
+      <div *ngIf="activeTab === 'activos'">
+        <!-- Contenido adicional para la pestaña "Activos" -->
+        <h2 class="card-title">El plan de Activos es una estructura contable que organiza y clasifica las cuentas utilizadas</h2>
+        <div class="custom-text-justify">
+          <p>1.- Identifica las necesidades de tu empresa: Antes de comenzar a crear el plan de cuentas, es importante comprender las características y actividades específicas de tu empresa. Considera los diferentes tipos de transacciones que realizarás y las categorías relevantes para tu industria.</p>
+          <p>2.- Clasifica las cuentas según su naturaleza: Organiza las cuentas en grupos principales según su naturaleza. Algunos grupos comunes en un plan de cuentas incluyen activos, pasivos, patrimonio, ingresos y gastos. Además, puedes agregar subcategorías dentro de cada grupo para una mayor especificidad.</p>
+        </div>
+      </div>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

@@ -91,6 +91,9 @@ import { PatrimonioComponent } from './Components/Contabilidad/Cont/plandecuenta
 import { IngresosComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/ingresos.component';
 import { GastosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/gastos.component';
 import { NavbarcontComponent } from './Components/Contabilidad/Cont/navbarcont/navbarcont.component';
+import { CcoperacionComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/ccoperacion.component';
+import { GuiaplancuentasComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiaplancuentas/guiaplancuentas.component';
+import { GuiaactivoComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiaactivo/guiaactivo.component';
 
 
 
@@ -153,6 +156,9 @@ import { NavbarcontComponent } from './Components/Contabilidad/Cont/navbarcont/n
     IngresosComponent,
     GastosComponent,
     NavbarcontComponent,
+    CcoperacionComponent,
+    GuiaplancuentasComponent,
+    GuiaactivoComponent,
     
     
   ],
@@ -185,7 +191,8 @@ import { NavbarcontComponent } from './Components/Contabilidad/Cont/navbarcont/n
     MatExpansionModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatDatepickerModule    
+    MatDatepickerModule
+     
     
   ],
   providers: [],

@@ -43,6 +43,8 @@ import { PasivoComponent } from './Components/Contabilidad/Cont/plandecuentas/pa
 import { PatrimonioComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/patrimonio.component';
 import { IngresosComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/ingresos.component';
 import { GastosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/gastos.component';
+import { CcoperacionComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/ccoperacion.component';
+import { GuiaactivoComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiaactivo/guiaactivo.component';
 
 
 
@@ -90,6 +92,8 @@ const routes: Routes = [
   {path: 'patrimonio',component:PatrimonioComponent},
   {path: 'pingreso',component:IngresosComponent},
   {path: 'pgastos',component:GastosComponent},
+  {path: 'coperacion',component:CcoperacionComponent},
+  {path: 'guiactivo',component:GuiaactivoComponent},
 
 
 
