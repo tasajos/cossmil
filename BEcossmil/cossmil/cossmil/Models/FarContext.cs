@@ -36,5 +36,8 @@ namespace cossmil.Models
 
         public DbSet<tiposcuentas> TiposCuentasCont { get; set; } //<clase> Nombre de la tabla
 
+
+        public DbSet<activoclase> Activocuenta { get; set; } //<clase> Nombre de la tabla
+
     }
 }

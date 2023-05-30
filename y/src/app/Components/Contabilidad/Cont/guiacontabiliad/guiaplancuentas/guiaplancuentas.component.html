@@ -10,24 +10,24 @@
           <a class="nav-link link-style" aria-current="true" (click)="loadContent('activos')">Activos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pasivos</a>
+          <a class="nav-link link-style" aria-current="true" (click)="loadContent('pasivos')">Pasivos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Patrimonio</a>
+          <a class="nav-link link-style" aria-current="true" (click)="loadContent('patrimonio')">Patrimonio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cuentas de Distribucion</a>
+          <a class="nav-link link-style" aria-current="true" (click)="loadContent('cuentasd')">Cuentas de Distribucion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cuentas de Productos</a>
+          <a class="nav-link link-style" aria-current="true" (click)="loadContent('cuentasp')">Cuentas de Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Costo de Operacion</a>
+          <a class="nav-link link-style" aria-current="true" (click)="loadContent('costoop')">Costo de Operacion</a>
         </li>
       </ul>
     </div>
     <div class="card-body">
-      <div *ngIf="activeTab !== 'activos'">
+      <div *ngIf="activeTab !== 'activos' && activeTab !== 'pasivos' && activeTab !== 'patrimonio' && activeTab !== 'cuentasd' && activeTab !== 'cuentasp' && activeTab !== 'costoop'">
         <h2 class="card-title">El plan de cuentas en Bolivia es una estructura contable que organiza y clasifica las cuentas utilizadas</h2>
         <div class="custom-text-justify">
           <p>1.- Identifica las necesidades de tu empresa: Antes de comenzar a crear el plan de cuentas, es importante comprender las características y actividades específicas de tu empresa. Considera los diferentes tipos de transacciones que realizarás y las categorías relevantes para tu industria.</p>
@@ -36,13 +36,98 @@
       </div>
       <div *ngIf="activeTab === 'activos'">
         <!-- Contenido adicional para la pestaña "Activos" -->
-        <h2 class="card-title">El plan de Activos es una estructura contable que organiza y clasifica las cuentas utilizadas</h2>
+        <h2 class="card-title">En un plan de cuentas, un activo representa los recursos económicos controlados por una empresa</h2>
         <div class="custom-text-justify">
-          <p>1.- Identifica las necesidades de tu empresa: Antes de comenzar a crear el plan de cuentas, es importante comprender las características y actividades específicas de tu empresa. Considera los diferentes tipos de transacciones que realizarás y las categorías relevantes para tu industria.</p>
-          <p>2.- Clasifica las cuentas según su naturaleza: Organiza las cuentas en grupos principales según su naturaleza. Algunos grupos comunes en un plan de cuentas incluyen activos, pasivos, patrimonio, ingresos y gastos. Además, puedes agregar subcategorías dentro de cada grupo para una mayor especificidad.</p>
+          <p>1.- <strong>Activos corrientes:</strong> Son los activos que se espera que se conviertan en efectivo o se consuman en un plazo de un año o dentro del ciclo normal de operaciones de la empresa. Ejemplos de activos corrientes incluyen efectivo, cuentas por cobrar, inventarios y activos financieros a corto plazo.</p>
+          <p>2.- <strong>Activos no corrientes o activos fijos:</strong> Son los activos de larga duración que no se espera que se conviertan en efectivo o se consuman en un corto plazo. Incluyen elementos como propiedades, planta y equipo, activos intangibles (como patentes y marcas registradas) y activos financieros a largo plazo.</p>
+          <p>3.- <strong>Activos financieros:</strong> Representan inversiones financieras realizadas por la empresa, como acciones, bonos, préstamos otorgados y depósitos a largo plazo.</p>
+          <p>4.- <strong>Activos intangibles:</strong> Son activos no físicos que poseen valor para la empresa, pero no se pueden tocar ni ver. Incluyen elementos como el fondo de comercio, derechos de autor, licencias y software.</p>
+          <p>5.- <strong>Activos diferidos:</strong> Son gastos pagados por adelantado que se convierten en activos debido a su valor a largo plazo. Ejemplos comunes son los gastos prepagados, como seguros pagados por adelantado o alquileres anticipados.</p>
+
         </div>
       </div>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+
+      <div *ngIf="activeTab === 'pasivos'">
+        <!-- Contenido adicional para la pestaña "Pasivos" -->
+        <h2 class="card-title"> Un pasivo representa las obligaciones financieras y deudas que una empresa tiene con terceros. Los pasivos son las fuentes de financiamiento de la empresa y representan las deudas que deben ser pagadas en el futuro</h2>
+        <div class="custom-text-justify">
+          <p>1.- <strong>Pasivos corrientes:</strong> Son las obligaciones y deudas que se espera que se paguen en un plazo de un año o dentro del ciclo normal de operaciones de la empresa</p>
+          <p>2.- <strong>Pasivos no corrientes:</strong> Son las obligaciones y deudas que tienen un plazo de vencimiento superior a un año o que no se espera que se liquiden en el corto plazo. Incluyen elementos como préstamos a largo plazo, hipotecas, bonos y obligaciones financieras a largo plazo.</p>
+          <p>3.- <strong>Pasivos contingentes:</strong> Representan obligaciones que dependen de eventos futuros inciertos. Estas obligaciones se registran en el balance como una nota aclaratoria.</p>
+          <p>4.- <strong>Pasivos acumulados:</strong> Son obligaciones y deudas que se han acumulado pero que aún no se han pagado o registrado en cuentas específicas.</p>
+          <p>5.- <strong>Pasivos financieros:</strong>  Representan las obligaciones financieras de la empresa, como préstamos bancarios, líneas de crédito y emisión de bonos.</p>
+
+        </div>
+      </div>
+
+      <div *ngIf="activeTab === 'patrimonio'">
+        <!-- Contenido adicional para la pestaña "Patrimonio" -->
+        <h2 class="card-title"> El patrimonio representa los recursos financieros de una empresa que pertenecen a los propietarios o accionistas. También se le conoce como el capital contable o el patrimonio neto.</h2>
+        <br>
+        <h4>El patrimonio es la diferencia entre los activos y los pasivos de una empresa y muestra el valor residual de la empresa una vez que se han pagado todas las obligaciones</h4>
+        <div class="custom-text-justify">
+          <p>1.- <strong>Capital social:</strong> Representa el capital aportado por los propietarios o accionistas de la empresa al inicio o a lo largo de su existencia. Es la inversión inicial que los propietarios realizan en la empresa.</p>
+          <p>2.- <strong>Resultados acumulados:</strong> Refleja las ganancias o pérdidas acumuladas de la empresa a lo largo del tiempo. Incluye los beneficios retenidos o las pérdidas acumuladas de ejercicios anteriores.</p>
+          <p>3.- <strong>Reservas:</strong> Son fondos separados del capital social y los resultados acumulados para propósitos específicos. Pueden incluir reservas legales, reservas estatutarias, reservas para contingencias o reservas voluntarias creadas por decisiones de la empresa.</p>
+          <p>4.- <strong>Ajustes de valor:</strong> Representan los cambios en el valor de los activos o pasivos de la empresa debido a revaluaciones, ajustes contables o cambios en los principios contables.</p>
+         
+
+        </div>
+      </div>
+
+
+      <div *ngIf="activeTab === 'cuentasd'">
+        <!-- Contenido adicional para la pestaña "Cuentas de Distribucion" -->
+        <h2 class="card-title"> En un plan de cuentas, una cuenta de distribución se utiliza para asignar o distribuir costos, ingresos o gastos a diferentes categorías o subcuentas..</h2>
+        <br>
+        <h4>La cuenta de distribución actúa como una cuenta puente o una cuenta de control que permite redistribuir los montos a otras cuentas en función de ciertos criterios o proporciones</h4>
+        <div class="custom-text-justify">
+          <p>1.- <strong>Cuenta de distribución de gastos:</strong> Se utiliza para desglosar los gastos generales en categorías más específicas. Por ejemplo, una empresa puede tener una cuenta de distribución de gastos para separar los gastos de nómina, suministros de oficina y gastos de viaje.</p>
+          <p>2.- <strong>Cuenta de distribución de ingresos:</strong> Se utiliza para desglosar los ingresos en diferentes categorías o fuentes. Por ejemplo, una empresa puede tener una cuenta de distribución de ingresos para clasificar los ingresos provenientes de distintos productos o servicios.</p>
+          <p>3.- <strong>Cuenta de distribución de costos:</strong> Se utiliza para asignar los costos a diferentes departamentos, proyectos o productos. </p>
+          <p>4.- <strong>Cuenta de distribución de impuestos:</strong> Se utiliza para desglosar los pagos de impuestos en diferentes categorías impositivas o jurisdicciones.</p>
+         
+
+        </div>
+      </div>
+
+      <div *ngIf="activeTab === 'cuentasp'">
+        <!-- Contenido adicional para la pestaña "Cuentas de Productos" -->
+        <h2 class="card-title"> En un plan de cuentas, una cuenta de productos se utiliza para registrar los ingresos generados por la venta de productos o servicios de una empresa.</h2>
+        <br>
+        <h4>Las cuentas de productos o ventas se utilizan para registrar los ingresos derivados de la venta de bienes o servicios, ya sea a clientes finales, distribuidores u otras empresas</h4>
+        <div class="custom-text-justify">
+          <p>1.- <strong>Cuenta de ventas de productos:</strong> Se utiliza para registrar los ingresos generados por la venta de productos físicos. Por ejemplo, una empresa de venta de ropa puede tener una cuenta de ventas de productos para registrar los ingresos obtenidos de la venta de prendas de vestir.</p>
+          <p>2.- <strong>Cuenta de ventas de servicios:</strong> se utiliza para registrar los ingresos generados por la prestación de servicios. Por ejemplo, una empresa de consultoría puede tener una cuenta de ventas de servicios para registrar los ingresos obtenidos por los servicios de consultoría prestados a sus clientes.</p>
+          <p>3.- <strong>Cuenta de ventas de software:</strong> Se utiliza para registrar los ingresos generados por la venta de software o licencias de software. Por ejemplo, una empresa de desarrollo de software puede tener una cuenta de ventas de software para registrar los ingresos obtenidos por la venta de sus productos de software.</p>
+          <p>4.- <strong>Cuenta de ventas de alimentos y bebidas:</strong> Se utiliza en el sector de la restauración para registrar los ingresos generados por la venta de alimentos y bebidas.</p>
+         
+
+        </div>
+      </div>
+
+      <div *ngIf="activeTab === 'costoop'">
+        <!-- Contenido adicional para la pestaña "Costo de Operacion" -->
+        <h2 class="card-title"> Un costo de operación representa los gastos incurridos en la operación diaria de una empresa.</h2>
+        <br>
+        <h4>Los costos de operación se registran en las cuentas de gastos en el estado de resultados de una empresa y son deducidos de los ingresos para determinar el resultado neto</h4>
+        <div class="custom-text-justify">
+          <p>1.- <strong>Costo de materiales:</strong> Incluye el costo de los materiales directos utilizados en la producción de bienes. Puede incluir materias primas, componentes, empaques y otros materiales necesarios para la fabricación.</p>
+          <p>2.- <strong>Costo de mano de obra:</strong>Representa el costo de la mano de obra directa involucrada en la producción de bienes o la prestación de servicios. Incluye salarios, beneficios y cargas sociales asociadas a los empleados directamente involucrados en la producción.</p>
+          <p>3.- <strong>Costo de servicios:</strong> Comprende los gastos relacionados con la adquisición de servicios externos necesarios para el funcionamiento del negocio. Puede incluir servicios profesionales, servicios de consultoría, servicios de mantenimiento y reparación, servicios de marketing, entre otros.</p>
+          <p>4.- <strong>Costo de alquiler y arrendamiento:</strong> Incluye los pagos realizados por el uso de instalaciones, equipos o activos en arrendamiento. Puede incluir el alquiler de locales comerciales, equipos de producción, vehículos y otros activos.</p>
+          <p>5.- <strong>Costo de energía y servicios públicos:</strong> Representa los gastos asociados con el consumo de energía eléctrica, agua, gas y otros servicios públicos necesarios para la operación del negocio.</p>
+          <p>6.- <strong>Costo de marketing y publicidad:</strong> Incluye los gastos relacionados con actividades de marketing y publicidad, como publicidad impresa, publicidad en línea, promociones, ferias comerciales y actividades de relaciones públicas.</p>
+         
+
+        </div>
+      </div>
+
+<br>
+<br>
+      <a href="#" class="btn btn-primary" routerLink="/guiacontabilidad" >volver</a>
     </div>
   </div>
 </div>
+<br>
+<br>
