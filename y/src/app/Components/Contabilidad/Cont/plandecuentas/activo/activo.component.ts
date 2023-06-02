@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {ContabiliadService} from 'src/app/services/contabiliad.service';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ContabiliadService } from 'src/app/services/contabiliad.service';
 import { HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-activo',
@@ -12,43 +12,51 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ActivoComponent implements OnInit {
 
+  formulario: FormGroup;
 
-  formulario:FormGroup;
-
-  constructor (private fb: FormBuilder, 
+  constructor(private fb: FormBuilder,
     private _snackBar: MatSnackBar,
-    private _rcontabilidadchicaService:ContabiliadService,
-    private aRoute: ActivatedRoute,
-    private router: Router,private http: HttpClient) {
+    private _rcontabilidadchicaService: ContabiliadService,
+    private http: HttpClient) {
 
     this.formulario = this.fb.group({
-      montoinicial: ['',Validators.required],
-      transacciones: ['',Validators.required],
-      fechai: [this.getFormattedDate(), Validators.required], // Autocompletar con la fecha actual
-      aprobaciones: ['',Validators.required],
-      comentario: ['',Validators.required],
-      
-      
-          
-      
-    })
+      nivel: ['', Validators.required],
+      nombrecuenta: ['', Validators.required],
+      cuentamayor: ['', Validators.required],
+    });
 
   }
 
-  registrarcuenta(){
-
+  registrarcuenta() {
+   //const nivelControl = this.formulario.get('nivel') as FormControl;
+    //const nivelSeleccionado = nivelControl.value;
+  
+    //if (nivelSeleccionado === '1') {
+      // Establecer cuentamayor en 0
+      //this.formulario.patchValue({ cuentamayor: 0 });
+    //}
   }
 
   ngOnInit(): void {
-    
-  }
 
-  getFormattedDate(): string {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = `${today.getMonth() + 1}`.padStart(2, '0');
-    const day = `${today.getDate()}`.padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    //logica del campo
+    this.formulario.get('nivel')?.valueChanges.subscribe(nivelSeleccionado => {
+      if (nivelSeleccionado === '1') {
+        // Establecer cuentamayor en 0
+        this.formulario.patchValue({ cuentamayor: 0 });
+      } else if (nivelSeleccionado === '2') {
+        this.formulario.patchValue({ cuentamayor: 1 });
+      } else if (nivelSeleccionado === '3') {
+        this.formulario.patchValue({ cuentamayor: 2 });
+      } else if (nivelSeleccionado === '4') {
+        this.formulario.patchValue({ cuentamayor: 3 });
+      } else if (nivelSeleccionado === '5') {
+        this.formulario.patchValue({ cuentamayor: 4 });
+      }
+      else if (nivelSeleccionado === '6') {
+        this.formulario.patchValue({ cuentamayor: 5 });
+      }
+    });
   }
 
 }
