@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cossmil.Models;
 
@@ -11,9 +12,10 @@ using cossmil.Models;
 namespace cossmil.Migrations
 {
     [DbContext(typeof(FarContext))]
-    partial class FarContextModelSnapshot : ModelSnapshot
+    [Migration("20230602185825_updateactivov")]
+    partial class updateactivov
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,13 +42,6 @@ namespace cossmil.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnum")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

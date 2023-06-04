@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
+import { ActivoInter } from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -15,6 +16,9 @@ export class ContabiliadService {
   //ENTORNO PARA LLAMAR
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/TiposCuentas/';
+  private Myapiurlac: string = 'api/ManejoCuentas/';
+  
+
 
 
 //Constructor para llamar
@@ -28,6 +32,14 @@ export class ContabiliadService {
   }
 
 
+  //
+//ingresar tabla activoscuenta
+
+postactivo  (activocuenta: ActivoInter): Observable<ActivoInter>{
+
+  return this.http.post<ActivoInter>(`${this.Myappurl}${this.Myapiurlac}`,activocuenta);
+  
+}
 
 
 }

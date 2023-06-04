@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContabiliadService } from 'src/app/services/contabiliad.service';
 import { HttpClient } from '@angular/common/http';
+import { ActivoInter } from 'src/app/Interfaz/contabilidad';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-activo',
@@ -17,7 +19,7 @@ export class ActivoComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private _snackBar: MatSnackBar,
     private _rcontabilidadchicaService: ContabiliadService,
-    private http: HttpClient) {
+    private router: Router,private http: HttpClient) {
 
     this.formulario = this.fb.group({
       nivel: ['', Validators.required],
@@ -28,13 +30,27 @@ export class ActivoComponent implements OnInit {
   }
 
   registrarcuenta() {
-   //const nivelControl = this.formulario.get('nivel') as FormControl;
-    //const nivelSeleccionado = nivelControl.value;
-  
-    //if (nivelSeleccionado === '1') {
-      // Establecer cuentamayor en 0
-      //this.formulario.patchValue({ cuentamayor: 0 });
-    //}
+    const rcactivo: ActivoInter = {
+      nivel: this.formulario.value.nivel,  
+      nombrecuenta: this.formulario.value.nombrecuenta,
+      cuentamayor: this.formulario.value.cuentamayor,
+           
+    };
+    console.log
+// Enviamos objeto al backend
+this._rcontabilidadchicaService.postactivo(rcactivo).subscribe(_data => {
+  this.mensajeExito('registrado');
+  location.reload();
+  this.router.navigate(['/pactivo']);
+})
+
+  }
+
+  mensajeExito(texto: string) {
+    this._snackBar.open(`El proceso fue realizado y ${texto} con exito`,'', {
+      duration: 2000,
+      horizontalPosition: 'right',
+    });
   }
 
   ngOnInit(): void {

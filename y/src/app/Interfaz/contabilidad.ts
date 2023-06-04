@@ -11,3 +11,12 @@ export interface registrarcuentacontabilidad {
         cuenta: string,
         tipo:string,
         }
+
+    
+        export interface ActivoInter {
+            // columna db 
+            id?: number,
+            nivel: number,
+            nombrecuenta:string,
+            cuentamayor:number,
+            }
