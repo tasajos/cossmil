@@ -41,5 +41,10 @@ postactivo  (activocuenta: ActivoInter): Observable<ActivoInter>{
   
 }
 
+getactivo(): Observable<ActivoInter[]> {
+     
+  return this.http.get<ActivoInter[]>(this.Myappurl+this.Myapiurlac);
+}
+
 
 }
