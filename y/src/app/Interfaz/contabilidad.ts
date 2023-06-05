@@ -19,4 +19,7 @@ export interface registrarcuentacontabilidad {
             nivel: number,
             nombrecuenta:string,
             cuentamayor:number,
+            activonivel:string,
+            totalnum:string,
+            numero:string,
             }

@@ -39,5 +39,7 @@ namespace cossmil.Models
 
         public DbSet<activoclase> Activocuenta { get; set; } //<clase> Nombre de la tabla
 
+
+        
     }
 }

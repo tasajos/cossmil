@@ -18,9 +18,6 @@ export class ContabiliadService {
   private Myapiurl: string = 'api/TiposCuentas/';
   private Myapiurlac: string = 'api/ManejoCuentas/';
   
-
-
-
 //Constructor para llamar
 
   constructor(private http: HttpClient) { }
@@ -45,6 +42,8 @@ getactivo(): Observable<ActivoInter[]> {
      
   return this.http.get<ActivoInter[]>(this.Myappurl+this.Myapiurlac);
 }
+
+
 
 
 }

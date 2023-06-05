@@ -95,6 +95,7 @@ import { CcoperacionComponent } from './Components/Contabilidad/Cont/plandecuent
 import { GuiaplancuentasComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiaplancuentas/guiaplancuentas.component';
 import { GuiaactivoComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiaactivo/guiaactivo.component';
 import { VeractivoComponent } from './Components/Contabilidad/Cont/plandecuentas/activo/veractivo/veractivo.component';
+import { NivelactivoComponent } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/nivelactivo.component';
 
 
 
@@ -162,6 +163,7 @@ import { VeractivoComponent } from './Components/Contabilidad/Cont/plandecuentas
     GuiaplancuentasComponent,
     GuiaactivoComponent,
     VeractivoComponent,
+    NivelactivoComponent,
     
     
     

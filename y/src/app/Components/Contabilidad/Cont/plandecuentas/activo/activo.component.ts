@@ -15,16 +15,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ActivoComponent implements OnInit {
 
   formulario: FormGroup;
+  activos: ActivoInter[] = [];
+
 
   constructor(private fb: FormBuilder,
     private _snackBar: MatSnackBar,
     private _rcontabilidadchicaService: ContabiliadService,
-    private router: Router,private http: HttpClient) {
+    private router: Router,private http: HttpClient,
+    private route: ActivatedRoute
+    ) {
 
     this.formulario = this.fb.group({
       nivel: ['', Validators.required],
       nombrecuenta: ['', Validators.required],
       cuentamayor: ['', Validators.required],
+      activonivel: ['', Validators.required],
+      numero: ['', Validators.required],
     });
 
   }
@@ -34,6 +40,9 @@ export class ActivoComponent implements OnInit {
       nivel: this.formulario.value.nivel,  
       nombrecuenta: this.formulario.value.nombrecuenta,
       cuentamayor: this.formulario.value.cuentamayor,
+      activonivel: this.formulario.value.activonivel,
+      totalnum: this.formulario.value.totalnum,
+      numero: this.formulario.value.numero,
            
     };
     console.log
@@ -73,6 +82,15 @@ this._rcontabilidadchicaService.postactivo(rcactivo).subscribe(_data => {
         this.formulario.patchValue({ cuentamayor: 5 });
       }
     });
-  }
+
+    this._rcontabilidadchicaService.getactivo().subscribe(
+      (activos: ActivoInter[]) => {
+        this.activos = activos;
+      },
+      (error) => {
+        console.error('Error al obtener los datos de getactivo():', error);
+      });
+    }
+  
 
 }
