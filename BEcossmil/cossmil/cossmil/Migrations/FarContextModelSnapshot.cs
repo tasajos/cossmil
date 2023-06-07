@@ -59,6 +59,80 @@ namespace cossmil.Migrations
                     b.ToTable("Activocuenta");
                 });
 
+            modelBuilder.Entity("cossmil.Models.activoclasen3", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("cuentamayor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("nivel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("nombrecuenta")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("numero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("totalnivel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("totalnum")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Activocuenta3");
+                });
+
+            modelBuilder.Entity("cossmil.Models.activoclasen4", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("cuentamayor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("nivel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("nombrecuenta")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("numero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("totalnivel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("totalnum")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Activocuenta4");
+                });
+
             modelBuilder.Entity("cossmil.Models.aperturacajachica", b =>
                 {
                     b.Property<int>("id")

@@ -1,4 +1,5 @@
-﻿using cossmil.Models;
+﻿using cossmil.Migrations;
+using cossmil.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +43,36 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpGet("3ernivel")]
+        public async Task<IActionResult> Get3ernivel()
+        {
+            try
+            {
+                var activocuentas = await _context.Activocuenta
+                    .Where(ac => ac.activonivel.StartsWith("1"))
+                    .Select(ac => new {
+                        ac.id,
+                        ac.nivel,
+                        ac.nombrecuenta,
+                        ac.cuentamayor,
+                        ac.FechaCreacion,
+                        ac.numero,
+                        ac.totalnum,
+                        ac.activonivel,
+                        
+                    })
+                    .Take(1000)
+                    .ToListAsync();
+
+                return Ok(activocuentas);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
         [HttpPost]
 
         public async Task<IActionResult> Post(activoclase Activocuenta)
@@ -59,6 +90,89 @@ namespace cossmil.Controllers
                 // Handle other errors
                 return BadRequest(ex.Message);
             }
+
+        }
+
+        [HttpPost("activoclasen3")]
+        public async Task<IActionResult> PostActivoclasen3(activoclasen3 Activocuenta3)
+        {
+            try
+            {
+                Activocuenta3.FechaCreacion = DateTime.Now;
+                _context.Add(Activocuenta3);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getactivon3a", new { Id = Activocuenta3.id }, Activocuenta3);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("activon3a")]
+        public async Task<IActionResult> Getactivon3a()
+        {
+            try
+            {
+                var listactivos = await _context.Activocuenta3.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+
+
+
+
+        [HttpPost("registraactmayor")]
+        public async Task<IActionResult> RegistraActMayor([FromBody] activoclase activocuenta)
+        {
+            try
+            {
+                // Realizar las operaciones necesarias para registrar los valores en actmayor
+                activocuenta.nombrecuenta = $"{activocuenta.numero} - {activocuenta.numero} - {activocuenta.nombrecuenta}";
+
+                activocuenta.FechaCreacion = DateTime.Now;
+                _context.Add(activocuenta);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("Get", new { Id = activocuenta.id }, activocuenta);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+        [HttpGet("activon3nivel")]
+        public async Task<IActionResult> Getactivon3nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Activocuenta3.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
 
         }
 

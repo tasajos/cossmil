@@ -45,6 +45,10 @@ import { IngresosComponent } from './Components/Contabilidad/Cont/plandecuentas/
 import { GastosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/gastos.component';
 import { CcoperacionComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/ccoperacion.component';
 import { GuiaactivoComponent } from './Components/Contabilidad/Cont/guiacontabiliad/guiaactivo/guiaactivo.component';
+import { N3Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n3/n3.component';
+import { N4Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n4/n4.component';
+import { N5Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n5/n5.component';
+import { N6Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n6/n6.component';
 
 
 
@@ -94,6 +98,10 @@ const routes: Routes = [
   {path: 'pgastos',component:GastosComponent},
   {path: 'coperacion',component:CcoperacionComponent},
   {path: 'guiactivo',component:GuiaactivoComponent},
+  {path: 'pactivon3',component:N3Component},
+  {path: 'pactivon4',component:N4Component},
+  {path: 'pactivon5',component:N5Component},
+  {path: 'pactivon6',component:N6Component},
 
 
 

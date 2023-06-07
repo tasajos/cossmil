@@ -43,6 +43,7 @@ export class ActivoComponent implements OnInit {
       activonivel: this.formulario.value.activonivel,
       totalnum: this.formulario.value.totalnum,
       numero: this.formulario.value.numero,
+      activoniveln2: this.formulario.value.activonivel,
            
     };
     console.log

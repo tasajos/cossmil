@@ -20,6 +20,20 @@ export interface registrarcuentacontabilidad {
             nombrecuenta:string,
             cuentamayor:number,
             activonivel:string,
+            activoniveln2:string,
             totalnum:string,
             numero:string,
+            
             }
+
+            export interface ActivoIntern3 {
+                // columna db 
+                id?: number,
+                nivel: number,
+                nombrecuenta:string,
+                cuentamayor:number,
+                totalnum:string,
+                numero:string,
+                
+                
+                }

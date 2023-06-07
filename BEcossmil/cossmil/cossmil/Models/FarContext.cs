@@ -34,12 +34,15 @@ namespace cossmil.Models
 
         public DbSet<CierreCajaChica> CierreCChica { get; set; } //<clase> Nombre de la tabla
 
-        public DbSet<tiposcuentas> TiposCuentasCont { get; set; } //<clase> Nombre de la tabla
+        public DbSet<tiposcuentas> TiposCuentasCont { get; set; } //<clase> Nombre de la tabla n1
 
 
-        public DbSet<activoclase> Activocuenta { get; set; } //<clase> Nombre de la tabla
+        public DbSet<activoclase> Activocuenta { get; set; } //<clase> Nombre de la tabla n2
+
+        public DbSet<activoclasen3> Activocuenta3 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<activoclasen4> Activocuenta4 { get; set; } //<clase> Nombre de la tabla
 
 
-        
     }
 }

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
-import { ActivoInter } from '../Interfaz/contabilidad';
+import { ActivoInter,ActivoIntern3 } from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -17,6 +17,9 @@ export class ContabiliadService {
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/TiposCuentas/';
   private Myapiurlac: string = 'api/ManejoCuentas/';
+  private Myapiurln3: string = 'api/ManejoCuentas/3ernivel';
+  private Myapiurlp3: string = 'api/ManejoCuentas/activoclasen3';
+  private Myapiurlan3: string = 'api/ManejoCuentas/activon3nivel';
   
 //Constructor para llamar
 
@@ -43,7 +46,20 @@ getactivo(): Observable<ActivoInter[]> {
   return this.http.get<ActivoInter[]>(this.Myappurl+this.Myapiurlac);
 }
 
+getactivon3(): Observable<ActivoInter[]> {
+     
+  return this.http.get<ActivoInter[]>(this.Myappurl+this.Myapiurln3);
+}
 
 
+postactivon3  (activocuentas: ActivoIntern3): Observable<ActivoIntern3>{
 
+  return this.http.post<ActivoIntern3>(`${this.Myappurl}${this.Myapiurlp3}`,activocuentas);
+  
+}
+
+getactivon3a(): Observable<ActivoIntern3[]> {
+     
+  return this.http.get<ActivoIntern3[]>(this.Myappurl+this.Myapiurlan3);
+}
 }
