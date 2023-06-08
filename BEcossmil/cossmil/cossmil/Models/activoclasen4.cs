@@ -14,7 +14,7 @@
 
         public string totalnivel
         {
-            get { return $"{totalnum}.{numero} {nombrecuenta}"; }
+            get { return $"{totalnum}.{numero}"; }
             set { }
         }
 

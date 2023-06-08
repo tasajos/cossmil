@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContabiliadService } from 'src/app/services/contabiliad.service';
 import { HttpClient } from '@angular/common/http';
-import { ActivoIntern3,ActivoInter } from 'src/app/Interfaz/contabilidad';
+import { ActivoIntern3,ActivoInter,ActivoIntern4 } from 'src/app/Interfaz/contabilidad';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -35,7 +35,7 @@ export class N4Component implements OnInit {
 
   registrarcuenta() {
 
-     const rcactivo: ActivoIntern3 = {
+     const rcactivo: ActivoIntern4 = {
       nivel: this.formulario.value.nivel,
       nombrecuenta: this.formulario.value.nombrecuenta,
       cuentamayor: this.formulario.value.cuentamayor,
@@ -45,7 +45,7 @@ export class N4Component implements OnInit {
     };
 
     // Enviamos objeto al backend
-    this._rcontabilidadchicaService.postactivon3(rcactivo).subscribe(_data => {
+    this._rcontabilidadchicaService.postactivon4(rcactivo).subscribe(_data => {
       this.mensajeExito('registrado');
       location.reload();
       this.router.navigate(['/pactivo']);
