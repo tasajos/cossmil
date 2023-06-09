@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
-import { ActivoInter,ActivoIntern3,ActivoIntern4 } from '../Interfaz/contabilidad';
+import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5 } from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -21,6 +21,9 @@ export class ContabiliadService {
   private Myapiurlp3: string = 'api/ManejoCuentas/activoclasen3';
   private Myapiurlan3: string = 'api/ManejoCuentas/activon3nivel';
   private Myapiurlan4: string = 'api/ManejoCuentas/activoclasen4';
+  private Myapiurlac4: string = 'api/ManejoCuentas/activon4nivel';
+  private Myapiurlan5: string = 'api/ManejoCuentas/activoclasen5';
+  private Myapiurlac5: string = 'api/ManejoCuentas/activon5nivel';
   
 //Constructor para llamar
 
@@ -68,6 +71,22 @@ postactivon4  (activocuentas: ActivoIntern4): Observable<ActivoIntern4>{
 
   return this.http.post<ActivoIntern4>(`${this.Myappurl}${this.Myapiurlan4}`,activocuentas);
   
+}
+
+getactivon4a(): Observable<ActivoIntern4[]> {
+     
+  return this.http.get<ActivoIntern4[]>(this.Myappurl+this.Myapiurlac4);
+}
+
+postactivon5  (activocuentas: ActivoIntern5): Observable<ActivoIntern5>{
+
+  return this.http.post<ActivoIntern5>(`${this.Myappurl}${this.Myapiurlan5}`,activocuentas);
+  
+}
+
+getactivon5a(): Observable<ActivoIntern5[]> {
+     
+  return this.http.get<ActivoIntern5[]>(this.Myappurl+this.Myapiurlac5);
 }
 
 }

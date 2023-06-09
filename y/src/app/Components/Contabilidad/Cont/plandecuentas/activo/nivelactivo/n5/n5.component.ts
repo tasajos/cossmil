@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContabiliadService } from 'src/app/services/contabiliad.service';
 import { HttpClient } from '@angular/common/http';
-import { ActivoIntern3,ActivoInter,ActivoIntern4 } from 'src/app/Interfaz/contabilidad';
+import { ActivoIntern4, ActivoIntern5 } from 'src/app/Interfaz/contabilidad';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -13,8 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class N5Component implements OnInit {
   formulario: FormGroup;
-  activos: ActivoIntern3[] = [];
-  filteredActivos: ActivoIntern3[] = []; // Lista filtrada de activos
+  activos: ActivoIntern4[] = [];
+  filteredActivos: ActivoIntern4[] = []; // Lista filtrada de activos
 
   constructor(
     private fb: FormBuilder,
@@ -35,7 +35,7 @@ export class N5Component implements OnInit {
 
   registrarcuenta() {
 
-     const rcactivo: ActivoIntern4 = {
+     const rcactivo: ActivoIntern5 = {
       nivel: this.formulario.value.nivel,
       nombrecuenta: this.formulario.value.nombrecuenta,
       cuentamayor: this.formulario.value.cuentamayor,
@@ -45,7 +45,7 @@ export class N5Component implements OnInit {
     };
 
     // Enviamos objeto al backend
-    this._rcontabilidadchicaService.postactivon4(rcactivo).subscribe(_data => {
+    this._rcontabilidadchicaService.postactivon5(rcactivo).subscribe(_data => {
       this.mensajeExito('registrado');
       location.reload();
       this.router.navigate(['/pactivo']);
@@ -64,10 +64,7 @@ export class N5Component implements OnInit {
    this.formulario.get('nivel')?.valueChanges.subscribe(nivelSeleccionado => {
     let cuentamayor = 0;
     switch (nivelSeleccionado) {
-      case '4':
-        cuentamayor = 3;
-        break;
-      case '5':
+           case '5':
         cuentamayor = 4;
         break;
       case '6':
@@ -84,8 +81,8 @@ export class N5Component implements OnInit {
     }
   });
 
-  this._rcontabilidadchicaService.getactivon3a().subscribe(
-    (activos: ActivoIntern3[]) => {
+  this._rcontabilidadchicaService.getactivon4a().subscribe(
+    (activos: ActivoIntern4[]) => {
       this.activos = activos;
       this.filteredActivos = activos; // Inicialmente, mostrar todos los activos
     },
