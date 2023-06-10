@@ -1,5 +1,6 @@
 ﻿using cossmil.Migrations;
 using cossmil.Models;
+using cossmil.Models.Pcuenta.Pasivo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -287,6 +288,81 @@ namespace cossmil.Controllers
             }
 
 
+        }
+
+
+        [HttpGet("pasivon2nivel")]
+        public async Task<IActionResult> Getpasivon2nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Pasivocuentan2.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("pasivon2nivelp")]
+        public async Task<IActionResult> Postpasivon2nivelp(pasivoclasen2 Pasivocuentan2)
+        {
+            try
+            {
+                Pasivocuentan2.FechaCreacion = DateTime.Now;
+                _context.Add(Pasivocuentan2);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpasivon2nivel", new { Id = Pasivocuentan2.id }, Pasivocuentan2);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        [HttpGet("pasivon3nivel")]
+        public async Task<IActionResult> Getpasivon3nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Pasivocuentan3.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("pasivon3nivelp")]
+        public async Task<IActionResult> Postpasivon3nivelp(pasivoclasen3 Pasivocuentan3)
+        {
+            try
+            {
+                Pasivocuentan3.FechaCreacion = DateTime.Now;
+                _context.Add(Pasivocuentan3);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpasivon3nivel", new { Id = Pasivocuentan3.id }, Pasivocuentan3);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
     }

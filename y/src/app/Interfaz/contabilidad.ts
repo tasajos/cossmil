@@ -71,3 +71,31 @@ export interface registrarcuentacontabilidad {
                         numero:string,
                         
                         }
+
+    //PASIVO INTER
+
+    export interface PasivoIntern2 {
+        // columna db 
+        id?: number,
+        nivel: number,
+        nombrecuenta:string,
+        cuentamayor:number,
+        activonivel:string,
+        activoniveln2:string,
+        totalnum:string,
+        numero:string,
+        
+        }
+
+
+        export interface PasivoIntern3 {
+            // columna db 
+            id?: number,
+            nivel: number,
+            nombrecuenta:string,
+            cuentamayor:number,
+            totalnum:string,
+            numero:string,
+            
+            
+            }

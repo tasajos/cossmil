@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
-import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6 } from '../Interfaz/contabilidad';
+import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6,
+         PasivoIntern2,PasivoIntern3 } from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -16,6 +17,8 @@ export class ContabiliadService {
   //ENTORNO PARA LLAMAR
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/TiposCuentas/';
+
+  //  entorno para llamar activos
   private Myapiurlac: string = 'api/ManejoCuentas/';
   private Myapiurln3: string = 'api/ManejoCuentas/3ernivel';
   private Myapiurlp3: string = 'api/ManejoCuentas/activoclasen3';
@@ -25,6 +28,17 @@ export class ContabiliadService {
   private Myapiurlan5: string = 'api/ManejoCuentas/activoclasen5';
   private Myapiurlac5: string = 'api/ManejoCuentas/activon5nivel';
   private Myapiurlan6: string = 'api/ManejoCuentas/activoclasen6';
+
+  //entorno para llamar pasivos
+
+  private Myapiurlg2: string = 'api/ManejoCuentas/pasivon2nivel'; //get nivel2
+  private Myapiurlp2: string = 'api/ManejoCuentas/pasivon2nivelp'; //post nivel2
+  private Myapiurlg3: string = 'api/ManejoCuentas/pasivon3nivel'; //get nivel3
+  private Myapiurlpp3: string = 'api/ManejoCuentas/pasivon3nivelp'; //get nivel3
+
+
+
+ 
 
 //Constructor para llamar
 
@@ -95,5 +109,34 @@ postactivon6  (activocuentas: ActivoIntern6): Observable<ActivoIntern6>{
   return this.http.post<ActivoIntern6>(`${this.Myappurl}${this.Myapiurlan6}`,activocuentas);
   
 }
+
+
+//PASIVOS
+
+getpasivon2(): Observable<PasivoIntern2[]> {
+     
+  return this.http.get<PasivoIntern2[]>(this.Myappurl+this.Myapiurlg2);
+}
+
+
+postpasivon2  (pasivocuentas: PasivoIntern2): Observable<PasivoIntern2>{
+
+  return this.http.post<PasivoIntern2>(`${this.Myappurl}${this.Myapiurlp2}`,pasivocuentas);
+  
+}
+
+
+getpasivon3(): Observable<PasivoIntern3[]> {
+     
+  return this.http.get<PasivoIntern3[]>(this.Myappurl+this.Myapiurlg3);
+}
+
+
+postpasivon3  (activocuentas: PasivoIntern3): Observable<PasivoIntern3>{
+
+  return this.http.post<PasivoIntern3>(`${this.Myappurl}${this.Myapiurlpp3}`,activocuentas);
+  
+}
+
 
 }

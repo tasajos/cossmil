@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using cossmil.Models.Pcuenta.Pasivo;
+using Microsoft.EntityFrameworkCore;
 
 namespace cossmil.Models
 {
@@ -46,6 +47,16 @@ namespace cossmil.Models
         public DbSet<activoclasen5> Activocuenta5 { get; set; } //<clase> Nombre de la tabla
 
         public DbSet<activoclasen6> Activocuenta6 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<pasivoclasen2> Pasivocuentan2 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<pasivoclasen3> Pasivocuentan3 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<pasivoclasen4> Pasivocuentan4 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<pasivoclasen5> Pasivocuentan5 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<pasivoclasen6> Pasivocuentan6 { get; set; } //<clase> Nombre de la tabla
 
 
     }
