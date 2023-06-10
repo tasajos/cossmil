@@ -253,5 +253,41 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpPost("activoclasen6")]
+        public async Task<IActionResult> PostActivoclasen6(activoclasen6 Activocuenta6)
+        {
+            try
+            {
+                Activocuenta6.FechaCreacion = DateTime.Now;
+                _context.Add(Activocuenta6);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getactivon6nivel", new { Id = Activocuenta6.id }, Activocuenta6);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("activon6nivel")]
+        public async Task<IActionResult> Getactivon6nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Activocuenta6.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
     }
 }

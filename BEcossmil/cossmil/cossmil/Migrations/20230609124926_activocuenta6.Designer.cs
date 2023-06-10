@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cossmil.Models;
 
@@ -11,9 +12,10 @@ using cossmil.Models;
 namespace cossmil.Migrations
 {
     [DbContext(typeof(FarContext))]
-    partial class FarContextModelSnapshot : ModelSnapshot
+    [Migration("20230609124926_activocuenta6")]
+    partial class activocuenta6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,43 +170,6 @@ namespace cossmil.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Activocuenta5");
-                });
-
-            modelBuilder.Entity("cossmil.Models.activoclasen6", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("cuentamayor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("nivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("totalnum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Activocuenta6");
                 });
 
             modelBuilder.Entity("cossmil.Models.aperturacajachica", b =>

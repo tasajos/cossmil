@@ -101,6 +101,12 @@ import { N3Component } from './Components/Contabilidad/Cont/plandecuentas/activo
 import { N4Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n4/n4.component';
 import { N5Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n5/n5.component';
 import { N6Component } from './Components/Contabilidad/Cont/plandecuentas/activo/nivelactivo/n6/n6.component';
+import { NavbarpasivoComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/navbarpasivo/navbarpasivo.component';
+import { N2pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n2p/n2p.component';
+import { N3pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n3p/n3p.component';
+import { N4pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n4p/n4p.component';
+import { N5pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n5p/n5p.component';
+import { N6pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n6p/n6p.component';
 
 
 
@@ -174,6 +180,12 @@ import { N6Component } from './Components/Contabilidad/Cont/plandecuentas/activo
     N4Component,
     N5Component,
     N6Component,
+    NavbarpasivoComponent,
+    N2pComponent,
+    N3pComponent,
+    N4pComponent,
+    N5pComponent,
+    N6pComponent,
     
     
     
