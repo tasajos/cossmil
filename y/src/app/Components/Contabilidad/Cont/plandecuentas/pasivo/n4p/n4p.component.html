@@ -1,1 +1,97 @@
-<p>n4p works!</p>
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarcontabilidad></app-navbarcontabilidad>
+<app-navbarpasivo></app-navbarpasivo>
+br>
+<br>
+<h1 align="center">REGISTRAR PASIVO - N4</h1>
+
+<div class="container">
+    
+    <div class="container text-center mt-4">
+      <form [formGroup]="formulario" (ngSubmit)="registrarcuenta()">
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Nivel:</label>
+              <select class="form-select" id="nivel" formControlName="nivel" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <option selected>Elegir...</option>
+                <!--<option value="2">2</option>-->
+                <option value="4">4</option>
+                <!--<option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>-->
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Activo:</label>
+                         
+              <select class="form-select" id="totalnum" formControlName="totalnum" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <option selected>Elegir...</option>
+                
+                <!-- Usar *ngFor para iterar sobre los elementos de activos y generar las opciones -->
+                <!--<option *ngFor="let activo of activos" [value]="activo.nombrecuenta">{{ activo.nombrecuenta }} </option>-->
+                <!--<option *ngFor="let activo of activos" [value]="`${activo.totalnum}.${activo.numero}`">{{ activo.totalnum }}.{{ activo.numero }} {{ activo.nombrecuenta }}</option>-->
+                <option *ngFor="let activo of activos" [value]="activo.totalnum + '.' + activo.numero">{{ activo.totalnum }}.{{ activo.numero }} {{ activo.nombrecuenta }}</option>
+                <!--
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>-->
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre Cuenta:</span>
+                <input formControlName="nombrecuenta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cuenta Mayor:</span>
+                <input formControlName="cuentamayor" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
+              </div>
+            </div>
+  
+            <div class="col">
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Posicion:</label>
+                         
+                <select class="form-select" id="numero" formControlName="numero" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <option selected>Elegir...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              
+                  </select>
+           
+      </div>
+      </div>
+  
+          <div class="row mt-4">
+            <div class="col">
+              <button class="btn btn-primary btn-lg mt-3" type="submit" style="margin-left: 10px;">Registrar</button>
+              <button class="btn btn-warning btn-lg mt-3" type="button" routerLink="/plandecuentas" style="margin-left: 10px;">Volver</button>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <p></p>
+  <br>
+  <p></p>
+  
