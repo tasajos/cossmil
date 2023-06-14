@@ -406,6 +406,45 @@ namespace cossmil.Controllers
 
 
 
+        [HttpGet("pasivon5nivel")]
+        public async Task<IActionResult> Getpasivon5nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Pasivocuentan5.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+
+        [HttpPost("pasivon5nivelp")]
+        public async Task<IActionResult> Postpasivon5nivelp(pasivoclasen5 Pasivocuentan5)
+        {
+            try
+            {
+                Pasivocuentan5.FechaCreacion = DateTime.Now;
+                _context.Add(Pasivocuentan5);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpasivon4nivel", new { Id = Pasivocuentan5.id }, Pasivocuentan5);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
 
     }
 }
