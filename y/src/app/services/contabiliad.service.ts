@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
 import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6,
-         PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5 } from '../Interfaz/contabilidad';
+         PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5,PasivoIntern6 } from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -39,6 +39,8 @@ export class ContabiliadService {
   private Myapiurlpp4: string = 'api/ManejoCuentas/pasivon4nivelp'; //get nivel4
   private Myapiurlg5: string = 'api/ManejoCuentas/pasivon5nivel'; //get nivel5
   private Myapiurlpp5: string = 'api/ManejoCuentas/pasivon5nivelp'; //get nivel5
+  private Myapiurlg6: string = 'api/ManejoCuentas/pasivon6nivel'; //get nivel6
+  private Myapiurlpp6: string = 'api/ManejoCuentas/pasivon6nivelp'; //get nivel6
 
 
  
@@ -166,6 +168,17 @@ postpasivon5  (activocuentas: PasivoIntern5): Observable<PasivoIntern5>{
   
 }
 
+
+getpasivon6(): Observable<PasivoIntern6[]> {
+     
+  return this.http.get<PasivoIntern6[]>(this.Myappurl+this.Myapiurlg6);
+}
+
+postpasivon6  (activocuentas: PasivoIntern6): Observable<PasivoIntern6>{
+
+  return this.http.post<PasivoIntern6>(`${this.Myappurl}${this.Myapiurlpp6}`,activocuentas);
+  
+}
 
 
 }
