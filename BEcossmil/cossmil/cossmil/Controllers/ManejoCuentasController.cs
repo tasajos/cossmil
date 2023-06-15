@@ -555,7 +555,7 @@ namespace cossmil.Controllers
                 Patrimonion3.FechaCreacion = DateTime.Now;
                 _context.Add(Patrimonion3);
                 await _context.SaveChangesAsync();
-                return CreatedAtAction("Getpasivon2nivel", new { Id = Patrimonion3.id }, Patrimonion3);
+                return CreatedAtAction("Getpatrimonio3nivel", new { Id = Patrimonion3.id }, Patrimonion3);
             }
             catch (Exception ex)
             {
@@ -564,6 +564,44 @@ namespace cossmil.Controllers
         }
 
 
+
+
+
+        [HttpGet("patrimonio4nivel")]
+        public async Task<IActionResult> Getpatrimonio4nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Patrimonion4.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("patrimonio4nivelp")]
+        public async Task<IActionResult> Postpatrimonio4nivelp(patrimonioclasen4 Patrimonion4)
+        {
+            try
+            {
+                Patrimonion4.FechaCreacion = DateTime.Now;
+                _context.Add(Patrimonion4);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpatrimonio4nivel", new { Id = Patrimonion4.id }, Patrimonion4);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
 
