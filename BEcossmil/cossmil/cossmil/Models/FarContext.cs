@@ -1,4 +1,5 @@
 ﻿using cossmil.Models.Pcuenta.Pasivo;
+using cossmil.Models.Pcuenta.Patrimonio;
 using Microsoft.EntityFrameworkCore;
 
 namespace cossmil.Models
@@ -37,6 +38,7 @@ namespace cossmil.Models
 
         public DbSet<tiposcuentas> TiposCuentasCont { get; set; } //<clase> Nombre de la tabla n1
 
+        //Activo
 
         public DbSet<activoclase> Activocuenta { get; set; } //<clase> Nombre de la tabla n2
 
@@ -48,6 +50,10 @@ namespace cossmil.Models
 
         public DbSet<activoclasen6> Activocuenta6 { get; set; } //<clase> Nombre de la tabla
 
+
+
+        //Pasivo
+
         public DbSet<pasivoclasen2> Pasivocuentan2 { get; set; } //<clase> Nombre de la tabla
 
         public DbSet<pasivoclasen3> Pasivocuentan3 { get; set; } //<clase> Nombre de la tabla
@@ -57,6 +63,17 @@ namespace cossmil.Models
         public DbSet<pasivoclasen5> Pasivocuentan5 { get; set; } //<clase> Nombre de la tabla
 
         public DbSet<pasivoclasen6> Pasivocuentan6 { get; set; } //<clase> Nombre de la tabla
+
+
+        //Patrimonio
+
+        public DbSet<patrimonioclasen2> Patrimonion2 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<patrimonioclasen3> Patrimonion3 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<patrimonioclasen4> Patrimonion4 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<patrimonioclasen5> Patrimonion5 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<patrimonioclasen6> Patrimonion6 { get; set; } //<clase> Nombre de la tabla
+
 
 
     }

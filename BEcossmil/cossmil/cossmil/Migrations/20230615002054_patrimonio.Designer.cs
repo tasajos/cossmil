@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cossmil.Models;
 
@@ -11,9 +12,10 @@ using cossmil.Models;
 namespace cossmil.Migrations
 {
     [DbContext(typeof(FarContext))]
-    partial class FarContextModelSnapshot : ModelSnapshot
+    [Migration("20230615002054_patrimonio")]
+    partial class patrimonio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -643,191 +645,6 @@ namespace cossmil.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Pasivocuentan6");
-                });
-
-            modelBuilder.Entity("cossmil.Models.Pcuenta.Patrimonio.patrimonioclasen2", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("activonivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("cuentamayor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("nivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Patrimonion2");
-                });
-
-            modelBuilder.Entity("cossmil.Models.Pcuenta.Patrimonio.patrimonioclasen3", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("cuentamayor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("nivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("totalnum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Patrimonion3");
-                });
-
-            modelBuilder.Entity("cossmil.Models.Pcuenta.Patrimonio.patrimonioclasen4", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("cuentamayor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("nivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("totalnum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Patrimonion4");
-                });
-
-            modelBuilder.Entity("cossmil.Models.Pcuenta.Patrimonio.patrimonioclasen5", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("cuentamayor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("nivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("totalnum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Patrimonion5");
-                });
-
-            modelBuilder.Entity("cossmil.Models.Pcuenta.Patrimonio.patrimonioclasen6", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<DateTime>("FechaCreacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("cuentamayor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("nivel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nombrecuenta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("numero")
-                        .HasColumnType("int");
-
-                    b.Property<string>("totalnivel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("totalnum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Patrimonion6");
                 });
 
             modelBuilder.Entity("cossmil.Models.PPacientesT", b =>
