@@ -54,6 +54,11 @@ import { N3pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasiv
 import { N4pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n4p/n4p.component';
 import { N5pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n5p/n5p.component';
 import { N6pComponent } from './Components/Contabilidad/Cont/plandecuentas/pasivo/n6p/n6p.component';
+import { N2patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n2pat/n2pat.component';
+import { N3patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n3pat/n3pat.component';
+import { N4patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n4pat/n4pat.component';
+import { N5patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n5pat/n5pat.component';
+import { N6patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n6pat/n6pat.component';
 
 
 
@@ -114,6 +119,11 @@ const routes: Routes = [
   {path: 'ppasivo4',component:N4pComponent},
   {path: 'ppasivo5',component:N5pComponent},
   {path: 'ppasivo6',component:N6pComponent},
+  {path: 'ppatrimonio3',component:N3patComponent},
+  {path: 'ppatrimonio4',component:N4patComponent},
+  {path: 'ppatrimonio5',component:N5patComponent},
+  {path: 'ppatrimonio6',component:N6patComponent},
+
   
   
 
