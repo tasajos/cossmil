@@ -5,7 +5,8 @@ import { environment } from 'src/environments/environment';
 import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
 import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6,
-         PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5,PasivoIntern6 } from '../Interfaz/contabilidad';
+         PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5,PasivoIntern6,
+         PatrimonioIntern2, PatrimonioIntern3,PatrimonioIntern4,PatrimonioIntern5,PatrimonioIntern6} from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -43,7 +44,18 @@ export class ContabiliadService {
   private Myapiurlpp6: string = 'api/ManejoCuentas/pasivon6nivelp'; //get nivel6
 
 
+   //entorno para llamar Patrimonio
+
+   private Myapiurlpatg2: string = 'api/ManejoCuentas/patrimonio2nivel'; //get nivel 2
+   private Myapiurlpatp2: string = 'api/ManejoCuentas/patrimonio2nivelp'; //post nivel 2
+
+   private Myapiurlpatg3: string = 'api/ManejoCuentas/patrimonio3nivel'; //get nivel 3
+   private Myapiurlpatp3: string = 'api/ManejoCuentas/patrimonio3nivelp'; //post nivel 3
+
  
+
+
+
 
 //Constructor para llamar
 
@@ -179,6 +191,32 @@ postpasivon6  (activocuentas: PasivoIntern6): Observable<PasivoIntern6>{
   return this.http.post<PasivoIntern6>(`${this.Myappurl}${this.Myapiurlpp6}`,activocuentas);
   
 }
+
+//PATRIMONIO
+
+getpatrimonion2(): Observable<PatrimonioIntern2[]> {
+     
+  return this.http.get<PatrimonioIntern2[]>(this.Myappurl+this.Myapiurlpatg2);
+}
+
+postpatrimonion2  (patrimoniocuentas: PatrimonioIntern2): Observable<PatrimonioIntern2>{
+
+  return this.http.post<PatrimonioIntern2>(`${this.Myappurl}${this.Myapiurlpatp2}`,patrimoniocuentas);
+  
+}
+
+
+getpatrimonion3(): Observable<PatrimonioIntern3[]> {
+     
+  return this.http.get<PatrimonioIntern3[]>(this.Myappurl+this.Myapiurlpatg3);
+}
+
+postpatrimonion3  (patrimoniocuentas: PatrimonioIntern3): Observable<PatrimonioIntern3>{
+
+  return this.http.post<PatrimonioIntern3>(`${this.Myappurl}${this.Myapiurlpatp3}`,patrimoniocuentas);
+  
+}
+
 
 
 }

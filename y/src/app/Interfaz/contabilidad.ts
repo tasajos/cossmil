@@ -135,3 +135,65 @@ export interface registrarcuentacontabilidad {
                         
                         
                         }
+    
+export interface PatrimonioIntern2 {
+// columna db 
+id?: number,
+nivel: number,
+nombrecuenta:string,
+cuentamayor:number,
+activonivel:string,
+activoniveln2:string,
+totalnum:string,
+numero:string,
+                 
+}
+
+
+export interface PatrimonioIntern3 {
+    // columna db 
+    id?: number,
+    nivel: number,
+    nombrecuenta:string,
+    cuentamayor:number,
+    totalnum:string,
+    numero:string,
+               
+    }
+
+    export interface PatrimonioIntern4 {
+        // columna db 
+        id?: number,
+        nivel: number,
+        nombrecuenta:string,
+        cuentamayor:number,
+        totalnum:string,
+        numero:string,
+        
+        
+        }
+
+
+        export interface PatrimonioIntern5 {
+            // columna db 
+            id?: number,
+            nivel: number,
+            nombrecuenta:string,
+            cuentamayor:number,
+            totalnum:string,
+            numero:string,
+            
+            
+            }
+
+            export interface PatrimonioIntern6 {
+                // columna db 
+                id?: number,
+                nivel: number,
+                nombrecuenta:string,
+                cuentamayor:number,
+                totalnum:string,
+                numero:string,
+                
+                
+                }

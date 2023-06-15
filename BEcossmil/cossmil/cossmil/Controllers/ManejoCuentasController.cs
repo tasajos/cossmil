@@ -1,6 +1,7 @@
 ﻿using cossmil.Migrations;
 using cossmil.Models;
 using cossmil.Models.Pcuenta.Pasivo;
+using cossmil.Models.Pcuenta.Patrimonio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -479,6 +480,91 @@ namespace cossmil.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+
+
+
+
+
+        [HttpGet("patrimonio2nivel")]
+        public async Task<IActionResult> Getpatrimonio2nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Patrimonion2.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("patrimonio2nivelp")]
+        public async Task<IActionResult> Postpatrimonio2nivelp(patrimonioclasen2 Patrimonion2)
+        {
+            try
+            {
+                Patrimonion2.FechaCreacion = DateTime.Now;
+                _context.Add(Patrimonion2);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpasivon2nivel", new { Id = Patrimonion2.id }, Patrimonion2);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+
+        [HttpGet("patrimonio3nivel")]
+        public async Task<IActionResult> Getpatrimonio3nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Patrimonion3.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("patrimonio3nivelp")]
+        public async Task<IActionResult> Postpatrimonio3nivelp(patrimonioclasen3 Patrimonion3)
+        {
+            try
+            {
+                Patrimonion3.FechaCreacion = DateTime.Now;
+                _context.Add(Patrimonion3);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpasivon2nivel", new { Id = Patrimonion3.id }, Patrimonion3);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
 
 
 
