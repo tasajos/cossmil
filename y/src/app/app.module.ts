@@ -113,6 +113,12 @@ import { N4patComponent } from './Components/Contabilidad/Cont/plandecuentas/pat
 import { N5patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n5pat/n5pat.component';
 import { N6patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n6pat/n6pat.component';
 import { NavbarpatrimonioComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/navbarpatrimonio/navbarpatrimonio.component';
+import { N2cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n2cd/n2cd.component';
+import { N3cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n3cd/n3cd.component';
+import { N4cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n4cd/n4cd.component';
+import { N5cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n5cd/n5cd.component';
+import { N6cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n6cd/n6cd.component';
+import { NavbarcuentasdistribucionComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/navbarcuentasdistribucion/navbarcuentasdistribucion.component';
 
 
 
@@ -198,6 +204,12 @@ import { NavbarpatrimonioComponent } from './Components/Contabilidad/Cont/plande
     N5patComponent,
     N6patComponent,
     NavbarpatrimonioComponent,
+    N2cdComponent,
+    N3cdComponent,
+    N4cdComponent,
+    N5cdComponent,
+    N6cdComponent,
+    NavbarcuentasdistribucionComponent,
     
     
     
