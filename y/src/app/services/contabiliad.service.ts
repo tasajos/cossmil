@@ -48,16 +48,18 @@ export class ContabiliadService {
 
    private Myapiurlpatg2: string = 'api/ManejoCuentas/patrimonio2nivel'; //get nivel 2
    private Myapiurlpatp2: string = 'api/ManejoCuentas/patrimonio2nivelp'; //post nivel 2
+
    private Myapiurlpatg3: string = 'api/ManejoCuentas/patrimonio3nivel'; //get nivel 3
    private Myapiurlpatp3: string = 'api/ManejoCuentas/patrimonio3nivelp'; //post nivel 3
 
    private Myapiurlpatg4: string = 'api/ManejoCuentas/patrimonio4nivel'; //get nivel 4
    private Myapiurlpatp4: string = 'api/ManejoCuentas/patrimonio4nivelp'; //post nivel 4
 
-
    private Myapiurlpatg5: string = 'api/ManejoCuentas/patrimonio5nivel'; //get nivel 5
    private Myapiurlpatp5: string = 'api/ManejoCuentas/patrimonio5nivelp'; //post nivel 5
 
+   private Myapiurlpatg6: string = 'api/ManejoCuentas/patrimonio6nivel'; //get nivel 6
+   private Myapiurlpatp6: string = 'api/ManejoCuentas/patrimonio6nivelp'; //post nivel 6
  
 
 
@@ -247,6 +249,19 @@ postpatrimonion5  (patrimoniocuentas: PatrimonioIntern5): Observable<PatrimonioI
   return this.http.post<PatrimonioIntern5>(`${this.Myappurl}${this.Myapiurlpatp5}`,patrimoniocuentas);
   
 }
+
+
+getpatrimonion6(): Observable<PatrimonioIntern6[]> {
+     
+  return this.http.get<PatrimonioIntern6[]>(this.Myappurl+this.Myapiurlpatg6);
+}
+
+postpatrimonion6  (patrimoniocuentas: PatrimonioIntern6): Observable<PatrimonioIntern6>{
+
+  return this.http.post<PatrimonioIntern6>(`${this.Myappurl}${this.Myapiurlpatp6}`,patrimoniocuentas);
+  
+}
+
 
 
 }

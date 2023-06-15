@@ -643,9 +643,41 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpGet("patrimonio6nivel")]
+        public async Task<IActionResult> Getpatrimonio6nivel()
+        {
+            try
+            {
+                var listactivos = await _context.Patrimonion6.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
 
 
+            }
 
+
+        }
+
+
+        [HttpPost("patrimonio6nivelp")]
+        public async Task<IActionResult> Postpatrimonio6nivelp(patrimonioclasen6 Patrimonion6)
+        {
+            try
+            {
+                Patrimonion6.FechaCreacion = DateTime.Now;
+                _context.Add(Patrimonion6);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getpatrimonio6nivel", new { Id = Patrimonion6.id }, Patrimonion6);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
 
