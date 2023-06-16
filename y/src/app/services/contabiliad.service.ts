@@ -7,7 +7,8 @@ import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
 import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6,
          PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5,PasivoIntern6,
          PatrimonioIntern2, PatrimonioIntern3,PatrimonioIntern4,PatrimonioIntern5,PatrimonioIntern6,
-         CDistrIntern2,CDistrIntern3,CDistrIntern4,CDistrIntern5,CDistrIntern6} from '../Interfaz/contabilidad';
+         CDistrIntern2,CDistrIntern3,CDistrIntern4,CDistrIntern5,CDistrIntern6,
+         CProductosIntern2,CProductosIntern3,CProductosIntern4,CProductosIntern5,CProductosIntern6} from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -78,6 +79,26 @@ export class ContabiliadService {
 
    private Myapiurlcdg6: string = 'api/ManejoCuentas/cuentad6nivel'; //get nivel 6
    private Myapiurlcdp6: string = 'api/ManejoCuentas/cuentad6nivelp'; //post nivel 6
+
+
+//entorno para cuentas de productos
+
+   private Myapiurlcpg2: string = 'api/ManejoCuentas/cuentap2nivel'; //get nivel 2
+   private Myapiurlcpp2: string = 'api/ManejoCuentas/cuentap2nivelp'; //post nivel 2
+
+   private Myapiurlcpg3: string = 'api/ManejoCuentas/cuentap3nivel'; //get nivel 3
+   private Myapiurlcpp3: string = 'api/ManejoCuentas/cuentap3nivelp'; //post nivel 3
+
+
+   private Myapiurlcpg4: string = 'api/ManejoCuentas/cuentap4nivel'; //get nivel 4
+   private Myapiurlcpp4: string = 'api/ManejoCuentas/cuentap4nivelp'; //post nivel 4
+
+   private Myapiurlcpg5: string = 'api/ManejoCuentas/cuentap5nivel'; //get nivel 5
+   private Myapiurlcpp5: string = 'api/ManejoCuentas/cuentap5nivelp'; //post nivel 5
+
+   private Myapiurlcpg6: string = 'api/ManejoCuentas/cuentap6nivel'; //get nivel 6
+   private Myapiurlcpp6: string = 'api/ManejoCuentas/cuentap6nivelp'; //post nivel 6
+
 
 
 
@@ -346,7 +367,69 @@ postcuentadistribucion6  (cdistribucioncuentas: CDistrIntern6): Observable<CDist
 
 
 
+////////////////////////
+//Cuenta Producto  ////
+//////////////////////
 
+
+getcuentaproducto2(): Observable<CProductosIntern2[]> {
+     
+  return this.http.get<CProductosIntern2[]>(this.Myappurl+this.Myapiurlcpg2);
+}
+
+postcuentaproducto2 (cproductocuentas: CProductosIntern2): Observable<CProductosIntern2>{
+
+  return this.http.post<CProductosIntern2>(`${this.Myappurl}${this.Myapiurlcpp2}`,cproductocuentas);
+  
+}
+
+
+getcuentaproducto3(): Observable<CProductosIntern3[]> {
+     
+  return this.http.get<CProductosIntern3[]>(this.Myappurl+this.Myapiurlcpg3);
+}
+
+postcuentaproducto3 (cproductocuentas: CProductosIntern3): Observable<CProductosIntern3>{
+
+  return this.http.post<CProductosIntern3>(`${this.Myappurl}${this.Myapiurlcpp3}`,cproductocuentas);
+  
+}
+
+
+getcuentaproducto4(): Observable<CProductosIntern4[]> {
+     
+  return this.http.get<CProductosIntern4[]>(this.Myappurl+this.Myapiurlcpg4);
+}
+
+postcuentaproducto4 (cproductocuentas: CProductosIntern4): Observable<CProductosIntern4>{
+
+  return this.http.post<CProductosIntern4>(`${this.Myappurl}${this.Myapiurlcpp4}`,cproductocuentas);
+  
+}
+
+getcuentaproducto5(): Observable<CProductosIntern5[]> {
+     
+  return this.http.get<CProductosIntern5[]>(this.Myappurl+this.Myapiurlcpg5);
+}
+
+postcuentaproducto5 (cproductocuentas: CProductosIntern5): Observable<CProductosIntern5>{
+
+  return this.http.post<CProductosIntern5>(`${this.Myappurl}${this.Myapiurlcpp5}`,cproductocuentas);
+  
+}
+
+
+
+getcuentaproducto6(): Observable<CProductosIntern6[]> {
+     
+  return this.http.get<CProductosIntern6[]>(this.Myappurl+this.Myapiurlcpg6);
+}
+
+postcuentaproducto6 (cproductocuentas: CProductosIntern6): Observable<CProductosIntern6>{
+
+  return this.http.post<CProductosIntern6>(`${this.Myappurl}${this.Myapiurlcpp6}`,cproductocuentas);
+  
+}
 
 
 

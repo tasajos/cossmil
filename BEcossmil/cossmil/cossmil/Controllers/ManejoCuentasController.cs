@@ -1,6 +1,7 @@
 ﻿using cossmil.Migrations;
 using cossmil.Models;
 using cossmil.Models.Pcuenta.Cuenta_Distribucion;
+using cossmil.Models.Pcuenta.Cuenta_Productos;
 using cossmil.Models.Pcuenta.Pasivo;
 using cossmil.Models.Pcuenta.Patrimonio;
 using Microsoft.AspNetCore.Http;
@@ -873,6 +874,203 @@ namespace cossmil.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        //////////////////////////////////////
+        ////  CUENTA DE PRODUCTOS       /////
+        ////////////////////////////////////
+
+
+
+        [HttpGet("cuentap2nivel")]
+        public async Task<IActionResult> Getcuentap2nivel()
+        {
+            try
+            {
+                var listactivos = await _context.CuentaProducto2.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("cuentap2nivelp")]
+        public async Task<IActionResult> Postcuentap2nivelp(cuentaproducto2 CuentaProducto2)
+        {
+            try
+            {
+                CuentaProducto2.FechaCreacion = DateTime.Now;
+                _context.Add(CuentaProducto2);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getcuentap2nivel", new { Id = CuentaProducto2.id }, CuentaProducto2);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("cuentap3nivel")]
+        public async Task<IActionResult> Getcuentap3nivel()
+        {
+            try
+            {
+                var listactivos = await _context.CuentaProducto3.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("cuentap3nivelp")]
+        public async Task<IActionResult> Postcuentap3nivelp(cuentaproducto3 CuentaProducto3)
+        {
+            try
+            {
+                CuentaProducto3.FechaCreacion = DateTime.Now;
+                _context.Add(CuentaProducto3);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getcuentap3nivel", new { Id = CuentaProducto3.id }, CuentaProducto3);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        [HttpGet("cuentap4nivel")]
+        public async Task<IActionResult> Getcuentap4nivel()
+        {
+            try
+            {
+                var listactivos = await _context.CuentaProducto4.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("cuentap4nivelp")]
+        public async Task<IActionResult> Postcuentap4nivelp(cuentaproducto4 CuentaProducto4)
+        {
+            try
+            {
+                CuentaProducto4.FechaCreacion = DateTime.Now;
+                _context.Add(CuentaProducto4);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getcuentap4nivel", new { Id = CuentaProducto4.id }, CuentaProducto4);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("cuentap5nivel")]
+        public async Task<IActionResult> Getcuentap5nivel()
+        {
+            try
+            {
+                var listactivos = await _context.CuentaProducto5.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("cuentap5nivelp")]
+        public async Task<IActionResult> Postcuentap5nivelp(cuentaproducto5 CuentaProducto5)
+        {
+            try
+            {
+                CuentaProducto5.FechaCreacion = DateTime.Now;
+                _context.Add(CuentaProducto5);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getcuentap5nivel", new { Id = CuentaProducto5.id }, CuentaProducto5);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        [HttpGet("cuentap6nivel")]
+        public async Task<IActionResult> Getcuentap6nivel()
+        {
+            try
+            {
+                var listactivos = await _context.CuentaProducto6.ToListAsync();
+                return Ok(listactivos);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("cuentap6nivelp")]
+        public async Task<IActionResult> Postcuentap6nivelp(cuentaproducto6 CuentaProducto6)
+        {
+            try
+            {
+                CuentaProducto6.FechaCreacion = DateTime.Now;
+                _context.Add(CuentaProducto6);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("Getcuentap6nivel", new { Id = CuentaProducto6.id }, CuentaProducto6);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
 
 
 

@@ -262,4 +262,67 @@ export interface PatrimonioIntern3 {
         
         
     
+     ////////////////////
+    ////CProductos//////
+    //////////////////
+
+
+    export interface CProductosIntern2 {
+        // columna db 
+        id?: number,
+        nivel: number,
+        nombrecuenta:string,
+        cuentamayor:number,
+        activonivel:string,
+        activoniveln2:string,
+        totalnum:string,
+        numero:string,
+                         
+        }
+
+        export interface CProductosIntern3 {
+            // columna db 
+            id?: number,
+            nivel: number,
+            nombrecuenta:string,
+            cuentamayor:number,
+            totalnum:string,
+            numero:string,
+                       
+            }
+
+            export interface CProductosIntern4 {
+                // columna db 
+                id?: number,
+                nivel: number,
+                nombrecuenta:string,
+                cuentamayor:number,
+                totalnum:string,
+                numero:string,
+                
+                
+                }
+                export interface CProductosIntern5 {
+                    // columna db 
+                    id?: number,
+                    nivel: number,
+                    nombrecuenta:string,
+                    cuentamayor:number,
+                    totalnum:string,
+                    numero:string,
+                    
+                    
+                    }
+        
+                    export interface CProductosIntern6 {
+                        // columna db 
+                        id?: number,
+                        nivel: number,
+                        nombrecuenta:string,
+                        cuentamayor:number,
+                        totalnum:string,
+                        numero:string,
+                        
+                        
+                        }
         

@@ -68,6 +68,7 @@ import { N2pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gast
 import { N4pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n4pc/n4pc.component';
 import { N5pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n5pc/n5pc.component';
 import { N6pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n6pc/n6pc.component';
+import { N3pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n3pc/n3pc.component';
 
 
 
@@ -136,7 +137,7 @@ const routes: Routes = [
   {path: 'cdistribucion4',component:N4cdComponent},
   {path: 'cdistribucion5',component:N5cdComponent},
   {path: 'cdistribucion6',component:N6cdComponent},
-  {path: 'cproducto3',component:N3pComponent},
+  {path: 'cproducto3',component:N3pcComponent},
   {path: 'cproducto4',component:N4pcComponent},
   {path: 'cproducto5',component:N5pcComponent},
   {path: 'cproducto6',component:N6pcComponent},
