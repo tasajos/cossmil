@@ -1,4 +1,5 @@
-﻿using cossmil.Models.Pcuenta.Cuenta_Distribucion;
+﻿using cossmil.Models.Pcuenta.Costos_Operacion;
+using cossmil.Models.Pcuenta.Cuenta_Distribucion;
 using cossmil.Models.Pcuenta.Cuenta_Productos;
 using cossmil.Models.Pcuenta.Pasivo;
 using cossmil.Models.Pcuenta.Patrimonio;
@@ -99,6 +100,17 @@ namespace cossmil.Models
         public DbSet<cuentaproducto5> CuentaProducto5 { get; set; } //<clase> Nombre de la tabla
 
         public DbSet<cuentaproducto6> CuentaProducto6 { get; set; } //<clase> Nombre de la tabla
+
+
+        //Costos de Operacion
+
+        public DbSet<coperacion2> CostoOperacion2 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<coperacion3> CostoOperacion3 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<coperacion4> CostoOperacion4 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<coperacion5> CostoOperacion5 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<coperacion6> CostoOperacion6 { get; set; } //<clase> Nombre de la tabla
+
 
 
 
