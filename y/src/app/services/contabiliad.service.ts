@@ -8,7 +8,8 @@ import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6,
          PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5,PasivoIntern6,
          PatrimonioIntern2, PatrimonioIntern3,PatrimonioIntern4,PatrimonioIntern5,PatrimonioIntern6,
          CDistrIntern2,CDistrIntern3,CDistrIntern4,CDistrIntern5,CDistrIntern6,
-         CProductosIntern2,CProductosIntern3,CProductosIntern4,CProductosIntern5,CProductosIntern6} from '../Interfaz/contabilidad';
+         CProductosIntern2,CProductosIntern3,CProductosIntern4,CProductosIntern5,CProductosIntern6,
+         COperacionIntern2,COperacionIntern3,COperacionIntern4,COperacionIntern5,COperacionIntern6} from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -100,7 +101,23 @@ export class ContabiliadService {
    private Myapiurlcpp6: string = 'api/ManejoCuentas/cuentap6nivelp'; //post nivel 6
 
 
+   //entorno para costos de operacion
 
+   private Myapiurlcog2: string = 'api/ManejoCuentas/cuentao2nivel'; //get nivel 2
+   private Myapiurlcop2: string = 'api/ManejoCuentas/cuentao2nivelp'; //post nivel 2
+
+   private Myapiurlcog3: string = 'api/ManejoCuentas/cuentao3nivel'; //get nivel 3
+   private Myapiurlcop3: string = 'api/ManejoCuentas/cuentao3nivelp'; //post nivel 3
+
+
+   private Myapiurlcog4: string = 'api/ManejoCuentas/cuentao4nivel'; //get nivel 4
+   private Myapiurlcop4: string = 'api/ManejoCuentas/cuentao4nivelp'; //post nivel 4
+
+   private Myapiurlcog5: string = 'api/ManejoCuentas/cuentao5nivel'; //get nivel 5
+   private Myapiurlcop5: string = 'api/ManejoCuentas/cuentao5nivelp'; //post nivel 5
+
+   private Myapiurlcog6: string = 'api/ManejoCuentas/cuentao6nivel'; //get nivel 6
+   private Myapiurlcop6: string = 'api/ManejoCuentas/cuentao6nivelp'; //post nivel 6
 
 //Constructor para llamar
 
@@ -431,6 +448,71 @@ postcuentaproducto6 (cproductocuentas: CProductosIntern6): Observable<CProductos
   
 }
 
+
+////////////////////////
+//Costos de Operacion//
+//////////////////////
+
+
+getcostooperacion2(): Observable<COperacionIntern2[]> {
+     
+  return this.http.get<COperacionIntern2[]>(this.Myappurl+this.Myapiurlcog2);
+}
+
+postcostooperacion2 (ccostooperacion: COperacionIntern2): Observable<COperacionIntern2>{
+
+  return this.http.post<COperacionIntern2>(`${this.Myappurl}${this.Myapiurlcop2}`,ccostooperacion);
+  
+}
+
+
+
+getcostooperacion3(): Observable<COperacionIntern3[]> {
+     
+  return this.http.get<COperacionIntern3[]>(this.Myappurl+this.Myapiurlcog3);
+}
+
+postcostooperacion3 (ccostooperacion: COperacionIntern3): Observable<COperacionIntern3>{
+
+  return this.http.post<COperacionIntern3>(`${this.Myappurl}${this.Myapiurlcop3}`,ccostooperacion);
+  
+}
+
+
+getcostooperacion4(): Observable<COperacionIntern4[]> {
+     
+  return this.http.get<COperacionIntern4[]>(this.Myappurl+this.Myapiurlcog4);
+}
+
+postcostooperacion4 (ccostooperacion: COperacionIntern4): Observable<COperacionIntern4>{
+
+  return this.http.post<COperacionIntern4>(`${this.Myappurl}${this.Myapiurlcop4}`,ccostooperacion);
+  
+}
+
+
+getcostooperacion5(): Observable<COperacionIntern5[]> {
+     
+  return this.http.get<COperacionIntern5[]>(this.Myappurl+this.Myapiurlcog5);
+}
+
+postcostooperacion5 (ccostooperacion: COperacionIntern5): Observable<COperacionIntern5>{
+
+  return this.http.post<COperacionIntern5>(`${this.Myappurl}${this.Myapiurlcop5}`,ccostooperacion);
+  
+}
+
+
+getcostooperacion6(): Observable<COperacionIntern6[]> {
+     
+  return this.http.get<COperacionIntern6[]>(this.Myappurl+this.Myapiurlcog6);
+}
+
+postcostooperacion6 (ccostooperacion: COperacionIntern6): Observable<COperacionIntern6>{
+
+  return this.http.post<COperacionIntern6>(`${this.Myappurl}${this.Myapiurlcop6}`,ccostooperacion);
+  
+}
 
 
 
