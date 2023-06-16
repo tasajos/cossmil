@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class N3Component implements OnInit {
   formulario: FormGroup;
   activos: ActivoInter[] = [];
-  filteredActivos: ActivoIntern3[] = []; // Lista filtrada de activos
+  filteredActivos: ActivoInter[] = []; // Lista filtrada de activos
 
   constructor(
     private fb: FormBuilder,

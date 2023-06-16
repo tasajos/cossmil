@@ -33,8 +33,8 @@
                 
                 <!-- Usar *ngFor para iterar sobre los elementos de activos y generar las opciones -->
                 <!--<option *ngFor="let activo of activos" [value]="activo.nombrecuenta">{{ activo.nombrecuenta }} </option>-->
-                <option *ngFor="let activo of activos" [value]="activo.totalnum">{{ activo.activonivel }}</option>
-  
+                <!--<option *ngFor="let activo of activos" [value]="activo.totalnum">{{ activo.activonivel }}</option>-->
+                <option *ngFor="let activo of activos" [value]="1 + '.' + activo.numero">{{ activo.activonivel }} {{ activo.nombrecuenta }}</option>
                 <!--
                 <option value="2">2</option>
                 <option value="3">3</option>
