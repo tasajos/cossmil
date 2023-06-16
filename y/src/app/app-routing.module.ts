@@ -69,6 +69,10 @@ import { N4pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gast
 import { N5pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n5pc/n5pc.component';
 import { N6pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n6pc/n6pc.component';
 import { N3pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n3pc/n3pc.component';
+import { N3coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n3co/n3co.component';
+import { N4coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n4co/n4co.component';
+import { N5coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n5co/n5co.component';
+import { N6coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n6co/n6co.component';
 
 
 
@@ -141,6 +145,11 @@ const routes: Routes = [
   {path: 'cproducto4',component:N4pcComponent},
   {path: 'cproducto5',component:N5pcComponent},
   {path: 'cproducto6',component:N6pcComponent},
+  {path: 'coperacion3',component:N3coComponent},
+  {path: 'coperacion4',component:N4coComponent},
+  {path: 'coperacion5',component:N5coComponent},
+  {path: 'coperacion6',component:N6coComponent},
+  
 
 
   

@@ -125,6 +125,12 @@ import { N4pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gast
 import { N5pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n5pc/n5pc.component';
 import { N6pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n6pc/n6pc.component';
 import { NavbarcuentacostosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/navbarcuentacostos/navbarcuentacostos.component';
+import { N2coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n2co/n2co.component';
+import { N3coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n3co/n3co.component';
+import { N4coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n4co/n4co.component';
+import { N5coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n5co/n5co.component';
+import { N6coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n6co/n6co.component';
+import { NavbaroperacionComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/navbaroperacion/navbaroperacion.component';
 
 
 
@@ -222,6 +228,12 @@ import { NavbarcuentacostosComponent } from './Components/Contabilidad/Cont/plan
     N5pcComponent,
     N6pcComponent,
     NavbarcuentacostosComponent,
+    N2coComponent,
+    N3coComponent,
+    N4coComponent,
+    N5coComponent,
+    N6coComponent,
+    NavbaroperacionComponent,
     
     
     
