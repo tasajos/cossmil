@@ -68,3 +68,13 @@ SELECT totalnivel, nombrecuenta AS Activo_N6 FROM Pasivocuentan6
 ORDER BY activonivel;
 
 --PLan de Cuentas Patrimonio
+SELECT activonivel, nombrecuenta FROM Patrimonion2
+UNION
+SELECT totalnivel, nombrecuenta FROM Patrimonion3
+UNION
+SELECT totalnivel, nombrecuenta FROM Patrimonion4
+UNION
+SELECT totalnivel, nombrecuenta FROM Patrimonion5
+UNION
+SELECT totalnivel, nombrecuenta FROM Patrimonion6
+ORDER BY activonivel;

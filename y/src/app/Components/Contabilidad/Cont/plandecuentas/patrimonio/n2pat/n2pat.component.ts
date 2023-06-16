@@ -52,7 +52,7 @@ export class N2patComponent implements OnInit {
 this._rcontabilidadchicaService.postpatrimonion2(rcactivo).subscribe(_data => {
   this.mensajeExito('registrado');
   location.reload();
-  this.router.navigate(['/ppasivo']);
+  this.router.navigate(['/patrimonio']);
 })
 
   }

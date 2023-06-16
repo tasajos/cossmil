@@ -23,11 +23,12 @@
 
         public string activonivel
         {
-            get { return totalnum.ToString() + ' ' + nombrecuenta.ToString(); }
+            get { return 1.ToString() + '.' + numero + '.'; }
             set { }
 
 
         }
+
 
     }
 }
