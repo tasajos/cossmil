@@ -6,7 +6,8 @@ import { registrarcuentacontabilidad } from '../Interfaz/contabilidad';
 import { cuentacontabilidadInter } from '../Interfaz/contabilidad';
 import { ActivoInter,ActivoIntern3,ActivoIntern4,ActivoIntern5,ActivoIntern6,
          PasivoIntern2,PasivoIntern3,PasivoIntern4,PasivoIntern5,PasivoIntern6,
-         PatrimonioIntern2, PatrimonioIntern3,PatrimonioIntern4,PatrimonioIntern5,PatrimonioIntern6} from '../Interfaz/contabilidad';
+         PatrimonioIntern2, PatrimonioIntern3,PatrimonioIntern4,PatrimonioIntern5,PatrimonioIntern6,
+         CDistrIntern2,CDistrIntern3,CDistrIntern4,CDistrIntern5,CDistrIntern6} from '../Interfaz/contabilidad';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -62,6 +63,21 @@ export class ContabiliadService {
    private Myapiurlpatp6: string = 'api/ManejoCuentas/patrimonio6nivelp'; //post nivel 6
  
 
+//entorno para cuentas de distribucion
+   private Myapiurlcdg2: string = 'api/ManejoCuentas/cuentad2nivel'; //get nivel 2
+   private Myapiurlcdp2: string = 'api/ManejoCuentas/cuentad2nivelp'; //post nivel 2
+
+   private Myapiurlcdg3: string = 'api/ManejoCuentas/cuentad3nivel'; //get nivel 3
+   private Myapiurlcdp3: string = 'api/ManejoCuentas/cuentad3nivelp'; //post nivel 3
+
+   private Myapiurlcdg4: string = 'api/ManejoCuentas/cuentad4nivel'; //get nivel 4
+   private Myapiurlcdp4: string = 'api/ManejoCuentas/cuentad4nivelp'; //post nivel 4
+
+   private Myapiurlcdg5: string = 'api/ManejoCuentas/cuentad5nivel'; //get nivel 5
+   private Myapiurlcdp5: string = 'api/ManejoCuentas/cuentad5nivelp'; //post nivel 5
+
+   private Myapiurlcdg6: string = 'api/ManejoCuentas/cuentad6nivel'; //get nivel 6
+   private Myapiurlcdp6: string = 'api/ManejoCuentas/cuentad6nivelp'; //post nivel 6
 
 
 
@@ -261,6 +277,79 @@ postpatrimonion6  (patrimoniocuentas: PatrimonioIntern6): Observable<PatrimonioI
   return this.http.post<PatrimonioIntern6>(`${this.Myappurl}${this.Myapiurlpatp6}`,patrimoniocuentas);
   
 }
+
+////////////////////////
+//Cuenta Distribucion//
+//////////////////////
+
+
+getcuentadistribucion2(): Observable<CDistrIntern2[]> {
+     
+  return this.http.get<CDistrIntern2[]>(this.Myappurl+this.Myapiurlcdg2);
+}
+
+postcuentadistribucion2  (cdistribucioncuentas: CDistrIntern2): Observable<CDistrIntern2>{
+
+  return this.http.post<CDistrIntern2>(`${this.Myappurl}${this.Myapiurlcdp2}`,cdistribucioncuentas);
+  
+}
+
+
+getcuentadistribucion3(): Observable<CDistrIntern3[]> {
+     
+  return this.http.get<CDistrIntern3[]>(this.Myappurl+this.Myapiurlcdg3);
+}
+
+postcuentadistribucion3  (cdistribucioncuentas: CDistrIntern3): Observable<CDistrIntern3>{
+
+  return this.http.post<CDistrIntern3>(`${this.Myappurl}${this.Myapiurlcdp3}`,cdistribucioncuentas);
+  
+}
+
+
+getcuentadistribucion4(): Observable<CDistrIntern4[]> {
+     
+  return this.http.get<CDistrIntern4[]>(this.Myappurl+this.Myapiurlcdg4);
+}
+
+postcuentadistribucion4  (cdistribucioncuentas: CDistrIntern4): Observable<CDistrIntern4>{
+
+  return this.http.post<CDistrIntern4>(`${this.Myappurl}${this.Myapiurlcdp4}`,cdistribucioncuentas);
+  
+}
+
+
+
+
+getcuentadistribucion5(): Observable<CDistrIntern5[]> {
+     
+  return this.http.get<CDistrIntern5[]>(this.Myappurl+this.Myapiurlcdg5);
+}
+
+postcuentadistribucion5  (cdistribucioncuentas: CDistrIntern5): Observable<CDistrIntern5>{
+
+  return this.http.post<CDistrIntern5>(`${this.Myappurl}${this.Myapiurlcdp5}`,cdistribucioncuentas);
+  
+}
+
+
+getcuentadistribucion6(): Observable<CDistrIntern6[]> {
+     
+  return this.http.get<CDistrIntern6[]>(this.Myappurl+this.Myapiurlcdg6);
+}
+
+postcuentadistribucion6  (cdistribucioncuentas: CDistrIntern6): Observable<CDistrIntern6>{
+
+  return this.http.post<CDistrIntern6>(`${this.Myappurl}${this.Myapiurlcdp6}`,cdistribucioncuentas);
+  
+}
+
+
+
+
+
+
+
 
 
 

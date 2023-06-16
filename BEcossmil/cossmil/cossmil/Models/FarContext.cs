@@ -1,4 +1,5 @@
-﻿using cossmil.Models.Pcuenta.Pasivo;
+﻿using cossmil.Models.Pcuenta.Cuenta_Distribucion;
+using cossmil.Models.Pcuenta.Pasivo;
 using cossmil.Models.Pcuenta.Patrimonio;
 using Microsoft.EntityFrameworkCore;
 
@@ -73,6 +74,18 @@ namespace cossmil.Models
 
         public DbSet<patrimonioclasen5> Patrimonion5 { get; set; } //<clase> Nombre de la tabla
         public DbSet<patrimonioclasen6> Patrimonion6 { get; set; } //<clase> Nombre de la tabla
+
+        //Cuentas de Distribucion
+
+
+        public DbSet<cuentadist2> CuentaDistribucion2 { get; set; } //<clase> Nombre de la tabla
+        public DbSet<cuentadist3> CuentaDistribucion3 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<cuentadist4> CuentaDistribucion4 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<cuentadist5> CuentaDistribucion5 { get; set; } //<clase> Nombre de la tabla
+
+        public DbSet<cuentadist6> CuentaDistribucion6 { get; set; } //<clase> Nombre de la tabla
 
 
 

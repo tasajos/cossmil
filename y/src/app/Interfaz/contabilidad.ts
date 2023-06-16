@@ -197,3 +197,69 @@ export interface PatrimonioIntern3 {
                 
                 
                 }
+    ////////////////////
+    ////CDistribucion//
+    //////////////////
+
+    export interface CDistrIntern2 {
+        // columna db 
+        id?: number,
+        nivel: number,
+        nombrecuenta:string,
+        cuentamayor:number,
+        activonivel:string,
+        activoniveln2:string,
+        totalnum:string,
+        numero:string,
+                         
+        }
+
+        export interface CDistrIntern3 {
+            // columna db 
+            id?: number,
+            nivel: number,
+            nombrecuenta:string,
+            cuentamayor:number,
+            totalnum:string,
+            numero:string,
+                       
+            }
+
+            export interface CDistrIntern4 {
+                // columna db 
+                id?: number,
+                nivel: number,
+                nombrecuenta:string,
+                cuentamayor:number,
+                totalnum:string,
+                numero:string,
+                
+                
+                }
+                export interface CDistrIntern5 {
+                    // columna db 
+                    id?: number,
+                    nivel: number,
+                    nombrecuenta:string,
+                    cuentamayor:number,
+                    totalnum:string,
+                    numero:string,
+                    
+                    
+                    }
+        
+                    export interface CDistrIntern6 {
+                        // columna db 
+                        id?: number,
+                        nivel: number,
+                        nombrecuenta:string,
+                        cuentamayor:number,
+                        totalnum:string,
+                        numero:string,
+                        
+                        
+                        }
+        
+        
+    
+        

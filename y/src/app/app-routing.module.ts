@@ -59,6 +59,11 @@ import { N3patComponent } from './Components/Contabilidad/Cont/plandecuentas/pat
 import { N4patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n4pat/n4pat.component';
 import { N5patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n5pat/n5pat.component';
 import { N6patComponent } from './Components/Contabilidad/Cont/plandecuentas/patrimonio/n6pat/n6pat.component';
+import { N2cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n2cd/n2cd.component';
+import { N3cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n3cd/n3cd.component';
+import { N4cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n4cd/n4cd.component';
+import { N5cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n5cd/n5cd.component';
+import { N6cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n6cd/n6cd.component';
 
 
 
@@ -123,6 +128,10 @@ const routes: Routes = [
   {path: 'ppatrimonio4',component:N4patComponent},
   {path: 'ppatrimonio5',component:N5patComponent},
   {path: 'ppatrimonio6',component:N6patComponent},
+  {path: 'cdistribucion3',component:N3cdComponent},
+  {path: 'cdistribucion4',component:N4cdComponent},
+  {path: 'cdistribucion5',component:N5cdComponent},
+  {path: 'cdistribucion6',component:N6cdComponent},
 
   
   
