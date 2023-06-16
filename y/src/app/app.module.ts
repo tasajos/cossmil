@@ -119,6 +119,12 @@ import { N4cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingr
 import { N5cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n5cd/n5cd.component';
 import { N6cdComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/n6cd/n6cd.component';
 import { NavbarcuentasdistribucionComponent } from './Components/Contabilidad/Cont/plandecuentas/ingresos/navbarcuentasdistribucion/navbarcuentasdistribucion.component';
+import { N2pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n2pc/n2pc.component';
+import { N3pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n3pc/n3pc.component';
+import { N4pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n4pc/n4pc.component';
+import { N5pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n5pc/n5pc.component';
+import { N6pcComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/n6pc/n6pc.component';
+import { NavbarcuentacostosComponent } from './Components/Contabilidad/Cont/plandecuentas/gastos/navbarcuentacostos/navbarcuentacostos.component';
 
 
 
@@ -210,6 +216,12 @@ import { NavbarcuentasdistribucionComponent } from './Components/Contabilidad/Co
     N5cdComponent,
     N6cdComponent,
     NavbarcuentasdistribucionComponent,
+    N2pcComponent,
+    N3pcComponent,
+    N4pcComponent,
+    N5pcComponent,
+    N6pcComponent,
+    NavbarcuentacostosComponent,
     
     
     
