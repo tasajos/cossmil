@@ -44,27 +44,27 @@ SELECT totalnivel AS Activo_N4 FROM Activocuenta4;
 
 --PLan de Cuentas Activos
 
-SELECT activonivel, nombrecuenta AS Activo_N2 FROM Activocuenta
+SELECT activonivel, nombrecuenta FROM Activocuenta
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N3 FROM Activocuenta3
+SELECT totalnivel, nombrecuenta FROM Activocuenta3
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N4 FROM Activocuenta4
+SELECT totalnivel, nombrecuenta FROM Activocuenta4
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N5 FROM Activocuenta5
+SELECT totalnivel, nombrecuenta FROM Activocuenta5
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N6 FROM Activocuenta6
+SELECT totalnivel, nombrecuenta FROM Activocuenta6
 ORDER BY activonivel;
 
 --PLan de Cuentas Pasivos
-SELECT activonivel, nombrecuenta AS Pasivo_N2 FROM Pasivocuentan2
+SELECT activonivel, nombrecuenta FROM Pasivocuentan2
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N3 FROM Pasivocuentan3
+SELECT totalnivel, nombrecuenta FROM Pasivocuentan3
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N4 FROM Pasivocuentan4
+SELECT totalnivel, nombrecuenta FROM Pasivocuentan4
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N5 FROM Pasivocuentan5
+SELECT totalnivel, nombrecuenta FROM Pasivocuentan5
 UNION
-SELECT totalnivel, nombrecuenta AS Activo_N6 FROM Pasivocuentan6
+SELECT totalnivel, nombrecuenta FROM Pasivocuentan6
 ORDER BY activonivel;
 
 --PLan de Cuentas Patrimonio
@@ -77,4 +77,42 @@ UNION
 SELECT totalnivel, nombrecuenta FROM Patrimonion5
 UNION
 SELECT totalnivel, nombrecuenta FROM Patrimonion6
+ORDER BY activonivel;
+
+
+--PLan de Cuentas de Distribucion
+SELECT activonivel, nombrecuenta FROM CuentaDistribucion2
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaDistribucion3
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaDistribucion4
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaDistribucion5
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaDistribucion6
+ORDER BY activonivel;
+
+
+--PLan de Cuentas de Productos
+SELECT activonivel, nombrecuenta FROM CuentaProducto2
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaProducto3
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaProducto4
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaProducto5
+UNION
+SELECT totalnivel, nombrecuenta FROM CuentaProducto6
+ORDER BY activonivel;
+
+--PLan de Costo de Operacion
+SELECT activonivel, nombrecuenta FROM CostoOperacion2
+UNION
+SELECT totalnivel, nombrecuenta FROM CostoOperacion3
+UNION
+SELECT totalnivel, nombrecuenta FROM CostoOperacion4
+UNION
+SELECT totalnivel, nombrecuenta FROM CostoOperacion5
+UNION
+SELECT totalnivel, nombrecuenta FROM CostoOperacion6
 ORDER BY activonivel;

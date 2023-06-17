@@ -73,6 +73,7 @@ import { N3coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccop
 import { N4coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n4co/n4co.component';
 import { N5coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n5co/n5co.component';
 import { N6coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n6co/n6co.component';
+import { DashboardGralComponent } from './Components/Contabilidad/dashboard-gral/dashboard-gral.component';
 
 
 
@@ -149,7 +150,8 @@ const routes: Routes = [
   {path: 'coperacion4',component:N4coComponent},
   {path: 'coperacion5',component:N5coComponent},
   {path: 'coperacion6',component:N6coComponent},
-  
+  {path: 'dboardgral',component:DashboardGralComponent},
+
 
 
   

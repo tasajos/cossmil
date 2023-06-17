@@ -25,40 +25,230 @@ namespace cossmil.Controllers
         {
             try
             {
-                var activoN2 = await _context.Activocuenta
-                    .Select(ac => new { activonivel = ac.activonivel ?? "", Activo_N2 = ac.nombrecuenta })
+                var activocuentas = await _context.Activocuenta
+                    .Where(ac => ac.activonivel.StartsWith("1"))
+                    .Select(ac => new
+                    {
+                        ac.activonivel,
+                        ac.nombrecuenta
+                    })
+                    .Union(_context.Activocuenta3.Select(ac3 => new
+                    {
+                        activonivel = ac3.totalnivel,
+                        ac3.nombrecuenta
+                    }))
+                    .Union(_context.Activocuenta4.Select(ac4 => new
+                    {
+                        activonivel = ac4.totalnivel,
+                        ac4.nombrecuenta
+                    }))
+                    .Union(_context.Activocuenta5.Select(ac5 => new
+                    {
+                        activonivel = ac5.totalnivel,
+                        ac5.nombrecuenta
+                    }))
+                    .Union(_context.Activocuenta6.Select(ac6 => new
+                    {
+                        activonivel = ac6.totalnivel,
+                        ac6.nombrecuenta
+                    }))
+                    .OrderBy(ac => ac.activonivel)
+                    .Take(1000)
                     .ToListAsync();
 
-                var activoN3 = await _context.Activocuenta3
-                    .Select(ac => new { totalnivel = ac.totalnum + "." + ac.numero, Activo_N3 = ac.nombrecuenta })
-                    .ToListAsync();
-
-                var activoN4 = await _context.Activocuenta4
-                    .Select(ac => new { totalnivel = ac.totalnum + "." + ac.numero, Activo_N4 = ac.nombrecuenta })
-                    .ToListAsync();
-
-                var activoN5 = await _context.Activocuenta5
-                    .Select(ac => new { totalnivel = ac.totalnum + "." + ac.numero, Activo_N5 = ac.nombrecuenta })
-                    .ToListAsync();
-
-                var activoN6 = await _context.Activocuenta6
-                    .Select(ac => new { totalnivel = ac.totalnum + "." + ac.numero, Activo_N6 = ac.nombrecuenta })
-                    .ToListAsync();
-
-                var dashboardActivo = activoN2
-                    .Concat(activoN3.Cast<object>())
-                    .Concat(activoN4.Cast<object>())
-                    .Concat(activoN5.Cast<object>())
-                    .Concat(activoN6.Cast<object>())
-                    .OrderBy(ac => ac?.GetType().GetProperty("activonivel")?.GetValue(ac))
-                    .ToList();
-
-                return Ok(dashboardActivo);
+                return Ok(activocuentas);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("totalregistrosDB")]
+        public async Task<IActionResult> GetTotalRegistrosdb()
+        {
+            try
+            {
+                var totalRegistros = await _context.Activocuenta
+                    .Where(ac => ac.activonivel.StartsWith("1"))
+                    .Select(ac => ac.id)
+                    .Cast<int>()
+                    .Concat(_context.Activocuenta3.Select(ac3 => ac3.id).Cast<int>())
+                    .Concat(_context.Activocuenta4.Select(ac4 => ac4.id).Cast<int>())
+                    .Concat(_context.Activocuenta5.Select(ac5 => ac5.id).Cast<int>())
+                    .Concat(_context.Activocuenta6.Select(ac6 => ac6.id).Cast<int>())
+                    .CountAsync();
+
+                return Ok(totalRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("dashboardpasivo")]
+        public async Task<IActionResult> GetDashboardPasivo()
+        {
+            try
+            {
+                var pasivocuentas = await _context.Pasivocuentan2
+                    .Select(ac => new
+                    {
+                        ac.activonivel,
+                        ac.nombrecuenta
+                    })
+                    .Union(_context.Pasivocuentan3.Select(ac3 => new
+                    {
+                        activonivel = ac3.totalnivel,
+                        ac3.nombrecuenta
+                    }))
+                    .Union(_context.Pasivocuentan4.Select(ac4 => new
+                    {
+                        activonivel = ac4.totalnivel,
+                        ac4.nombrecuenta
+                    }))
+                    .Union(_context.Pasivocuentan5.Select(ac5 => new
+                    {
+                        activonivel = ac5.totalnivel,
+                        ac5.nombrecuenta
+                    }))
+                    .Union(_context.Pasivocuentan6.Select(ac6 => new
+                    {
+                        activonivel = ac6.totalnivel,
+                        ac6.nombrecuenta
+                    }))
+                    .OrderBy(ac => ac.activonivel)
+                    .ToListAsync();
+
+                return Ok(pasivocuentas);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("totalregistrosDBPasivo")]
+        public async Task<IActionResult> GetTotalRegistrosdbpasivo()
+        {
+            try
+            {
+                var totalRegistros = await _context.Pasivocuentan2
+                    .Where(ac => ac.activonivel.StartsWith("2"))
+                    .Select(ac => ac.id)
+                    .Cast<int>()
+                    .Concat(_context.Pasivocuentan3.Select(ac3 => ac3.id).Cast<int>())
+                    .Concat(_context.Pasivocuentan4.Select(ac4 => ac4.id).Cast<int>())
+                    .Concat(_context.Pasivocuentan5.Select(ac5 => ac5.id).Cast<int>())
+                    .Concat(_context.Pasivocuentan6.Select(ac6 => ac6.id).Cast<int>())
+                    .CountAsync();
+
+                return Ok(totalRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("totalregistrosDBPatrimonio")]
+        public async Task<IActionResult> GetTotalRegistrosdbpatrimonio()
+        {
+            try
+            {
+                var totalRegistros = await _context.Patrimonion2
+                    .Where(ac => ac.activonivel.StartsWith("3"))
+                    .Select(ac => ac.id)
+                    .Cast<int>()
+                    .Concat(_context.Patrimonion3.Select(ac3 => ac3.id).Cast<int>())
+                    .Concat(_context.Patrimonion4.Select(ac4 => ac4.id).Cast<int>())
+                    .Concat(_context.Patrimonion5.Select(ac5 => ac5.id).Cast<int>())
+                    .Concat(_context.Patrimonion6.Select(ac6 => ac6.id).Cast<int>())
+                    .CountAsync();
+
+                return Ok(totalRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("totalregistrosDBcdistribucion")]
+        public async Task<IActionResult> GetTotalRegistrosdbcdistribucion()
+        {
+            try
+            {
+                var totalRegistros = await _context.CuentaDistribucion2
+                    .Where(ac => ac.activonivel.StartsWith("4"))
+                    .Select(ac => ac.id)
+                    .Cast<int>()
+                    .Concat(_context.CuentaDistribucion3.Select(ac3 => ac3.id).Cast<int>())
+                    .Concat(_context.CuentaDistribucion4.Select(ac4 => ac4.id).Cast<int>())
+                    .Concat(_context.CuentaDistribucion5.Select(ac5 => ac5.id).Cast<int>())
+                    .Concat(_context.CuentaDistribucion6.Select(ac6 => ac6.id).Cast<int>())
+                    .CountAsync();
+
+                return Ok(totalRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("totalregistrosDBcproducto")]
+        public async Task<IActionResult> GetTotalRegistrosdbcproducto()
+        {
+            try
+            {
+                var totalRegistros = await _context.CuentaProducto2
+                    .Where(ac => ac.activonivel.StartsWith("5"))
+                    .Select(ac => ac.id)
+                    .Cast<int>()
+                    .Concat(_context.CuentaProducto3.Select(ac3 => ac3.id).Cast<int>())
+                    .Concat(_context.CuentaProducto4.Select(ac4 => ac4.id).Cast<int>())
+                    .Concat(_context.CuentaProducto5.Select(ac5 => ac5.id).Cast<int>())
+                    .Concat(_context.CuentaProducto6.Select(ac6 => ac6.id).Cast<int>())
+                    .CountAsync();
+
+                return Ok(totalRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("totalregistrosDBcoperacion")]
+        public async Task<IActionResult> GetTotalRegistrosdbcoperacion()
+        {
+            try
+            {
+                var totalRegistros = await _context.CostoOperacion2
+                    .Where(ac => ac.activonivel.StartsWith("6"))
+                    .Select(ac => ac.id)
+                    .Cast<int>()
+                    .Concat(_context.CostoOperacion3.Select(ac3 => ac3.id).Cast<int>())
+                    .Concat(_context.CostoOperacion4.Select(ac4 => ac4.id).Cast<int>())
+                    .Concat(_context.CostoOperacion5.Select(ac5 => ac5.id).Cast<int>())
+                    .Concat(_context.CostoOperacion6.Select(ac6 => ac6.id).Cast<int>())
+                    .CountAsync();
+
+                return Ok(totalRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
     }
 }

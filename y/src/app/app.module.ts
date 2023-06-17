@@ -131,6 +131,9 @@ import { N4coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccop
 import { N5coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n5co/n5co.component';
 import { N6coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n6co/n6co.component';
 import { NavbaroperacionComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/navbaroperacion/navbaroperacion.component';
+import { DashboardGralComponent } from './Components/Contabilidad/dashboard-gral/dashboard-gral.component';
+import { Men1Component } from './Components/Contabilidad/DashboardGral/men1/men1.component';
+import { Men2Component } from './Components/Contabilidad/DashboardGral/men2/men2.component';
 
 
 
@@ -234,6 +237,9 @@ import { NavbaroperacionComponent } from './Components/Contabilidad/Cont/plandec
     N5coComponent,
     N6coComponent,
     NavbaroperacionComponent,
+    DashboardGralComponent,
+    Men1Component,
+    Men2Component,
     
     
     
