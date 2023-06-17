@@ -74,6 +74,11 @@ import { N4coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccop
 import { N5coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n5co/n5co.component';
 import { N6coComponent } from './Components/Contabilidad/Cont/plandecuentas/ccoperacion/n6co/n6co.component';
 import { DashboardGralComponent } from './Components/Contabilidad/dashboard-gral/dashboard-gral.component';
+import { DbpasivoComponent } from './Components/Contabilidad/dashboard-gral/dbpasivo/dbpasivo.component';
+import { DbpatrimonioComponent } from './Components/Contabilidad/dashboard-gral/dbpatrimonio/dbpatrimonio.component';
+import { DbcuentasdistrComponent } from './Components/Contabilidad/dashboard-gral/dbcuentasdistr/dbcuentasdistr.component';
+import { DbcuentaproductoComponent } from './Components/Contabilidad/dashboard-gral/dbcuentaproducto/dbcuentaproducto.component';
+import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-gral/dbcostooperativo/dbcostooperativo.component';
 
 
 
@@ -151,6 +156,11 @@ const routes: Routes = [
   {path: 'coperacion5',component:N5coComponent},
   {path: 'coperacion6',component:N6coComponent},
   {path: 'dboardgral',component:DashboardGralComponent},
+  {path: 'dboardpasivo',component:DbpasivoComponent},
+  {path: 'dboardpatrimonio',component:DbpatrimonioComponent},
+  {path: 'dboardcdistribucion',component:DbcuentasdistrComponent},
+  {path: 'dboardcproducto',component:DbcuentaproductoComponent},
+  {path: 'dboardcoperativo',component:DbcostooperativoComponent},
 
 
 

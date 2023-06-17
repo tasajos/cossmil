@@ -130,6 +130,186 @@ namespace cossmil.Controllers
         }
 
 
+
+        [HttpGet("dashboardpatrimonio")]
+        public async Task<IActionResult> GetDashboardpatrimonio()
+        {
+            try
+            {
+                var patrimoniocuentas = await _context.Patrimonion2
+                    .Select(ac => new
+                    {
+                        ac.activonivel,
+                        ac.nombrecuenta
+                    })
+                    .Union(_context.Patrimonion3.Select(ac3 => new
+                    {
+                        activonivel = ac3.totalnivel,
+                        ac3.nombrecuenta
+                    }))
+                    .Union(_context.Patrimonion4.Select(ac4 => new
+                    {
+                        activonivel = ac4.totalnivel,
+                        ac4.nombrecuenta
+                    }))
+                    .Union(_context.Patrimonion5.Select(ac5 => new
+                    {
+                        activonivel = ac5.totalnivel,
+                        ac5.nombrecuenta
+                    }))
+                    .Union(_context.Patrimonion6.Select(ac6 => new
+                    {
+                        activonivel = ac6.totalnivel,
+                        ac6.nombrecuenta
+                    }))
+                    .OrderBy(ac => ac.activonivel)
+                    .ToListAsync();
+
+                return Ok(patrimoniocuentas);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        [HttpGet("dashboardcdistribucion")]
+        public async Task<IActionResult> GetDashboardcdistribucion()
+        {
+            try
+            {
+                var cuentdistribucion = await _context.CuentaDistribucion2
+                    .Select(ac => new
+                    {
+                        ac.activonivel,
+                        ac.nombrecuenta
+                    })
+                    .Union(_context.CuentaDistribucion3.Select(ac3 => new
+                    {
+                        activonivel = ac3.totalnivel,
+                        ac3.nombrecuenta
+                    }))
+                    .Union(_context.CuentaDistribucion4.Select(ac4 => new
+                    {
+                        activonivel = ac4.totalnivel,
+                        ac4.nombrecuenta
+                    }))
+                    .Union(_context.CuentaDistribucion5.Select(ac5 => new
+                    {
+                        activonivel = ac5.totalnivel,
+                        ac5.nombrecuenta
+                    }))
+                    .Union(_context.CuentaDistribucion6.Select(ac6 => new
+                    {
+                        activonivel = ac6.totalnivel,
+                        ac6.nombrecuenta
+                    }))
+                    .OrderBy(ac => ac.activonivel)
+                    .ToListAsync();
+
+                return Ok(cuentdistribucion);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("dashboardcproducto")]
+        public async Task<IActionResult> GetDashboardcproducto()
+        {
+            try
+            {
+                var cuentaproducto = await _context.CuentaProducto2
+                    .Select(ac => new
+                    {
+                        ac.activonivel,
+                        ac.nombrecuenta
+                    })
+                    .Union(_context.CuentaProducto3.Select(ac3 => new
+                    {
+                        activonivel = ac3.totalnivel,
+                        ac3.nombrecuenta
+                    }))
+                    .Union(_context.CuentaProducto4.Select(ac4 => new
+                    {
+                        activonivel = ac4.totalnivel,
+                        ac4.nombrecuenta
+                    }))
+                    .Union(_context.CuentaProducto5.Select(ac5 => new
+                    {
+                        activonivel = ac5.totalnivel,
+                        ac5.nombrecuenta
+                    }))
+                    .Union(_context.CuentaProducto6.Select(ac6 => new
+                    {
+                        activonivel = ac6.totalnivel,
+                        ac6.nombrecuenta
+                    }))
+                    .OrderBy(ac => ac.activonivel)
+                    .ToListAsync();
+
+                return Ok(cuentaproducto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("dashboardcostooperacion")]
+        public async Task<IActionResult> GetDashboardcostooperacion()
+        {
+            try
+            {
+                var costooperacion = await _context.CostoOperacion2
+                    .Select(ac => new
+                    {
+                        ac.activonivel,
+                        ac.nombrecuenta
+                    })
+                    .Union(_context.CostoOperacion3.Select(ac3 => new
+                    {
+                        activonivel = ac3.totalnivel,
+                        ac3.nombrecuenta
+                    }))
+                    .Union(_context.CostoOperacion4.Select(ac4 => new
+                    {
+                        activonivel = ac4.totalnivel,
+                        ac4.nombrecuenta
+                    }))
+                    .Union(_context.CostoOperacion5.Select(ac5 => new
+                    {
+                        activonivel = ac5.totalnivel,
+                        ac5.nombrecuenta
+                    }))
+                    .Union(_context.CostoOperacion6.Select(ac6 => new
+                    {
+                        activonivel = ac6.totalnivel,
+                        ac6.nombrecuenta
+                    }))
+                    .OrderBy(ac => ac.activonivel)
+                    .ToListAsync();
+
+                return Ok(costooperacion);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
         [HttpGet("totalregistrosDBPasivo")]
         public async Task<IActionResult> GetTotalRegistrosdbpasivo()
         {

@@ -134,6 +134,11 @@ import { NavbaroperacionComponent } from './Components/Contabilidad/Cont/plandec
 import { DashboardGralComponent } from './Components/Contabilidad/dashboard-gral/dashboard-gral.component';
 import { Men1Component } from './Components/Contabilidad/DashboardGral/men1/men1.component';
 import { Men2Component } from './Components/Contabilidad/DashboardGral/men2/men2.component';
+import { DbpasivoComponent } from './Components/Contabilidad/dashboard-gral/dbpasivo/dbpasivo.component';
+import { DbpatrimonioComponent } from './Components/Contabilidad/dashboard-gral/dbpatrimonio/dbpatrimonio.component';
+import { DbcuentasdistrComponent } from './Components/Contabilidad/dashboard-gral/dbcuentasdistr/dbcuentasdistr.component';
+import { DbcuentaproductoComponent } from './Components/Contabilidad/dashboard-gral/dbcuentaproducto/dbcuentaproducto.component';
+import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-gral/dbcostooperativo/dbcostooperativo.component';
 
 
 
@@ -240,6 +245,11 @@ import { Men2Component } from './Components/Contabilidad/DashboardGral/men2/men2
     DashboardGralComponent,
     Men1Component,
     Men2Component,
+    DbpasivoComponent,
+    DbpatrimonioComponent,
+    DbcuentasdistrComponent,
+    DbcuentaproductoComponent,
+    DbcostooperativoComponent,
     
     
     

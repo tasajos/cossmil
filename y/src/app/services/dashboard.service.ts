@@ -11,7 +11,16 @@ import { throwError } from 'rxjs';
 })
 export class DashboardService {
   private Myappurl: string = environment.endpoint;
+  //dashboard
   private Myapiurl: string = 'api/Dashboard_Cuentas/dashboardactivo';
+  private Myapiurldp: string = 'api/Dashboard_Cuentas/dashboardpasivo';
+  private Myapiurldpatr: string = 'api/Dashboard_Cuentas/dboardpatrimonio';
+  private Myapiurldcdist: string = 'api/Dashboard_Cuentas/dboardcdistribucion';
+  private Myapiurldcprod: string = 'api/Dashboard_Cuentas/dboardcproducto';
+  private Myapiurldcopet: string = 'api/Dashboard_Cuentas/dboardcoperativo';
+
+  
+//Total Registros
   private Myapiurlac: string = 'api/Dashboard_Cuentas/totalregistrosDB';
   private Myapiurlacp: string = 'api/Dashboard_Cuentas/totalregistrosDBPasivo';
   private Myapiurlaccpat: string = 'api/Dashboard_Cuentas/totalregistrosDBPatrimonio';
@@ -27,8 +36,34 @@ export class DashboardService {
 ////////////////////
 
   getplancuentas(): Observable<PlandeCuentaInterdboard[]> {
-    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurl);
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurl);  //activo
   }
+  
+  getplandashboardpasivo(): Observable<PlandeCuentaInterdboard[]> {
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurldp);  //pasivo
+  }
+
+  getplandashboardpatrimonio(): Observable<PlandeCuentaInterdboard[]> {
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlaccpat); //patrimonio
+  }
+
+  getplandashboardcdistr(): Observable<PlandeCuentaInterdboard[]> {
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlaccd); //cuenta distribucion   
+  }
+
+  getplandashboardcprod(): Observable<PlandeCuentaInterdboard[]> {
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlaccp); //cuenta producto
+  }
+
+  getplandashboardcoperativo(): Observable<PlandeCuentaInterdboard[]> {
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlacco); //costo operativo
+  }
+
+
+
+//////////////////////////
+//// TOTAL REGISTROS ////
+////////////////////////
 
 
   getplancuentasactivo(): Observable<PlandeCuentaInterdboard[]> {
