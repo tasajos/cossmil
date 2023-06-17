@@ -139,6 +139,7 @@ import { DbpatrimonioComponent } from './Components/Contabilidad/dashboard-gral/
 import { DbcuentasdistrComponent } from './Components/Contabilidad/dashboard-gral/dbcuentasdistr/dbcuentasdistr.component';
 import { DbcuentaproductoComponent } from './Components/Contabilidad/dashboard-gral/dbcuentaproducto/dbcuentaproducto.component';
 import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-gral/dbcostooperativo/dbcostooperativo.component';
+import { NavbartransaccionesComponent } from './Components/Contabilidad/Cont/ctransacciones/navbartransacciones/navbartransacciones.component';
 
 
 
@@ -250,6 +251,7 @@ import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-g
     DbcuentasdistrComponent,
     DbcuentaproductoComponent,
     DbcostooperativoComponent,
+    NavbartransaccionesComponent,
     
     
     
