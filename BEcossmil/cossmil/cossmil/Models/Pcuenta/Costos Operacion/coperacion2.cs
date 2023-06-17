@@ -22,7 +22,7 @@
 
         public string activonivel
         {
-            get { return 6.ToString() + '.' + numero + '.' + nombrecuenta.ToString(); }
+            get { return 6.ToString() + '.' + numero + '.'; }
             set { }
 
 
