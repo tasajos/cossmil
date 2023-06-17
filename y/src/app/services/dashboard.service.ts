@@ -14,10 +14,10 @@ export class DashboardService {
   //dashboard
   private Myapiurl: string = 'api/Dashboard_Cuentas/dashboardactivo';
   private Myapiurldp: string = 'api/Dashboard_Cuentas/dashboardpasivo';
-  private Myapiurldpatr: string = 'api/Dashboard_Cuentas/dboardpatrimonio';
-  private Myapiurldcdist: string = 'api/Dashboard_Cuentas/dboardcdistribucion';
-  private Myapiurldcprod: string = 'api/Dashboard_Cuentas/dboardcproducto';
-  private Myapiurldcopet: string = 'api/Dashboard_Cuentas/dboardcoperativo';
+  private Myapiurldpatr: string = 'api/Dashboard_Cuentas/dashboardpatrimonio';
+  private Myapiurldcdist: string = 'api/Dashboard_Cuentas/dashboardcdistribucion';
+  private Myapiurldcprod: string = 'api/Dashboard_Cuentas/dashboardcproducto';
+  private Myapiurldcopet: string = 'api/Dashboard_Cuentas/dashboardcostooperacion';
 
   
 //Total Registros
@@ -44,19 +44,19 @@ export class DashboardService {
   }
 
   getplandashboardpatrimonio(): Observable<PlandeCuentaInterdboard[]> {
-    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlaccpat); //patrimonio
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurldpatr); //patrimonio
   }
 
   getplandashboardcdistr(): Observable<PlandeCuentaInterdboard[]> {
-    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlaccd); //cuenta distribucion   
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurldcdist); //cuenta distribucion   
   }
 
   getplandashboardcprod(): Observable<PlandeCuentaInterdboard[]> {
-    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlaccp); //cuenta producto
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurldcprod); //cuenta producto
   }
 
   getplandashboardcoperativo(): Observable<PlandeCuentaInterdboard[]> {
-    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurlacco); //costo operativo
+    return this.http.get<PlandeCuentaInterdboard[]>(this.Myappurl + this.Myapiurldcopet); //costo operativo
   }
 
 
