@@ -120,6 +120,10 @@ namespace cossmil.Models
         public DbSet<egresot> EgresosTransacciones { get; set; } //<clase> Nombre de la tabla
 
 
+        //Opciones Transacciones
+
+        public DbSet<opcionesT> OpcionesTransacciones { get; set; } //<clase> Nombre de la tabla
+
 
     }
 }

@@ -143,6 +143,7 @@ import { NavbartransaccionesComponent } from './Components/Contabilidad/Cont/ctr
 import { RecibosTComponent } from './Components/Contabilidad/Cont/ctransacciones/recibos-t/recibos-t.component';
 import { IngresostComponent } from './Components/Contabilidad/Cont/ctransacciones/ingresost/ingresost.component';
 import { EgresostComponent } from './Components/Contabilidad/Cont/ctransacciones/egresost/egresost.component';
+import { OpcionestComponent } from './Components/Contabilidad/Cont/ctransacciones/opcionest/opcionest.component';
 
 
 
@@ -258,6 +259,7 @@ import { EgresostComponent } from './Components/Contabilidad/Cont/ctransacciones
     RecibosTComponent,
     IngresostComponent,
     EgresostComponent,
+    OpcionestComponent,
     
     
     

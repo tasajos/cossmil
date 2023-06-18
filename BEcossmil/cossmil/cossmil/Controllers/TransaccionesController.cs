@@ -87,7 +87,42 @@ namespace cossmil.Controllers
 
 
 
+        [HttpGet("opcionesT")]
+        public async Task<IActionResult> GetopcionesT()
+        {
+            try
+            {
+                var transacciones = await _context.OpcionesTransacciones.ToListAsync();
+                return Ok(transacciones);
+            }
+            catch (Exception ex)
+            {
 
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+
+        [HttpPost("opcionespT")]
+        public async Task<IActionResult> Postopcionespt(opcionesT OpcionesTransacciones)
+        {
+            try
+            {
+                OpcionesTransacciones.FechaCreacion = DateTime.Now;
+                _context.Add(OpcionesTransacciones);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetopcionesT", new { Id = OpcionesTransacciones.id }, OpcionesTransacciones);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
     }

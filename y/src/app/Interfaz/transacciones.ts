@@ -10,4 +10,13 @@ export interface ingresoInter {
     }
 
 
+    export interface opcionesInter {
+        // columna db 
+        id?: number,
+        numero:number,
+        
+        }
+    
+    
+
   

@@ -1,0 +1,30 @@
+<app-cabecera></app-cabecera>
+<br><br><br>
+<app-navbarcontabilidad></app-navbarcontabilidad>
+<br>
+<br>
+<app-navbartransacciones></app-navbartransacciones>
+<br>
+<br>
+<div class="tituloformrecib">
+
+<h1 style="text-align: center;">OPCIONES - TRANSACCIONES</h1>
+
+</div>
+<div class="contenido">
+<form [formGroup]="formulario" (ngSubmit)="registraropciones()">
+    <div class="row">
+            <div class="col">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nro Ingreso:</span>
+                
+                <input type="text" formControlName="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <!--<input type="text" formControlName="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="numero">-->
+                <!--<input type="text" formControlName="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
+              </div>
+           </div>
+
+</div>
+
+<button type="button" class="btn btn-warning" routerLink="/ctransacciones" style="margin-right: 10px;">Volver</button>
+<button type="button"  type="submit" class="btn btn-primary">Registrar</button>

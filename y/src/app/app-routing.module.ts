@@ -82,6 +82,7 @@ import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-g
 import { RecibosTComponent } from './Components/Contabilidad/Cont/ctransacciones/recibos-t/recibos-t.component';
 import { IngresostComponent } from './Components/Contabilidad/Cont/ctransacciones/ingresost/ingresost.component';
 import { EgresostComponent } from './Components/Contabilidad/Cont/ctransacciones/egresost/egresost.component';
+import { OpcionestComponent } from './Components/Contabilidad/Cont/ctransacciones/opcionest/opcionest.component';
 
 
 
@@ -167,6 +168,7 @@ const routes: Routes = [
   {path: 'recibost',component:RecibosTComponent},
   {path: 'ingresost',component:IngresostComponent},
   {path: 'egresost',component:EgresostComponent},
+  {path: 'opcionest',component:OpcionestComponent},
 
 
 

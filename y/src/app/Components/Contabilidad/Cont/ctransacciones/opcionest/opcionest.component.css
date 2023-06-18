@@ -1,0 +1,13 @@
+.tituloformrecib{
+    background-color: #1976d2;
+    width: 30%;
+    margin-left: 20px;
+    color: white;
+    
+}
+
+.contenido {
+    width: 30%;
+    margin-left: 20px; /* Mover el contenido hacia la izquierda */
+    
+}
