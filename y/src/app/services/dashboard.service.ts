@@ -10,6 +10,7 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class DashboardService {
+  
   private Myappurl: string = environment.endpoint;
   //dashboard
   private Myapiurl: string = 'api/Dashboard_Cuentas/dashboardactivo';

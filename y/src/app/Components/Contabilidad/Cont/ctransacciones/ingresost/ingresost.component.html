@@ -12,46 +12,47 @@
 
 </div>
 <div class="contenido">
- 
-<div class="row">
+<form [formGroup]="formulario" (ngSubmit)="registrarcuenta()">
+    <div class="row">
             <div class="col">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default">Fecha:</span>
-                  <input type="date" formControlName="fechav" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <input type="date" formControlName="fechat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
             <div class="col">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Numero:</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                
+                <input type="text" formControlName="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <!--<input type="text" formControlName="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [value]="numero">-->
+                <!--<input type="text" formControlName="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
               </div>
-            </div>
-
-
+           </div>
 
 </div>
 <div class="input-group mb-3">
     <span class="input-group-text" id="inputGroup-sizing-default">Concepto de:</span>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input type="text" formControlName="concepto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
   </div>
   <div class="row">
     <div class="col">
   <div class="input-group mb-3">
     <span class="input-group-text" id="inputGroup-sizing-default">Cantidad:</span>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input type="text" formControlName="cantidad" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
   </div>
 </div>
   <div class="col">
   <div class="input-group mb-3">
     <label class="input-group-text" for="inputGroupSelect01">Moneda:</label>
-    <select class="form-select" id="inputGroupSelect01">
+    <select class="form-select" formControlName="moneda" id="inputGroupSelect01">
       <option selected>Elegir...</option>
-      <option value="1">$</option>
-      <option value="2">Bs</option>
-      <option value="3">Eur</option>
+      <option value="$">$</option>
+      <option value="Bs">Bs</option>
+      <option value="Eur">Eur</option>
     </select>
   </div>
 </div>
 </div>
 <button type="button" class="btn btn-warning" routerLink="/ctransacciones" style="margin-right: 10px;">Volver</button>
-<button type="button" class="btn btn-primary">Registrar</button>
+<button type="button"  type="submit" class="btn btn-primary">Registrar</button>
