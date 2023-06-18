@@ -51,8 +51,9 @@ export class IngresostComponent implements OnInit {
       this.mensajeExito('registrado');
       location.reload();
       this.router.navigate(['/ingresost']);;
+      this.numero = this.numero + 1;
 
-    this.numero++; // Incrementamos el número después de cada registro exitoso
+    //this.numero++; // Incrementamos el número después de cada registro exitoso
   });
       
     
@@ -67,8 +68,11 @@ export class IngresostComponent implements OnInit {
 
  // Enviamos objeto al backend
  this._rnroreciboservice.postopcionescuentas(rnros).subscribe(_data => {
+  this.numero = this.numero + 1;
 
-this.numero++; // Incrementamos el número después de cada registro exitoso
+
+  this.obtenerUltimoNumero();
+  //this.numero++; // Incrementamos el número después de cada registro exitoso
 });
   }
   mensajeExito(texto: string) {
@@ -85,6 +89,9 @@ this.numero++; // Incrementamos el número después de cada registro exitoso
       if (opcionesCuentas.length > 0) {
         this.ultimoNumero = opcionesCuentas[opcionesCuentas.length - 1].numero;
       }
+       // Inicializamos el número con el valor obtenido del backend
+       this.numero = this.ultimoNumero;
+
       this.formulario.patchValue({
         numero: this.ultimoNumero // Establecer el valor inicial del campo "numero"
       });
@@ -98,6 +105,7 @@ obtenerUltimoNumero() {
   // Aquí se muestra un ejemplo estático:
   this._ringresosservice.getUltimoNumero().subscribe((ultimoNumero: number) => {
     this.numero = ultimoNumero + 1; // Incrementar el último número y asignarlo a la variable numero
+    
   });
 }
 

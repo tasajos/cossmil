@@ -58,6 +58,34 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpPost("ingresospTT")]
+        public async Task<IActionResult> Postingresosptt(opcionesT OpcionesTransacciones)
+        {
+            try
+            {
+                OpcionesTransacciones.FechaCreacion = DateTime.Now;
+
+                // Obtener el último número actualizado
+                var ultimoNumero = await _context.IngresosTransacciones.MaxAsync(x => x.numero);
+                OpcionesTransacciones.numero = ultimoNumero + 1;
+
+                _context.Add(OpcionesTransacciones);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetopcionesT", new { Id = OpcionesTransacciones.id }, OpcionesTransacciones);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+
+
+
         [HttpGet("ultimoNumero")]
         public async Task<IActionResult> GetUltimoNumero()
         {

@@ -25,6 +25,7 @@ export class TransaccionesService {
   //opcionesT
   private Myapiurlopt: string = 'api/Transacciones/opcionesT';
   private Myapiurloptp: string = 'api/Transacciones/opcionespT';
+  private Myapiurloptpt: string = 'api/Transacciones/opcionespTT';
 
   
 
