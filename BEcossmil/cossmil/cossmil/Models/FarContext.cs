@@ -3,6 +3,7 @@ using cossmil.Models.Pcuenta.Cuenta_Distribucion;
 using cossmil.Models.Pcuenta.Cuenta_Productos;
 using cossmil.Models.Pcuenta.Pasivo;
 using cossmil.Models.Pcuenta.Patrimonio;
+using cossmil.Models.Transacciones;
 using Microsoft.EntityFrameworkCore;
 
 namespace cossmil.Models
@@ -111,6 +112,12 @@ namespace cossmil.Models
 
         public DbSet<coperacion6> CostoOperacion6 { get; set; } //<clase> Nombre de la tabla
 
+
+        //Transacciones
+
+
+        public DbSet<ingresot> IngresosTransacciones { get; set; } //<clase> Nombre de la tabla
+        public DbSet<egresot> EgresosTransacciones { get; set; } //<clase> Nombre de la tabla
 
 
 
