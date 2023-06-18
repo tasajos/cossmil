@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TransaccionesService } from 'src/app/services/transacciones.service';
 import { HttpClient } from '@angular/common/http';
-import { ingresoInter } from 'src/app/Interfaz/transacciones';
+import { ingresoInter,opcionesInter } from 'src/app/Interfaz/transacciones';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -15,11 +15,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class IngresostComponent implements OnInit {
   formulario: FormGroup;
   numero!: number;
+  opcionesCuentas: opcionesInter[] = [];
+  ultimoNumero: number = 0;
 
   constructor(
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
     private _ringresosservice: TransaccionesService,
+    private _rnroreciboservice: TransaccionesService,
     private router: Router,
     private http: HttpClient,
     private route: ActivatedRoute
@@ -31,32 +34,43 @@ export class IngresostComponent implements OnInit {
       cantidad: ['', Validators.required],
       moneda: ['', Validators.required],
          });
-
-         
   }
 
   registrarcuenta() {
 
      const rcactivo: ingresoInter = {
       fechat: this.formulario.value.fechat,
-      numero: this.formulario.value.numero,
-      //numero: parseInt(this.formulario.value.numero),
-      //numero: Number(this.formulario.value.numero),
+      numero: parseInt(this.formulario.value.numero),
       concepto: this.formulario.value.concepto,
       cantidad: this.formulario.value.cantidad,
       moneda: this.formulario.value.moneda,
-     
-    };
 
+    };
     // Enviamos objeto al backend
     this._ringresosservice.postingresocuentas(rcactivo).subscribe(_data => {
       this.mensajeExito('registrado');
       location.reload();
-      this.router.navigate(['/ingresost']);
-      this.numero++; // Incrementamos el número después de cada registro exitoso
-    });
+      this.router.navigate(['/ingresost']);;
+
+    this.numero++; // Incrementamos el número después de cada registro exitoso
+  });
+      
+    
   }
 
+  registrarnrorecibo() {
+
+    const rnros: opcionesInter = {
+     numero: parseInt(this.formulario.value.numero),
+     
+   };
+
+ // Enviamos objeto al backend
+ this._rnroreciboservice.postopcionescuentas(rnros).subscribe(_data => {
+
+this.numero++; // Incrementamos el número después de cada registro exitoso
+});
+  }
   mensajeExito(texto: string) {
     this._snackBar.open(`El proceso fue realizado y ${texto} con exito`, '', {
       duration: 2000,
@@ -66,7 +80,15 @@ export class IngresostComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.obtenerUltimoNumero();
+    this._ringresosservice.getopcionescuentas().subscribe((opcionesCuentas: opcionesInter[]) => {
+      this.opcionesCuentas = opcionesCuentas;
+      if (opcionesCuentas.length > 0) {
+        this.ultimoNumero = opcionesCuentas[opcionesCuentas.length - 1].numero;
+      }
+      this.formulario.patchValue({
+        numero: this.ultimoNumero // Establecer el valor inicial del campo "numero"
+      });
+    });
    // Lógica del campo
 }
 

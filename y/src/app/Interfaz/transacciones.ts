@@ -2,8 +2,8 @@
 export interface ingresoInter {
     // columna db 
     id?: number,
-    fechat: Date,
-    numero:Int16Array,
+    fechat: string,
+    numero:number,
     concepto: string,
     cantidad:number,
     moneda:string,
