@@ -140,6 +140,9 @@ import { DbcuentasdistrComponent } from './Components/Contabilidad/dashboard-gra
 import { DbcuentaproductoComponent } from './Components/Contabilidad/dashboard-gral/dbcuentaproducto/dbcuentaproducto.component';
 import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-gral/dbcostooperativo/dbcostooperativo.component';
 import { NavbartransaccionesComponent } from './Components/Contabilidad/Cont/ctransacciones/navbartransacciones/navbartransacciones.component';
+import { RecibosTComponent } from './Components/Contabilidad/Cont/ctransacciones/recibos-t/recibos-t.component';
+import { IngresostComponent } from './Components/Contabilidad/Cont/ctransacciones/ingresost/ingresost.component';
+import { EgresostComponent } from './Components/Contabilidad/Cont/ctransacciones/egresost/egresost.component';
 
 
 
@@ -252,6 +255,9 @@ import { NavbartransaccionesComponent } from './Components/Contabilidad/Cont/ctr
     DbcuentaproductoComponent,
     DbcostooperativoComponent,
     NavbartransaccionesComponent,
+    RecibosTComponent,
+    IngresostComponent,
+    EgresostComponent,
     
     
     

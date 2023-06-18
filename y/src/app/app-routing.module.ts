@@ -79,6 +79,9 @@ import { DbpatrimonioComponent } from './Components/Contabilidad/dashboard-gral/
 import { DbcuentasdistrComponent } from './Components/Contabilidad/dashboard-gral/dbcuentasdistr/dbcuentasdistr.component';
 import { DbcuentaproductoComponent } from './Components/Contabilidad/dashboard-gral/dbcuentaproducto/dbcuentaproducto.component';
 import { DbcostooperativoComponent } from './Components/Contabilidad/dashboard-gral/dbcostooperativo/dbcostooperativo.component';
+import { RecibosTComponent } from './Components/Contabilidad/Cont/ctransacciones/recibos-t/recibos-t.component';
+import { IngresostComponent } from './Components/Contabilidad/Cont/ctransacciones/ingresost/ingresost.component';
+import { EgresostComponent } from './Components/Contabilidad/Cont/ctransacciones/egresost/egresost.component';
 
 
 
@@ -161,6 +164,9 @@ const routes: Routes = [
   {path: 'dboardcdistribucion',component:DbcuentasdistrComponent},
   {path: 'dboardcproducto',component:DbcuentaproductoComponent},
   {path: 'dboardcoperativo',component:DbcostooperativoComponent},
+  {path: 'recibost',component:RecibosTComponent},
+  {path: 'ingresost',component:IngresostComponent},
+  {path: 'egresost',component:EgresostComponent},
 
 
 
