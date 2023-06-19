@@ -124,6 +124,8 @@ namespace cossmil.Models
 
         public DbSet<opcionesT> OpcionesTransacciones { get; set; } //<clase> Nombre de la tabla
 
+        public DbSet<opcioneseT> OpcionesETransacciones { get; set; } //<clase> Nombre de la tabla
+
 
     }
 }

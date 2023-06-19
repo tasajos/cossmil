@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TransaccionesService } from 'src/app/services/transacciones.service';
 import { HttpClient } from '@angular/common/http';
-import { ingresoInter,opcionesInter } from 'src/app/Interfaz/transacciones';
+import { ingresoInter,opcionesInter,opcionesegresoInter } from 'src/app/Interfaz/transacciones';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -13,24 +13,35 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class OpcionestComponent  implements OnInit {
   formulario: FormGroup;
+  formegreso:FormGroup;
+
   constructor(
     private fb: FormBuilder,
+    private fbe: FormBuilder,
     private _snackBar: MatSnackBar,
     private _ringresosservice: TransaccionesService,
     private router: Router,
     private http: HttpClient,
     private route: ActivatedRoute
-  ) {
+  ) 
+  
+  {
     this.formulario = this.fb.group({
       //fechat: ['', Validators.required],
       numero: ['', Validators.required],
       //concepto: ['', Validators.required],
       //cantidad: ['', Validators.required],
       //moneda: ['', Validators.required],
-         });
-
+         });   
          
+         this.formegreso = this.fbe.group({
+           numero: ['', Validators.required],
+          
+             });   
   }
+
+
+
 
   registraropciones() {
 
@@ -67,6 +78,29 @@ export class OpcionestComponent  implements OnInit {
    // Lógica del campo
 }
 
+registrarreciboegreso(){
+
+  const rcactivo: opcionesegresoInter = {
+     numero: this.formegreso.value.numero
+  };
+
+  // Enviamos objeto al backend
+  this._ringresosservice.postopcioneegresocuentas(rcactivo).subscribe(_data => {
+    this.mensajeExitoe('registrado');
+    location.reload();
+    this.router.navigate(['/opcionest']);
+    
+  });
 }
 
+mensajeExitoe(texto: string) {
+  this._snackBar.open(`El proceso fue realizado y ${texto} con exito`, '', {
+    duration: 2000,
+    horizontalPosition: 'right',
+  });
+}
+
+
+
+}
 

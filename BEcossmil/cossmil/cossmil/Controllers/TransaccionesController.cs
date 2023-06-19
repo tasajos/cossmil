@@ -153,5 +153,119 @@ namespace cossmil.Controllers
         }
 
 
+        [HttpGet("egresosT")]
+        public async Task<IActionResult> GetegresoT()
+        {
+            try
+            {
+                var transaccionesegreso = await _context.EgresosTransacciones.ToListAsync();
+                return Ok(transaccionesegreso);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+        [HttpPost("egresospT")]
+        public async Task<IActionResult> Postegresospt(egresot EgresosTransacciones)
+        {
+            try
+            {
+                EgresosTransacciones.FechaCreacion = DateTime.Now;
+                _context.Add(EgresosTransacciones);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetegresoT", new { Id = EgresosTransacciones.id }, EgresosTransacciones);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        //opciones egreso
+
+        [HttpGet("opcioneseT")]
+        public async Task<IActionResult> GetopcioneseT()
+        {
+            try
+            {
+                var transacciones = await _context.OpcionesETransacciones.ToListAsync();
+                return Ok(transacciones);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+
+            }
+
+
+        }
+
+
+
+        [HttpPost("opcionespeT")]
+        public async Task<IActionResult> Postopcionespet(opcioneseT OpcionesETransacciones)
+        {
+            try
+            {
+                OpcionesETransacciones.FechaCreacion = DateTime.Now;
+                _context.Add(OpcionesETransacciones);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetopcioneseT", new { Id = OpcionesETransacciones.id }, OpcionesETransacciones);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+        [HttpGet("ultimoNumeroEgreso")]
+        public async Task<IActionResult> GetUltimoNumeroE()
+        {
+            try
+            {
+                var ultimoIngreso = await _context.EgresosTransacciones
+                    .OrderByDescending(i => i.id)
+                    .FirstOrDefaultAsync();
+
+                if (ultimoIngreso != null)
+                {
+                    var ultimoNumero = ultimoIngreso.numero;
+                    return Ok(ultimoNumero);
+                }
+                else
+                {
+                    // No se encontraron registros, se puede considerar un número inicial como 1 o cualquier otro valor predeterminado
+                    var numeroInicial = 1;
+                    return Ok(numeroInicial);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }
